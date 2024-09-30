@@ -1,6 +1,6 @@
 ## Building and Running the Project
 
-1. To build and run the project:
+1. To build the project:
 
     ```bash
     cargo build --release
