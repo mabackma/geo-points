@@ -3,6 +3,7 @@ pub struct Tree {
     species: u8,
     mean_height: f32,
     position: (f64, f64, f64),
+    tree_status: f64,
 }
 
 impl Tree {
@@ -11,6 +12,7 @@ impl Tree {
             species,
             mean_height,
             position,
+            tree_status: 1.0,
         }
     }
 
@@ -20,5 +22,9 @@ impl Tree {
 
     pub fn position(&self) -> (f64, f64, f64) {
         self.position
+    }
+
+    pub fn tree_status(&self) -> f64 {
+        self.tree_status
     }
 }

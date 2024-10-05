@@ -11,8 +11,8 @@ pub struct SharedBuffer {
 impl SharedBuffer {
     #[wasm_bindgen(constructor)]
     pub fn new(num_trees: usize) -> SharedBuffer {
-        // Each tree will have 3 values: x, y (f64), and species (u8 stored as f64)
-        let size = num_trees * 3;
+        // Each tree will have 4 values: x, y (f64), species (u8 stored as f64), and tree_status (f64)
+        let size = num_trees * 4;
         let buffer = vec![0f64; size].into_boxed_slice(); // Allocate memory
         let ptr = buffer.as_ptr() as *mut f64; // Get raw pointer to the buffer
         let len = buffer.len(); // Length of the buffer
@@ -31,12 +31,13 @@ impl SharedBuffer {
     /// Fills the buffer with data for a single tree (x, y, species)
     /// `index` is the index of the tree in the buffer (0-based)
     pub fn fill_tree(&self, index: usize, x: f64, y: f64, species: u8) {
-        let base = index * 3; // 3 values per tree: x, y, species
-        if base + 2 < self.len / 3 && species != 0 {
+        let base = index * 4; // 4 values per tree: x, y, species, tree_status
+        if base + 2 < self.len / 4 && species != 0 {
             unsafe {
                 *self.ptr.add(base) = x;           // x coordinate
                 *self.ptr.add(base + 1) = y;       // y coordinate
                 *self.ptr.add(base + 2) = species as f64; // species as u8 stored in f64
+                *self.ptr.add(base + 3) = 1.0;     // tree_status (1.0 = tree, 0.0 = stump)
             }
         }
     }

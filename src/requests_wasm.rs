@@ -247,7 +247,7 @@ pub fn generate_random_trees_into_buffer(
     // Insert the trees into the buffer
     for (i, tree) in trees.iter().enumerate() {
         let buffer_index = start_index + i;
-        if i < buffer.len() / 3 {
+        if i < buffer.len() / 4 {
             // Fill the buffer with x, y, and species
             buffer.fill_tree(buffer_index, tree.position().0, tree.position().1, tree.species());
             tree_count += 1;
@@ -330,8 +330,8 @@ pub fn get_compartment_areas_in_bounding_box(
 
         log_1(&"Buffer contains:".into());
         for (i, value) in buffer_slice.iter().enumerate() {
-            if i % 3 == 0 && buffer_slice[i + 2] != 0.0 {
-                let buffer_info = format!("Tree {}: x = {}, y = {}, species = {}", i / 3, buffer_slice[i], buffer_slice[i + 1], buffer_slice[i + 2]);
+            if i % 4 == 0 && buffer_slice[i + 2] != 0.0 {
+                let buffer_info = format!("Tree {}: x = {}, y = {}, species = {}, status = {}", i / 4, buffer_slice[i], buffer_slice[i + 1], buffer_slice[i + 2], buffer_slice[i + 3]);
                 log_1(&buffer_info.into());
             }
         }
