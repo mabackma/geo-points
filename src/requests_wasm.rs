@@ -199,8 +199,6 @@ pub fn generate_random_trees_into_buffer(
         acc
     });
 
-    let mut tree_count = 0;
-
     let trees = strata
         .tree_stratum
         .par_iter()
@@ -223,15 +221,6 @@ pub fn generate_random_trees_into_buffer(
             let mut grid = JitteredHexagonalGridSampling::new(rng, options);
             let points = grid.fill();
 
-            if points.is_empty() {
-                //println!("\tNo trees generated for stratum with basal area {}, stem count {}, mean height {}", stratum.basal_area, stratum.stem_count, stratum.mean_height);
-            } else if points.len() < amount as usize {
-                println!(
-                    "Generated {} / {} trees for stratum with basal area {}, stem count {}, mean height {}.",
-                    points.len(), amount, stratum.basal_area, stratum.stem_count, stratum.mean_height
-                );
-            }
-
             let trees_strata: Vec<Tree> = points
                 .iter()
                 .map(|pair: &[f64; 2]| {
@@ -247,16 +236,15 @@ pub fn generate_random_trees_into_buffer(
     // Insert the trees into the buffer
     for (i, tree) in trees.iter().enumerate() {
         let buffer_index = start_index + i;
-        if i < buffer.len() / 4 {
+        if i < buffer.len() / 5 {
             // Fill the buffer with x, y, and species
-            buffer.fill_tree(buffer_index, tree.position().0, tree.position().1, tree.species());
-            tree_count += 1;
+            buffer.fill_tree(buffer_index, tree.position().0, tree.position().1, tree.species(), tree.tree_height());           
         } else {
             break; // Avoid overflowing the buffer
         }
     }
 
-    tree_count // Return the number of trees added to the buffer
+    trees.len() // Return the number of trees added to the buffer
 }
 
 // Get compartment areas in a bounding box.
@@ -330,8 +318,16 @@ pub fn get_compartment_areas_in_bounding_box(
 
         log_1(&"Buffer contains:".into());
         for (i, value) in buffer_slice.iter().enumerate() {
-            if i % 4 == 0 && buffer_slice[i + 2] != 0.0 {
-                let buffer_info = format!("Tree {}: x = {}, y = {}, species = {}, status = {}", i / 4, buffer_slice[i], buffer_slice[i + 1], buffer_slice[i + 2], buffer_slice[i + 3]);
+            if i % 5 == 0 && buffer_slice[i + 2] != 0.0 {
+                let buffer_info = format!(
+                    "Tree {}: x = {}, y = {}, species = {}, height = {}, status = {}", 
+                    i / 5, 
+                    buffer_slice[i], 
+                    buffer_slice[i + 1], 
+                    buffer_slice[i + 2], 
+                    buffer_slice[i + 3], 
+                    buffer_slice[i + 4]
+                );
                 log_1(&buffer_info.into());
             }
         }
