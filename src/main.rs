@@ -16,7 +16,7 @@ use std::error::Error;
 fn main() -> Result<(), Box<dyn Error>>{
     let mut bbox = get_bounding_box_of_map();
     bbox = random_bbox(&bbox);
-    
+    println!("Bounding box: {:#?}", bbox);
     let empty_geojson = GeoJson::FeatureCollection(FeatureCollection {
         bbox: None,
         features: vec![],

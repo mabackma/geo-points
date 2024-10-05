@@ -60,10 +60,26 @@ pub fn random_bbox(map_bbox: &Polygon<f64>) -> Polygon<f64> {
 
     let mut rng = rand::thread_rng();
 
-    let x1 = rng.gen_range(min_x..max_x);
-    let y1 = rng.gen_range(min_y..max_y);
-    let x2 = rng.gen_range(min_x..max_x);
-    let y2 = rng.gen_range(min_y..max_y);
+    let mut x1 = 0.0;
+    let mut x2 = 0.0;
+    let mut y1 = 0.0;
+    let mut y2 = 0.0;
+
+    loop {
+        x1 = rng.gen_range(min_x..max_x);
+        x2 = rng.gen_range(min_x..max_x);
+        if (x2 - x1).abs() < 0.001 && (x2 - x1).abs() > 0.0009 {
+            break;
+        }
+    }
+
+    loop {
+        y1 = rng.gen_range(min_y..max_y);
+        y2 = rng.gen_range(min_y..max_y);
+        if (y2 - y1).abs() < 0.001 && (y2 - y1).abs() > 0.0009 {
+            break;
+        }
+    }
 
     let random_bbox = geo::Polygon::new(
         LineString(vec![
