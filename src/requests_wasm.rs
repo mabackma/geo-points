@@ -86,6 +86,7 @@ pub fn geojson_to_polygons(geojson: &GeoJson) -> Vec<Polygon<f64>> {
     polygons
 }
 
+// Struct to hold GeoJSON data, max tree count, tree count, and buffer pointer
 #[derive(Serialize)]
 struct GeoJsonWithTreeCount {
     geojson: serde_json::Value,
@@ -94,6 +95,8 @@ struct GeoJsonWithTreeCount {
     buffer_pointer: u64,
 }
 
+// Fetches GeoJSON data from the given bounding box and XML content
+// Returns a GeoJsonWithTreeCount struct as a JsValue
 #[wasm_bindgen]
 pub async fn geo_json_from_coords(
     min_x: f64,
@@ -248,6 +251,7 @@ pub fn generate_random_trees_into_buffer(
 }
 
 // Get compartment areas in a bounding box.
+// Returns a tuple of compartment areas, max tree count, tree count, and buffer pointer in decimal
 pub fn get_compartment_areas_in_bounding_box(
     all_stands: Vec<Stand>,
     bbox: &Polygon,
@@ -316,6 +320,7 @@ pub fn get_compartment_areas_in_bounding_box(
             std::slice::from_raw_parts(buffer.ptr(), buffer.len())
         };  
 
+        // Log the buffer contents
         log_1(&"Buffer contains:".into());
         for (i, value) in buffer_slice.iter().enumerate() {
             if i % 5 == 0 && buffer_slice[i + 2] != 0.0 {
