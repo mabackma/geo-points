@@ -24,6 +24,10 @@ impl SharedBuffer {
         self.ptr
     }
 
+    pub fn set_ptr(&mut self, ptr: *mut f64) {
+        self.ptr = ptr;
+    }
+
     pub fn len(&self) -> usize {
         self.len
     }
@@ -39,6 +43,16 @@ impl SharedBuffer {
                 *self.ptr.add(base + 2) = species as f64; // species as u8 stored in f64
                 *self.ptr.add(base + 3) = tree_height as f64;     // tree_height 
                 *self.ptr.add(base + 4) = 1.0;     // tree_status (1.0 = tree, 0.0 = stump)
+            }
+        }
+    }
+
+    /// Marks the tree at the given index as cut by setting its status to 0.0 (stump).
+    pub fn cut_tree(&self, index: usize) {
+        let base = index * 5; 
+        if base + 4 < self.len {
+            unsafe {
+                *self.ptr.add(base + 4) = 0.0; // Change tree status to 0.0 (stump)
             }
         }
     }
