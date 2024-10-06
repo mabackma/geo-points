@@ -1,5 +1,6 @@
 use wasm_bindgen::prelude::*;
 use web_sys::console::log_1;
+use rand::Rng;
 
 #[wasm_bindgen]
 pub struct SharedBuffer {
@@ -47,16 +48,36 @@ impl SharedBuffer {
         }
     }
 
-    /// Marks the tree at the given index as cut by setting its status to 0.0 (stump).
-    pub fn cut_tree(&self, index: usize) {
-        let base = index * 5; 
-        if base + 4 < self.len {
-            unsafe {
-                *self.ptr.add(base + 4) = 0.0; // Change tree status to 0.0 (stump)
+    /// Marks trees by setting its status to 0.0 (stump).
+    pub fn forest_clearing(&self, amount: usize, tree_count: usize) {
+        let mut rng = rand::thread_rng();
+        let mut index = 0;
+        let mut indices = Vec::new();
+
+        for _ in 0..amount {
+            loop {
+                index = rng.gen_range(0..tree_count);
+                if !indices.contains(&index) {
+                    indices.push(index);
+                    break;
+                }
+            }
+
+            let base = index * 5; 
+            if base + 4 < self.len {
+                unsafe {
+                    *self.ptr.add(base + 4) = 0.0; // Change tree status to 0.0 (stump)
+                }
             }
         }
     }
+
+    // TODO: Implement forest thinning
+    pub fn forest_thinning() {
+
+    }
 }
+
 
 impl Drop for SharedBuffer {
     fn drop(&mut self) {
