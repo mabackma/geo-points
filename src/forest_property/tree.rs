@@ -3,6 +3,7 @@ use rand_distr::{Distribution, Normal};
 
 #[derive(Default, Debug, Clone, Copy)]
 pub struct Tree {
+    stand_number: f64,
     species: u8,
     tree_height: f32,
     position: (f64, f64, f64),
@@ -10,10 +11,11 @@ pub struct Tree {
 }
 
 impl Tree {
-    pub fn new(species: u8, mean_height: f32, position: (f64, f64, f64)) -> Self {
+    pub fn new(stand_number: f64, species: u8, mean_height: f32, position: (f64, f64, f64)) -> Self {
         let height = calculate_height(mean_height);
 
         Tree {
+            stand_number,
             species,
             tree_height: height,
             position,
@@ -28,13 +30,17 @@ impl Tree {
     pub fn tree_height(&self) -> f32 {
         self.tree_height
     }
-    
+
     pub fn position(&self) -> (f64, f64, f64) {
         self.position
     }
 
     pub fn tree_status(&self) -> f64 {
         self.tree_status
+    }
+
+    pub fn stand_number(&self) -> f64 {
+        self.stand_number
     }
 }
 

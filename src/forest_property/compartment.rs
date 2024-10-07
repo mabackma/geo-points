@@ -88,6 +88,7 @@ pub fn get_compartments_in_bounding_box(
             .map(|stand| {
                 let polygon = stand.computed_polygon.to_owned().unwrap();
                 let strata = stand.get_strata();
+                let stand_number = stand.stand_basic_data.stand_number as f64;
 
                 // Clip the stand's polygon to the bounding box
                 let intersected_polygons = polygon.intersection(bbox).0;
@@ -102,7 +103,7 @@ pub fn get_compartments_in_bounding_box(
 
                 // Generate trees if strata exist
                 let trees = if let Some(strata) = strata {
-                    generate_random_trees(&clipped_polygon, &strata, area_ratio)
+                    generate_random_trees(&clipped_polygon, &strata, area_ratio, stand_number)
                 } else {
                     vec![]
                 };

@@ -34,8 +34,8 @@ pub fn generate_radius(total_stem_count: u32, area: f32) -> f32 {
     (tree_needed_area / PI).sqrt()
 }
 
-// Generates random trees for all strata with jittered grid sampling
-pub fn generate_random_trees(p: &Polygon, strata: &TreeStrata, area_ratio: f64) -> Vec<Tree> {
+// Generates random trees in stand for all strata with jittered grid sampling
+pub fn generate_random_trees(p: &Polygon, strata: &TreeStrata, area_ratio: f64, stand_number: f64) -> Vec<Tree> {
     let total_stem_count = strata.tree_stratum.iter().fold(0, |mut acc: u32, f| {
         acc += f.stem_count;
         acc
@@ -77,6 +77,7 @@ pub fn generate_random_trees(p: &Polygon, strata: &TreeStrata, area_ratio: f64) 
 
             let trees_strata: Vec<Tree> = points.iter().map(|pair: &[f64; 2]| {
                 Tree::new(
+                    stand_number,
                     stratum.tree_species,
                     stratum.mean_height,
                     (pair[0], pair[1], 0.0),

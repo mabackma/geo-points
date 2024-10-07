@@ -189,11 +189,12 @@ pub async fn geo_json_from_coords(
     Ok(result_js_value)
 }
 
-// Generates random trees for all strata with jittered grid sampling
+// Generates random trees for all strata in stand with jittered grid sampling
 pub fn generate_random_trees_into_buffer(
     p: &Polygon,
     strata: &TreeStrata,
     area_ratio: f64,
+    stand_number: f64,
     buffer: &SharedBuffer, // Pass in the SharedBuffer to fill
     start_index: usize
 ) -> usize {
@@ -227,7 +228,7 @@ pub fn generate_random_trees_into_buffer(
             let trees_strata: Vec<Tree> = points
                 .iter()
                 .map(|pair: &[f64; 2]| {
-                    Tree::new(stratum.tree_species, stratum.mean_height, (pair[0], pair[1], 0.0))
+                    Tree::new(stand_number, stratum.tree_species, stratum.mean_height, (pair[0], pair[1], 0.0))
                 })
                 .collect();
 
@@ -239,9 +240,9 @@ pub fn generate_random_trees_into_buffer(
     // Insert the trees into the buffer
     for (i, tree) in trees.iter().enumerate() {
         let buffer_index = start_index + i;
-        if i < buffer.len() / 5 {
+        if i < buffer.len() / 6 {
             // Fill the buffer with x, y, and species
-            buffer.fill_tree(buffer_index, tree.position().0, tree.position().1, tree.species(), tree.tree_height());           
+            buffer.fill_tree(buffer_index, tree.stand_number(), tree.position().0, tree.position().1, tree.species(), tree.tree_height());           
         } else {
             break; // Avoid overflowing the buffer
         }
@@ -287,7 +288,8 @@ pub fn get_compartment_areas_in_bounding_box(
         for stand in stands {
             let polygon = stand.computed_polygon.to_owned().unwrap();
             let strata = stand.get_strata();
-
+            let stand_number: f64 = stand.stand_basic_data.stand_number as f64;
+            
             // Clip the stand's polygon to the bounding box
             let intersected_polygons = polygon.intersection(bbox).0;
             let clipped_polygon = intersected_polygons.first()
@@ -302,7 +304,7 @@ pub fn get_compartment_areas_in_bounding_box(
             // Generate trees and save them to the buffer if strata exist
             let mut tree_count = 0;
             if let Some(strata) = strata {
-                tree_count = generate_random_trees_into_buffer(&clipped_polygon, &strata, area_ratio, &buffer, buffer_index);
+                tree_count = generate_random_trees_into_buffer(&clipped_polygon, &strata, area_ratio, stand_number, &buffer, buffer_index);
                 buffer_index += tree_count;
                 log_1(&format!("Generated {} trees for stand {}", tree_count, stand.stand_basic_data.stand_number).into());
             }
@@ -323,15 +325,16 @@ pub fn get_compartment_areas_in_bounding_box(
         // Log the buffer contents
         log_1(&"Buffer contains:".into());
         for (i, value) in buffer_slice.iter().enumerate() {
-            if i % 5 == 0 && buffer_slice[i + 2] != 0.0 {
+            if i % 6 == 0 && buffer_slice[i + 2] != 0.0 {
                 let buffer_info = format!(
-                    "Tree {}: x = {}, y = {}, species = {}, height = {}, status = {}", 
-                    i / 5, 
-                    buffer_slice[i], 
+                    "Tree {}: stand: {}, x = {}, y = {}, species = {}, height = {}, status = {}", 
+                    i / 6, 
+                    buffer_slice[i],
                     buffer_slice[i + 1], 
                     buffer_slice[i + 2], 
                     buffer_slice[i + 3], 
-                    buffer_slice[i + 4]
+                    buffer_slice[i + 4], 
+                    buffer_slice[i + 5]
                 );
                 log_1(&buffer_info.into());
             }
