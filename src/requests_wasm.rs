@@ -208,9 +208,6 @@ pub fn generate_random_trees_into_buffer(
         .tree_stratum
         .par_iter()
         .map(|stratum| {
-            //let tree_amount = (stratum.stem_count as f64) * area_ratio;
-            //let amount = tree_amount.round() as u32;
-
             let amount = stratum.stem_count;
             let mut radius = generate_radius(total_stem_count, stratum.basal_area);
             radius *= 0.00001;
@@ -231,7 +228,6 @@ pub fn generate_random_trees_into_buffer(
                 .iter()
                 .map(|pair: &[f64; 2]| {
                     if clipped_p.contains(&point!(x: pair[0], y: pair[1])) {
-                        log_1(&format!("Tree at ({}, {}) is inside the clipped polygon", pair[0], pair[1]).into());
                         Tree::new(stand_number, stratum.tree_species, stratum.mean_height, (pair[0], pair[1], 0.0), 1.0)
                     } else {
                         Tree::new(stand_number, stratum.tree_species, stratum.mean_height, (pair[0], pair[1], 0.0), 0.0)
