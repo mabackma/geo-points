@@ -227,7 +227,7 @@ pub fn draw_stands_in_bbox(bbox: &Polygon<f64>, property: &ForestPropertyData, b
 pub fn draw_selected_stand(property: &ForestPropertyData) -> ImageProcessor {
     let mut stand = property.get_stand_cli();
     let polygon = stand.create_polygon();
-    let stand_number: f64 = stand.id.parse().unwrap();
+    let stand_number: f64 = stand.stand_basic_data.stand_number as f64;
 
     // Create an image for the polygon and random points
     let img_width = 800;
