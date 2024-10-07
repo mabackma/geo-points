@@ -8,10 +8,11 @@ pub struct Tree {
     tree_height: f32,
     position: (f64, f64, f64),
     tree_status: f64,
+    inside_bbox: f64,
 }
 
 impl Tree {
-    pub fn new(stand_number: f64, species: u8, mean_height: f32, position: (f64, f64, f64)) -> Self {
+    pub fn new(stand_number: f64, species: u8, mean_height: f32, position: (f64, f64, f64), inside_bbox: f64) -> Self {
         let height = calculate_height(mean_height);
 
         Tree {
@@ -20,6 +21,7 @@ impl Tree {
             tree_height: height,
             position,
             tree_status: 1.0,
+            inside_bbox,
         }
     }
 
@@ -41,6 +43,10 @@ impl Tree {
 
     pub fn stand_number(&self) -> f64 {
         self.stand_number
+    }
+
+    pub fn inside_bbox(&self) -> f64 {
+        self.inside_bbox
     }
 }
 

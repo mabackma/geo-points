@@ -8,7 +8,7 @@ use crate::geojson_utils::all_compartment_areas_to_geojson;
 use crate::shared_buffer::SharedBuffer;
 use crate::jittered_hexagonal_sampling::{GridOptions, JitteredHexagonalGridSampling};
 use rayon::iter::{IntoParallelRefIterator, ParallelIterator};
-use geo::{coord, Area, LineString, Polygon, BooleanOps};
+use geo::{coord, Area, LineString, Polygon, BooleanOps, Contains, point};
 use geojson::{GeoJson, Value};
 use reqwest_wasm::Client;
 use reqwest::Error as ReqwestError;
@@ -191,7 +191,8 @@ pub async fn geo_json_from_coords(
 
 // Generates random trees for all strata in stand with jittered grid sampling
 pub fn generate_random_trees_into_buffer(
-    p: &Polygon,
+    stand_p: &Polygon,
+    clipped_p: &Polygon,
     strata: &TreeStrata,
     area_ratio: f64,
     stand_number: f64,
@@ -207,16 +208,17 @@ pub fn generate_random_trees_into_buffer(
         .tree_stratum
         .par_iter()
         .map(|stratum| {
-            let tree_amount = (stratum.stem_count as f64) * area_ratio;
-            let amount = tree_amount.round() as u32;
+            //let tree_amount = (stratum.stem_count as f64) * area_ratio;
+            //let amount = tree_amount.round() as u32;
 
+            let amount = stratum.stem_count;
             let mut radius = generate_radius(total_stem_count, stratum.basal_area);
             radius *= 0.00001;
 
             // Jittered Grid Version 2
             let rng = rand::thread_rng();
             let options = GridOptions {
-                polygon: p.to_owned(),
+                polygon: stand_p.to_owned(),
                 radius: (radius).into(),
                 jitter: Some(0.6666),
                 point_limit: Some(amount as usize),
@@ -228,7 +230,12 @@ pub fn generate_random_trees_into_buffer(
             let trees_strata: Vec<Tree> = points
                 .iter()
                 .map(|pair: &[f64; 2]| {
-                    Tree::new(stand_number, stratum.tree_species, stratum.mean_height, (pair[0], pair[1], 0.0))
+                    if clipped_p.contains(&point!(x: pair[0], y: pair[1])) {
+                        log_1(&format!("Tree at ({}, {}) is inside the clipped polygon", pair[0], pair[1]).into());
+                        Tree::new(stand_number, stratum.tree_species, stratum.mean_height, (pair[0], pair[1], 0.0), 1.0)
+                    } else {
+                        Tree::new(stand_number, stratum.tree_species, stratum.mean_height, (pair[0], pair[1], 0.0), 0.0)
+                    }
                 })
                 .collect();
 
@@ -240,9 +247,9 @@ pub fn generate_random_trees_into_buffer(
     // Insert the trees into the buffer
     for (i, tree) in trees.iter().enumerate() {
         let buffer_index = start_index + i;
-        if i < buffer.len() / 6 {
-            // Fill the buffer with x, y, and species
-            buffer.fill_tree(buffer_index, tree.stand_number(), tree.position().0, tree.position().1, tree.species(), tree.tree_height());           
+        if i < buffer.len() / 7 {
+            // Fill the buffer with tree data
+            buffer.fill_tree(buffer_index, tree.stand_number(), tree.position().0, tree.position().1, tree.species(), tree.tree_height(), tree.inside_bbox());           
         } else {
             break; // Avoid overflowing the buffer
         }
@@ -304,7 +311,7 @@ pub fn get_compartment_areas_in_bounding_box(
             // Generate trees and save them to the buffer if strata exist
             let mut tree_count = 0;
             if let Some(strata) = strata {
-                tree_count = generate_random_trees_into_buffer(&clipped_polygon, &strata, area_ratio, stand_number, &buffer, buffer_index);
+                tree_count = generate_random_trees_into_buffer(&polygon, &clipped_polygon, &strata, area_ratio, stand_number, &buffer, buffer_index);
                 buffer_index += tree_count;
                 log_1(&format!("Generated {} trees for stand {}", tree_count, stand.stand_basic_data.stand_number).into());
             }
@@ -323,18 +330,19 @@ pub fn get_compartment_areas_in_bounding_box(
         };  
 
         // Log the buffer contents
-        log_1(&"Buffer contains:".into());
+        log_1(&"Bounding box contains:".into());
         for (i, value) in buffer_slice.iter().enumerate() {
-            if i % 6 == 0 && buffer_slice[i + 2] != 0.0 {
+            if i % 7 == 0 && buffer_slice[i + 6] != 0.0 {
                 let buffer_info = format!(
-                    "Tree {}: stand: {}, x = {}, y = {}, species = {}, height = {}, status = {}", 
-                    i / 6, 
+                    "Tree {}: stand: {}, x = {}, y = {}, species = {}, height = {}, status = {}, in bbox = {}", 
+                    i / 7, 
                     buffer_slice[i],
                     buffer_slice[i + 1], 
                     buffer_slice[i + 2], 
                     buffer_slice[i + 3], 
                     buffer_slice[i + 4], 
-                    buffer_slice[i + 5]
+                    buffer_slice[i + 5],
+                    buffer_slice[i + 6]
                 );
                 log_1(&buffer_info.into());
             }

@@ -12,8 +12,8 @@ pub struct SharedBuffer {
 impl SharedBuffer {
     #[wasm_bindgen(constructor)]
     pub fn new(num_trees: usize) -> SharedBuffer {
-        // Each tree will have 6 values: stand_number, x, y (f64), species (u8 stored as f64), tree_height (f32 stored as f64), tree_status (f64)
-        let size = num_trees * 6;
+        // Each tree will have 7 values: stand_number, x, y (f64), species (u8 stored as f64), tree_height (f32 stored as f64), tree_status (f64), inside_bbox (f64)
+        let size = num_trees * 7;
         let buffer = vec![0f64; size].into_boxed_slice(); // Allocate memory
         let ptr = buffer.as_ptr() as *mut f64; // Get raw pointer to the buffer
         let len = buffer.len(); // Length of the buffer
@@ -35,9 +35,9 @@ impl SharedBuffer {
 
     /// Fills the buffer with data for a single tree (stand_number, x, y, species, tree_height, tree_status=1.0)
     /// `index` is the index of the tree in the buffer (0-based)
-    pub fn fill_tree(&self, index: usize, stand_number: f64, x: f64, y: f64, species: u8, tree_height: f32) {
-        let base = index * 6; // 6 values per tree: stand_number, x, y, species, tree_height, tree_status
-        if base + 5 < self.len / 6 && species != 0 {
+    pub fn fill_tree(&self, index: usize, stand_number: f64, x: f64, y: f64, species: u8, tree_height: f32, inside_bbox: f64) {
+        let base = index * 7; // 7 values per tree: stand_number, x, y, species, tree_height, tree_status, inside_bbox
+        if base + 6 < self.len && species != 0 {
             unsafe {
                 *self.ptr.add(base) = stand_number;     // stand id in f64
                 *self.ptr.add(base + 1) = x;           // x coordinate
@@ -45,6 +45,7 @@ impl SharedBuffer {
                 *self.ptr.add(base + 3) = species as f64; // species as u8 stored in f64
                 *self.ptr.add(base + 4) = tree_height as f64;     // tree_height 
                 *self.ptr.add(base + 5) = 1.0;     // tree_status (1.0 = tree, 0.0 = stump)
+                *self.ptr.add(base + 6) = inside_bbox;     // inside_bbox (1.0 = inside, 0.0 = outside)
             }
         }
     }
@@ -64,8 +65,8 @@ impl SharedBuffer {
                 }
             }
 
-            let base = index * 6; 
-            if base + 5 < self.len {
+            let base = index * 7; 
+            if base + 6 < self.len {
                 unsafe {
                     *self.ptr.add(base + 5) = 0.0; // Change tree status to 0.0 (stump)
                 }
