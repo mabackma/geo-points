@@ -1,6 +1,7 @@
 use wasm_bindgen::prelude::*;
 use web_sys::console::log_1;
 use rand::Rng;
+use std::collections::HashSet;
 
 #[wasm_bindgen]
 pub struct SharedBuffer {
@@ -50,25 +51,23 @@ impl SharedBuffer {
         }
     }
 
-    /// Marks trees by setting its status to 0.0 (stump).
-    pub fn forest_clearing(&self, amount: usize, tree_count: usize) {
+    /// Clears trees from chosen stand. 
+    pub fn forest_clearing(&self, stand_number: f64, amount: usize, tree_count: usize) {
         let mut rng = rand::thread_rng();
-        let mut index = 0;
-        let mut indices = Vec::new();
+        let mut indices = HashSet::new();
+        let mut trees_cleared = 0;
+    
+        while trees_cleared < amount {
+            let index = rng.gen_range(0..tree_count);
+            
+            if indices.insert(index) { // Only process if index wasn't already processed
+                let base = index * 7;
 
-        for _ in 0..amount {
-            loop {
-                index = rng.gen_range(0..tree_count);
-                if !indices.contains(&index) {
-                    indices.push(index);
-                    break;
-                }
-            }
-
-            let base = index * 7; 
-            if base + 6 < self.len {
                 unsafe {
-                    *self.ptr.add(base + 5) = 0.0; // Change tree status to 0.0 (stump)
+                    if base + 6 < self.len && *self.ptr.add(base) == stand_number {
+                        *self.ptr.add(base + 5) = 0.0; // Change tree status to 0.0 (stump)
+                        trees_cleared += 1;
+                    }
                 }
             }
         }
