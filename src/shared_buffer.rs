@@ -51,12 +51,13 @@ impl SharedBuffer {
     }
 
     /// Clears trees from chosen stand. 
-    pub fn forest_clearing(&self, stand_number: f64, amount: usize, tree_count: usize) {
+    pub fn forest_clearing(&self, stand_number: f64, amount: usize, tree_count: usize, area_ratio: f64) {
         let mut rng = rand::thread_rng();
         let mut indices = HashSet::new();
         let mut trees_cleared = 0;
+        let trees_to_cut = (amount as f64 * area_ratio).floor() as usize;
     
-        while trees_cleared < amount {
+        while trees_cleared < trees_to_cut {
             let index = rng.gen_range(0..tree_count);
             
             if indices.insert(index) { // Only process if index wasn't already processed

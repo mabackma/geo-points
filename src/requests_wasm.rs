@@ -327,7 +327,7 @@ pub fn get_compartment_areas_in_bounding_box(
         // Log the buffer contents
         log_1(&"Bounding box contains:".into());
         for (i, value) in buffer_slice.iter().enumerate() {
-            if i % 6 == 0 {
+            if i % 6 == 0 && buffer_slice[i + 3] != 0.0 {
                 let buffer_info = format!(
                     "Tree {}: stand: {}, x = {}, y = {}, species = {}, height = {}, status = {}", 
                     i / 6, 
