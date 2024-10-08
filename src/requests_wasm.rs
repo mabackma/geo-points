@@ -194,7 +194,6 @@ pub fn generate_random_trees_into_buffer(
     stand_p: &Polygon,
     clipped_p: &Polygon,
     strata: &TreeStrata,
-    area_ratio: f64,
     stand_number: f64,
     buffer: &SharedBuffer, // Pass in the SharedBuffer to fill
     start_index: usize
@@ -208,6 +207,14 @@ pub fn generate_random_trees_into_buffer(
         .tree_stratum
         .par_iter()
         .map(|stratum| {
+            // Calculate the area ratio of the clipped polygon to the original polygon
+            //let original_area = stand_p.unsigned_area();
+            //let clipped_area = clipped_p.unsigned_area();
+            //let area_ratio = clipped_area / original_area;
+            
+            //let tree_amount = (stratum.stem_count as f64) * area_ratio;
+            //let amount = tree_amount.round() as u32;
+
             let amount = stratum.stem_count;
             let mut radius = generate_radius(total_stem_count, stratum.basal_area);
             radius *= 0.00001;
@@ -216,6 +223,7 @@ pub fn generate_random_trees_into_buffer(
             let rng = rand::thread_rng();
             let options = GridOptions {
                 polygon: stand_p.to_owned(),
+                //polygon: clipped_p.to_owned(),
                 radius: (radius).into(),
                 jitter: Some(0.6666),
                 point_limit: Some(amount as usize),
@@ -299,15 +307,10 @@ pub fn get_compartment_areas_in_bounding_box(
                 .expect("Intersection result should contain at least one polygon")
                 .to_owned();
 
-            // Calculate the area ratio of the clipped polygon to the original polygon
-            let original_area = polygon.unsigned_area();
-            let clipped_area = clipped_polygon.unsigned_area();
-            let area_ratio = clipped_area / original_area;
-
             // Generate trees and save them to the buffer if strata exist
             let mut tree_count = 0;
             if let Some(strata) = strata {
-                tree_count = generate_random_trees_into_buffer(&polygon, &clipped_polygon, &strata, area_ratio, stand_number, &buffer, buffer_index);
+                tree_count = generate_random_trees_into_buffer(&polygon, &clipped_polygon, &strata, stand_number, &buffer, buffer_index);
                 buffer_index += tree_count;
                 log_1(&format!("Generated {} trees for stand {}", tree_count, stand.stand_basic_data.stand_number).into());
             }
