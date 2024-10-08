@@ -208,22 +208,20 @@ pub fn generate_random_trees_into_buffer(
         .par_iter()
         .map(|stratum| {
             // Calculate the area ratio of the clipped polygon to the original polygon
-            //let original_area = stand_p.unsigned_area();
-            //let clipped_area = clipped_p.unsigned_area();
-            //let area_ratio = clipped_area / original_area;
+            let original_area = stand_p.unsigned_area();
+            let clipped_area = clipped_p.unsigned_area();
+            let area_ratio = clipped_area / original_area;
             
-            //let tree_amount = (stratum.stem_count as f64) * area_ratio;
-            //let amount = tree_amount.round() as u32;
+            let tree_amount = (stratum.stem_count as f64) * area_ratio;
+            let amount = tree_amount.round() as u32;
 
-            let amount = stratum.stem_count;
             let mut radius = generate_radius(total_stem_count, stratum.basal_area);
             radius *= 0.00001;
 
             // Jittered Grid Version 2
             let rng = rand::thread_rng();
             let options = GridOptions {
-                polygon: stand_p.to_owned(),
-                //polygon: clipped_p.to_owned(),
+                polygon: clipped_p.to_owned(),
                 radius: (radius).into(),
                 jitter: Some(0.6666),
                 point_limit: Some(amount as usize),
@@ -235,11 +233,9 @@ pub fn generate_random_trees_into_buffer(
             let trees_strata: Vec<Tree> = points
                 .iter()
                 .map(|pair: &[f64; 2]| {
-                    if clipped_p.contains(&point!(x: pair[0], y: pair[1])) {
-                        Tree::new(stand_number, stratum.tree_species, stratum.mean_height, (pair[0], pair[1], 0.0), 1.0)
-                    } else {
-                        Tree::new(stand_number, stratum.tree_species, stratum.mean_height, (pair[0], pair[1], 0.0), 0.0)
-                    }
+                    //if clipped_p.contains(&point!(x: pair[0], y: pair[1])) {
+                        Tree::new(stand_number, stratum.tree_species, stratum.mean_height, (pair[0], pair[1], 0.0))
+                    //}
                 })
                 .collect();
 
@@ -251,9 +247,9 @@ pub fn generate_random_trees_into_buffer(
     // Insert the trees into the buffer
     for (i, tree) in trees.iter().enumerate() {
         let buffer_index = start_index + i;
-        if i < buffer.len() / 7 {
+        if i < buffer.len() / 6 {
             // Fill the buffer with tree data
-            buffer.fill_tree(buffer_index, tree.stand_number(), tree.position().0, tree.position().1, tree.species(), tree.tree_height(), tree.inside_bbox());           
+            buffer.fill_tree(buffer_index, tree.stand_number(), tree.position().0, tree.position().1, tree.species(), tree.tree_height());           
         } else {
             break; // Avoid overflowing the buffer
         }
@@ -331,17 +327,16 @@ pub fn get_compartment_areas_in_bounding_box(
         // Log the buffer contents
         log_1(&"Bounding box contains:".into());
         for (i, value) in buffer_slice.iter().enumerate() {
-            if i % 7 == 0 && buffer_slice[i + 6] != 0.0 {
+            if i % 6 == 0 {
                 let buffer_info = format!(
-                    "Tree {}: stand: {}, x = {}, y = {}, species = {}, height = {}, status = {}, in bbox = {}", 
-                    i / 7, 
+                    "Tree {}: stand: {}, x = {}, y = {}, species = {}, height = {}, status = {}", 
+                    i / 6, 
                     buffer_slice[i],
                     buffer_slice[i + 1], 
                     buffer_slice[i + 2], 
                     buffer_slice[i + 3], 
                     buffer_slice[i + 4], 
-                    buffer_slice[i + 5],
-                    buffer_slice[i + 6]
+                    buffer_slice[i + 5]
                 );
                 log_1(&buffer_info.into());
             }
