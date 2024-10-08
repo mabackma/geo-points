@@ -1,5 +1,4 @@
 use std::fs::File;
-use crate::forest_property::stand;
 use crate::geometry_utils::{generate_random_trees, get_min_max_coordinates};
 use crate::geojson_utils::{polygon_to_geojson, all_compartments_to_geojson};
 use crate::forest_property::compartment::get_compartments_in_bounding_box;

@@ -189,6 +189,38 @@ pub async fn geo_json_from_coords(
     Ok(result_js_value)
 }
 
+// Get the area ratio of the stand's clipped polygon in the bounding box to the original polygon
+#[wasm_bindgen]
+pub fn get_area_ratio(xml_content: String, stand_number: u16, x_min: f64, x_max: f64, y_min: f64, y_max: f64) -> JsValue {
+    let bbox = Polygon::new(
+        LineString(vec![
+            coord!(x: x_min, y: y_min),
+            coord!(x: x_max, y: y_min),
+            coord!(x: x_max, y: y_max),
+            coord!(x: x_min, y: y_max),
+            coord!(x: x_min, y: y_min),
+        ]),
+        vec![],
+    );
+
+    let property = ForestPropertyData::from_xml_str(&xml_content);
+    let real_estate = property.real_estates.real_estate[0].clone();
+    let all_stands = real_estate.get_stands();
+
+    let stands = find_stands_in_bounding_box(&all_stands, &bbox).unwrap();
+
+    let stand = stands.iter().find(|stand| stand.stand_basic_data.stand_number == stand_number).unwrap();
+    
+    let polygon = stand.computed_polygon.to_owned().unwrap();
+    let original_area = polygon.unsigned_area();
+    let clipped_polygon = polygon.intersection(&bbox);
+    let clipped_area = clipped_polygon.unsigned_area();
+    
+    let area_ratio = clipped_area / original_area;
+    log_1(&format!("Area ratio: {}", area_ratio).into());
+    JsValue::from(area_ratio)
+}
+
 // Generates random trees for all strata in stand with jittered grid sampling
 pub fn generate_random_trees_into_buffer(
     stand_p: &Polygon,
@@ -369,4 +401,9 @@ pub fn hexadecimal_to_decimal(hexadecimal_str: &str) -> Result<u64, &'static str
         Ok(decimal) => Ok(decimal),
         Err(_e) => Err("Failed to convert to hexadecimal"),
     }
+}
+
+#[wasm_bindgen]
+pub fn empty_function(xml_content: String) {
+    log_1(&"empty_function called".into());
 }
