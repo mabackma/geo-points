@@ -103,10 +103,10 @@ pub async fn geo_json_from_coords(
     max_x: f64,
     min_y: f64,
     max_y: f64,
-    xml_content: String,
+    xml_content: &str,
 ) -> Result<JsValue, JsValue> {
     // Get the ForestPropertyData from the XML content
-    let property = ForestPropertyData::from_xml_str(&xml_content);
+    let property = ForestPropertyData::from_xml_str(xml_content);
     log_1(&"Got property".into());
 
     let mut bbox = Polygon::new(
@@ -191,7 +191,7 @@ pub async fn geo_json_from_coords(
 
 // Get the area ratio of the stand's clipped polygon in the bounding box to the original polygon
 #[wasm_bindgen]
-pub fn get_area_ratio(xml_content: String, stand_number: u16, x_min: f64, x_max: f64, y_min: f64, y_max: f64) -> JsValue {
+pub fn get_area_ratio(xml_content: &str, stand_number: u16, x_min: f64, x_max: f64, y_min: f64, y_max: f64) -> JsValue {
     let bbox = Polygon::new(
         LineString(vec![
             coord!(x: x_min, y: y_min),
@@ -203,7 +203,7 @@ pub fn get_area_ratio(xml_content: String, stand_number: u16, x_min: f64, x_max:
         vec![],
     );
 
-    let property = ForestPropertyData::from_xml_str(&xml_content);
+    let property = ForestPropertyData::from_xml_str(xml_content);
     let real_estate = property.real_estates.real_estate[0].clone();
     let all_stands = real_estate.get_stands();
 
@@ -404,6 +404,7 @@ pub fn hexadecimal_to_decimal(hexadecimal_str: &str) -> Result<u64, &'static str
 }
 
 #[wasm_bindgen]
-pub fn empty_function(xml_content: String) {
-    log_1(&"empty_function called".into());
+pub fn empty_function(xml_content: &str) {
+    let property = ForestPropertyData::from_xml_str(xml_content);
+    log_1(&format!("empty_function called with xml_content: {}", xml_content).into());
 }
