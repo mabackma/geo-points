@@ -2,9 +2,11 @@ use wasm_bindgen::prelude::*;
 use web_sys::console::log_1;
 use rand::Rng;
 use std::collections::HashSet;
+use std::sync::Arc;
 
 #[wasm_bindgen]
 pub struct SharedBuffer {
+    buffer: Arc<Vec<f64>>, // Use Arc to manage the buffer
     ptr: *mut f64,
     len: usize,
 }
@@ -13,13 +15,11 @@ pub struct SharedBuffer {
 impl SharedBuffer {
     #[wasm_bindgen(constructor)]
     pub fn new(num_trees: usize) -> SharedBuffer {
-        // Each tree will have 6 values: stand_number, x, y (f64), species (u8 stored as f64), tree_height (f32 stored as f64), and tree_status (f64)
         let size = num_trees * 6;
-        let buffer = vec![0f64; size].into_boxed_slice(); // Allocate memory
+        let buffer = Arc::new(vec![0f64; size]); // Use Arc to manage buffer lifetime
         let ptr = buffer.as_ptr() as *mut f64; // Get raw pointer to the buffer
-        let len = buffer.len(); // Length of the buffer
-        std::mem::forget(buffer); // Prevent Rust from freeing this memory
-        SharedBuffer { ptr, len }
+        let len = buffer.len();
+        SharedBuffer { buffer, ptr, len }
     }
 
     pub fn ptr(&self) -> *mut f64 {
@@ -77,13 +77,12 @@ impl SharedBuffer {
     pub fn forest_thinning() {
 
     }
-}
 
-
-impl Drop for SharedBuffer {
-    fn drop(&mut self) {
+    pub fn log_buffer(&self) {
         unsafe {
-            let _ = Vec::from_raw_parts(self.ptr, self.len, self.len);
+            for i in 0..self.len {
+                log_1(&format!("Buffer[{}]: {}", i, *self.ptr.add(i)).into());
+            }
         }
     }
 }

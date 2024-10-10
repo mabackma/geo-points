@@ -404,7 +404,5 @@ pub fn hexadecimal_to_decimal(hexadecimal_str: &str) -> Result<u64, &'static str
 }
 
 #[wasm_bindgen]
-pub fn empty_function(xml_content: &str) {
-    let property = ForestPropertyData::from_xml_str(xml_content);
-    log_1(&format!("empty_function called with xml_content: {}", xml_content).into());
+pub fn empty_function(xml_content: String) {
 }
