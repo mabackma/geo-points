@@ -10,7 +10,7 @@ use crate::geometry_utils::{generate_radius, get_min_max_coordinates};
 use crate::jittered_hexagonal_sampling::{GridOptions, JitteredHexagonalGridSampling};
 use crate::shared_buffer::SharedBuffer;
 
-use geo::{coord, point, Area, BooleanOps, Contains, Line, LineString, Polygon};
+use geo::{coord, point, Area, BooleanOps, Contains, EuclideanDistance, Line, LineString, Polygon};
 use geojson::{Error as GeoJsonError, JsonObject};
 use geojson::{GeoJson, Value};
 use rayon::iter::{IntoParallelRefIterator, ParallelIterator};
@@ -19,6 +19,7 @@ use reqwest_wasm::Client;
 use serde::{Deserialize, Serialize};
 use serde_json::{json, Value as SerdeJsonValue};
 use serde_wasm_bindgen;
+use web_sys::js_sys::Math::abs;
 use std::error::Error;
 use std::fmt;
 use std::slice::from_raw_parts;
@@ -98,21 +99,21 @@ struct GeoJsonWithTreeCount {
     tree_count: usize,
     buffer_pointer: u64,
 }
-#[derive(Serialize,Deserialize, Clone, PartialEq)]
+#[derive(Serialize, Deserialize, Clone, PartialEq)]
 enum OperationType {
     Thinning,
     Cutting,
     Simulation,
 }
 
-#[derive(Serialize,Deserialize, Clone, PartialEq)]
+#[derive(Serialize, Deserialize, Clone, PartialEq)]
 #[wasm_bindgen]
 struct Operation {
     operation_type: OperationType,
     cutting_areas: Vec<Polygon>,
 }
 
-#[derive(Serialize,Deserialize, Clone, PartialEq)]
+#[derive(Serialize, Deserialize, Clone, PartialEq)]
 #[wasm_bindgen]
 struct StandOperation {
     id: u32,
@@ -122,7 +123,7 @@ struct StandOperation {
 }
 
 #[wasm_bindgen]
-#[derive(Serialize,Deserialize, Clone, PartialEq)]
+#[derive(Serialize, Deserialize, Clone, PartialEq)]
 pub struct VirtualForest {
     property: ForestPropertyData,
     selected_realestate: u32,
@@ -130,11 +131,11 @@ pub struct VirtualForest {
     retention_zones: Vec<Polygon>,
     roads: Option<Vec<LineString>>,
     buildings: Option<Vec<Polygon>>,
-    water: Option<Vec<Polygon>>
+    water: Option<Vec<Polygon>>,
 }
 
 #[wasm_bindgen]
-#[derive(Serialize,Deserialize, Debug, Clone, PartialEq)]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
 pub struct RealEstateValue {
     pub id: u32,
     pub index: usize,
@@ -155,13 +156,12 @@ impl VirtualForest {
             retention_zones: vec![],
             roads: None,
             water: None,
-            buildings: None
+            buildings: None,
         }
     }
 
     #[wasm_bindgen]
     pub fn to_json(&self) -> JsValue {
-   
         let data = serde_json::to_string(&self).unwrap();
         /*         log_1(&format!("property serialized {}", data).into()); */
         JsValue::from(data)
@@ -171,14 +171,9 @@ impl VirtualForest {
 
     #[wasm_bindgen]
     pub fn from_json(json: &str) -> Self {
-
-
-        let property : Self = serde_json::from_str(json).expect("Error parsing json file");
-
+        let property: Self = serde_json::from_str(json).expect("Error parsing json file");
 
         property
-
-
     }
 
     #[wasm_bindgen]
@@ -275,6 +270,9 @@ impl VirtualForest {
 
         let compartments = get_compartments_in_bounding_box(stands, &bbox);
 
+
+
+
         let trees = compartments
             .iter()
             .enumerate()
@@ -287,6 +285,24 @@ impl VirtualForest {
                         let height = tree.tree_height();
                         let status = tree.tree_status();
                         let stand_number = tree.stand_number();
+
+                     /*    let l = LineString::new(vec![coord! {x: 10.0,y:10.0},coord! {x: 20.0,y:10.0}]);
+
+                        let remove = l.points().find(|p| {
+
+                            abs( p.x() - x ) > 0.0005 || abs(p.y() - y) > 0.0005
+
+                        });
+
+
+                        let p = point!(x: x,y: y);
+
+                        let distance = p.euclidean_distance(&l); */
+
+                        // let isOk = l.euclidean_distance(&point!(x: x as usize,y: y as usize)) > 5.0 as usize;
+
+
+
                         vec![
                             x as f32,
                             y as f32,
