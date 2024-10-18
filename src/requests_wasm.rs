@@ -645,7 +645,13 @@ pub fn roads_geojson_to_linestrings(geojson: &GeoJson) -> Vec<LineString<f64>> {
                     Value::LineString(line_string) => {
                         let line = line_string
                             .iter()
-                            .map(|point| (point[0], point[1]))
+                            .filter_map(|point| {
+                                if point[2] >= 0.0 {
+                                    Some(coord!(x: point[0], y: point[1]))
+                                } else {
+                                    None
+                                }
+                            })
                             .collect::<Vec<_>>();
                         linestrings.push(LineString::from(line));
                     }
