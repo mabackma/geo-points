@@ -1,6 +1,6 @@
 use crate::{forest_property::{compartment::{Compartment, CompartmentArea}, tree::Tree}, geometry_utils::get_min_max_coordinates};
 
-use geo::Polygon;
+use geo::{LineString, MultiLineString, Polygon};
 use geojson::{Feature, FeatureCollection, GeoJson, Geometry as GeoJsonGeometry, Value};
 
 // Function to convert a Polygon into a GeoJSON Feature
@@ -12,6 +12,30 @@ fn convert_polygon_to_feature(polygon: &Polygon<f64>) -> Feature {
     let geometry = GeoJsonGeometry {
         bbox: None,
         value: Value::Polygon(vec![exterior_coords]),
+        foreign_members: None,
+    };
+
+    Feature {
+        geometry: Some(geometry),
+        properties: None,
+        id: None,
+        bbox: None,
+        foreign_members: None,
+    }
+}
+
+fn convert_linestrings_to_feature(line_strings: &Vec<LineString>) -> Feature {
+    let mut line_strings_coords = Vec::new();
+    for line_string in line_strings {
+        let coords: Vec<Vec<f64>> = line_string.points()
+            .map(|point| vec![point.x(), point.y()])
+            .collect();
+        line_strings_coords.push(coords);
+    }
+
+    let geometry = GeoJsonGeometry {
+        bbox: None,
+        value: Value::MultiLineString(line_strings_coords),
         foreign_members: None,
     };
 
@@ -101,38 +125,24 @@ pub fn all_compartments_to_geojson(
 
 pub fn all_compartment_areas_to_geojson(
     compartment_areas: Vec<CompartmentArea>,
-    buildings: &GeoJson, 
-    roads: &GeoJson) -> GeoJson {
+    buildings: &Vec<Polygon>, 
+    roads: &Vec<LineString>) -> GeoJson {
     
     let mut all_features = Vec::new();
 
     for compartment_area in compartment_areas {
-        // Convert the compartment (polygon) to a GeoJSON feature
         let polygon_feature = convert_polygon_to_feature(&compartment_area.polygon);
-
-        // Add the polygon feature to the list
         all_features.push(polygon_feature);
     }
 
-    // Add building features to the list, ensuring the GeoJson is a FeatureCollection
-    if let GeoJson::FeatureCollection(building_collection) = buildings {
-        println!("Added buildings to geojson: {}", building_collection.features.len());
-        for building_feature in &building_collection.features {
-            all_features.push(building_feature.clone());
-        }
-    } else {
-        println!("Buildings GeoJson is not a FeatureCollection");
+    for building in buildings.iter() {
+        let building_feature = convert_polygon_to_feature(building);
+        all_features.push(building_feature);
     }
 
-    // Add road features to the list, ensuring the GeoJson is a FeatureCollection
-    if let GeoJson::FeatureCollection(road_collection) = roads {
-        println!("Added roads to geojson: {}", road_collection.features.len());
-        for road_feature in &road_collection.features {
-            all_features.push(road_feature.clone());
-        }
-    } else {
-        println!("Roads GeoJson is not a FeatureCollection");
-    }
+    let road_feature = convert_linestrings_to_feature(&roads);
+    all_features.push(road_feature);
+
 
     // Create the GeoJSON FeatureCollection
     let feature_collection = FeatureCollection {

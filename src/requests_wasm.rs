@@ -140,10 +140,8 @@ pub struct VirtualForest {
     selected_realestate: u32,
     stand_operations: Vec<StandOperation>,
     retention_zones: Vec<Polygon>,
-    //roads: Option<Vec<LineString>>,
-    //buildings: Option<Vec<Polygon>>,
-    roads: Option<GeoJson>,
-    buildings: Option<GeoJson>,
+    roads: Option<Vec<LineString>>,
+    buildings: Option<Vec<Polygon>>,
     water: Option<Vec<Polygon>>,
 }
 
@@ -187,16 +185,30 @@ impl VirtualForest {
             "https://metne-test.onrender.com/geoserver/mml/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=mml:rakennus&maxFeatures=2000&outputFormat=application%2Fjson&BBOX={},{},{},{},EPSG:4326&srsName=EPSG:4326",
             west, south, east, north
         );
-        let buildings_geojson = get_geojson_from_url(url_buildings).await.unwrap();
-        self.buildings = Some(buildings_geojson);
+
+        match get_geojson_from_url(url_buildings).await {
+            Ok(geojson) => {
+                self.buildings = Some(geojson_to_polygons(&geojson));
+            }
+            Err(_) => {
+                self.buildings = None;
+            }
+        }
 
         // Get roads in the bounding box
         let url_roads = format!(
             "https://metne-test.onrender.com/geoserver/mml/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=mml:tieviiva&bbox={},{},{},{},EPSG:4326&srsName=EPSG:4326&outputFormat=application/json",
             west, south, east, north
         );
-        let roads_geojson = get_geojson_from_url(url_roads).await.unwrap();
-        self.roads = Some(roads_geojson);
+
+        match get_geojson_from_url(url_roads).await {
+            Ok(geojson) => {
+                self.roads = Some(roads_geojson_to_linestrings(&geojson));
+            }
+            Err(_) => {
+                self.roads = None;
+            }
+        }
     }
 
     #[wasm_bindgen]
@@ -378,12 +390,11 @@ impl VirtualForest {
             vec![],
         );
 
-        let buildings = geojson_to_polygons(&self.buildings.clone().unwrap());
-        let buildings_count = buildings.len();
+        let buildings_count = self.buildings.clone().unwrap().len();
         log_1(&format!("{} buildings in the bounding box", buildings_count).into());
     
         // Exclude buildings from the bounding box
-        for building in buildings.iter() {
+        for building in self.buildings.clone().unwrap().iter() {
             bbox = bbox.difference(building).0.first().unwrap().to_owned();
         }
 
@@ -395,8 +406,8 @@ impl VirtualForest {
 
             let geojson = all_compartment_areas_to_geojson(
                 compartment_areas.0,
-                &self.buildings.clone().unwrap(),
-                &self.roads.clone().unwrap(),
+                &self.buildings.clone().unwrap_or(vec![]),
+                &self.roads.clone().unwrap_or(vec![]),
             );
 
             Ok(JsValue::from(geojson.to_string()))
@@ -620,5 +631,30 @@ pub async fn get_geojson_from_url(url: String) -> Result<GeoJson, FetchError> {
     let geojson: GeoJson = serde_json::from_str(&text).map_err(FetchError::from)?;
 
     Ok(geojson)
+}
+
+pub fn roads_geojson_to_linestrings(geojson: &GeoJson) -> Vec<LineString<f64>> {
+    let mut linestrings = Vec::new();
+
+    if let GeoJson::FeatureCollection(collection) = geojson {
+        for feature in collection.features.iter() {
+            if let Some(geometry) = &feature.geometry {
+                match &geometry.value {
+                    Value::LineString(line_string) => {
+                        let line = line_string
+                            .iter()
+                            .map(|point| (point[0], point[1]))
+                            .collect::<Vec<_>>();
+                        linestrings.push(LineString::from(line));
+                    }
+                    _ => {
+                        continue;
+                    }
+                }
+            }
+        }
+    }
+
+    linestrings
 }
 
