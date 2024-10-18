@@ -1,10 +1,13 @@
+use std::collections::HashMap;
+
 use crate::{forest_property::{compartment::{Compartment, CompartmentArea}, tree::Tree}, geometry_utils::get_min_max_coordinates};
 
 use geo::{LineString, MultiLineString, Polygon};
-use geojson::{Feature, FeatureCollection, GeoJson, Geometry as GeoJsonGeometry, Value};
+use geojson::{Feature, FeatureCollection, GeoJson, Geometry as GeoJsonGeometry, JsonObject, JsonValue, Value};
+use serde_json::json;
 
 // Function to convert a Polygon into a GeoJSON Feature
-fn convert_polygon_to_feature(polygon: &Polygon<f64>) -> Feature {
+fn convert_polygon_to_feature(polygon: &Polygon<f64>, property: Option<&str>) -> Feature {
     let exterior_coords: Vec<Vec<f64>> = polygon.exterior().points()
         .map(|point| vec![point.x(), point.y()])
         .collect();
@@ -15,12 +18,24 @@ fn convert_polygon_to_feature(polygon: &Polygon<f64>) -> Feature {
         foreign_members: None,
     };
 
-    Feature {
-        geometry: Some(geometry),
-        properties: None,
-        id: None,
-        bbox: None,
-        foreign_members: None,
+    if let Some(property) = property {
+        let mut properties = JsonObject::new();
+        properties.insert("type".to_string(), JsonValue::from(property));
+        Feature {
+            geometry: Some(geometry),
+            properties: Some(properties),
+            id: None,
+            bbox: None,
+            foreign_members: None,
+        }
+    } else {
+        Feature {
+            geometry: Some(geometry),
+            properties: None,
+            id: None,
+            bbox: None,
+            foreign_members: None,
+        }
     }
 }
 
@@ -39,9 +54,12 @@ fn convert_linestrings_to_feature(line_strings: &Vec<LineString>) -> Feature {
         foreign_members: None,
     };
 
+    let mut properties = JsonObject::new();
+    properties.insert("type".to_string(), JsonValue::from("roads".to_string()));
+
     Feature {
         geometry: Some(geometry),
-        properties: None,
+        properties: Some(properties),
         id: None,
         bbox: None,
         foreign_members: None,
@@ -82,7 +100,7 @@ pub fn all_compartments_to_geojson(
         let trees = compartment.trees_in_bounding_box(min_x, max_x, min_y, max_y);
 
         // Convert the compartment (polygon) to a GeoJSON feature
-        let polygon_feature = convert_polygon_to_feature(&compartment.polygon);
+        let polygon_feature = convert_polygon_to_feature(&compartment.polygon, None);
         let tree_features: Vec<Feature> = trees.iter().map(|tree| convert_tree_to_feature(tree)).collect();
 
         // Add the polygon feature and tree features to the list
@@ -131,12 +149,12 @@ pub fn all_compartment_areas_to_geojson(
     let mut all_features = Vec::new();
 
     for compartment_area in compartment_areas {
-        let polygon_feature = convert_polygon_to_feature(&compartment_area.polygon);
+        let polygon_feature = convert_polygon_to_feature(&compartment_area.polygon, None);
         all_features.push(polygon_feature);
     }
 
     for building in buildings.iter() {
-        let building_feature = convert_polygon_to_feature(building);
+        let building_feature = convert_polygon_to_feature(building, Some("building"));
         all_features.push(building_feature);
     }
 
@@ -161,7 +179,7 @@ pub fn polygon_to_geojson(polygon: &Polygon<f64>, trees: &Vec<Tree>) -> GeoJson 
     let mut all_features = Vec::new();
 
     // Convert the compartment (polygon) to a GeoJSON feature
-    let polygon_feature = convert_polygon_to_feature(&polygon);
+    let polygon_feature = convert_polygon_to_feature(&polygon, None);
     let tree_features: Vec<Feature> = trees.iter().map(|tree| convert_tree_to_feature(tree)).collect();
 
     // Add the polygon feature and tree features to the list

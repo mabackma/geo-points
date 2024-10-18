@@ -369,7 +369,8 @@ impl VirtualForest {
     }
 
     // Fetches GeoJSON data from the given bounding box and XML content
-    // Returns a GeoJsonWithTreeCount struct as a JsValue
+    // Returns a GeoJson of stand polygons, building polygons, and a roads multi-linestring
+    // Buildings and roads have a property "type" with values "building" and "roads" respectively
     #[wasm_bindgen]
     pub async fn geo_json_from_coords(
         & mut self,
@@ -392,7 +393,8 @@ impl VirtualForest {
 
         let buildings_count = self.buildings.clone().unwrap().len();
         log_1(&format!("{} buildings in the bounding box", buildings_count).into());
-    
+        log_1(&format!("{} roads in the bounding box", self.roads.clone().unwrap().len()).into());
+
         // Exclude buildings from the bounding box
         for building in self.buildings.clone().unwrap().iter() {
             bbox = bbox.difference(building).0.first().unwrap().to_owned();
