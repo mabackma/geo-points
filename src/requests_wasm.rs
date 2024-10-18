@@ -28,11 +28,15 @@ use wasm_bindgen::{JsCast, JsValue};
 use wasm_bindgen_futures::JsFuture;
 use web_sys::console::log_1;
 use web_sys::js_sys::{Float32Array, JsString};
+use reqwest_wasm::Error as ReqwestWasmError;
+use serde_json::Error as SerdeJsonError;
 
 #[derive(Debug)]
 pub enum FetchError {
     Reqwest(ReqwestError),
     GeoJson(GeoJsonError),
+    ReqwestWasm(ReqwestWasmError),
+    SerdeJson(SerdeJsonError),
 }
 
 impl fmt::Display for FetchError {
@@ -40,6 +44,9 @@ impl fmt::Display for FetchError {
         match self {
             FetchError::Reqwest(err) => write!(f, "Reqwest error: {}", err),
             FetchError::GeoJson(err) => write!(f, "GeoJson error: {}", err),
+            FetchError::ReqwestWasm(err) => write!(f, "Reqwest WASM error: {}", err),
+            FetchError::SerdeJson(err) => write!(f, "Serde JSON error: {}", err),
+
         }
     }
 }
@@ -55,6 +62,18 @@ impl From<ReqwestError> for FetchError {
 impl From<GeoJsonError> for FetchError {
     fn from(err: GeoJsonError) -> Self {
         FetchError::GeoJson(err)
+    }
+}
+
+impl From<ReqwestWasmError> for FetchError {
+    fn from(err: ReqwestWasmError) -> Self {
+        FetchError::ReqwestWasm(err)
+    }
+}
+
+impl From<SerdeJsonError> for FetchError { 
+    fn from(err: SerdeJsonError) -> Self {
+        FetchError::SerdeJson(err)
     }
 }
 
@@ -91,14 +110,6 @@ pub fn geojson_to_polygons(geojson: &GeoJson) -> Vec<Polygon<f64>> {
     polygons
 }
 
-// Struct to hold GeoJSON data, max tree count, tree count, and buffer pointer
-#[derive(Serialize)]
-struct GeoJsonWithTreeCount {
-    geojson: serde_json::Value,
-    max_tree_count: usize,
-    tree_count: usize,
-    buffer_pointer: u64,
-}
 #[derive(Serialize, Deserialize, Clone, PartialEq)]
 enum OperationType {
     Thinning,
@@ -129,8 +140,10 @@ pub struct VirtualForest {
     selected_realestate: u32,
     stand_operations: Vec<StandOperation>,
     retention_zones: Vec<Polygon>,
-    roads: Option<Vec<LineString>>,
-    buildings: Option<Vec<Polygon>>,
+    //roads: Option<Vec<LineString>>,
+    //buildings: Option<Vec<Polygon>>,
+    roads: Option<GeoJson>,
+    buildings: Option<GeoJson>,
     water: Option<Vec<Polygon>>,
 }
 
@@ -158,6 +171,32 @@ impl VirtualForest {
             water: None,
             buildings: None,
         }
+    }
+
+    // Gets the infrastructure data (buildings and roads) in the bounding box
+    pub async fn get_infrastructure(&mut self, xml: &str) {
+        let (min_x, max_x, min_y, max_y) = get_coords_of_map(xml);
+
+        let west = min_x;
+        let south = min_y;
+        let east = max_x;
+        let north = max_y;
+    
+        // Get buildings in the bounding box
+        let url_buildings = format!(
+            "https://metne-test.onrender.com/geoserver/mml/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=mml:rakennus&maxFeatures=2000&outputFormat=application%2Fjson&BBOX={},{},{},{},EPSG:4326&srsName=EPSG:4326",
+            west, south, east, north
+        );
+        let buildings_geojson = get_geojson_from_url(url_buildings).await.unwrap();
+        self.buildings = Some(buildings_geojson);
+
+        // Get roads in the bounding box
+        let url_roads = format!(
+            "https://metne-test.onrender.com/geoserver/mml/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=mml:tieviiva&bbox={},{},{},{},EPSG:4326&srsName=EPSG:4326&outputFormat=application/json",
+            west, south, east, north
+        );
+        let roads_geojson = get_geojson_from_url(url_roads).await.unwrap();
+        self.roads = Some(roads_geojson);
     }
 
     #[wasm_bindgen]
@@ -270,9 +309,6 @@ impl VirtualForest {
 
         let compartments = get_compartments_in_bounding_box(stands, &bbox);
 
-
-
-
         let trees = compartments
             .iter()
             .enumerate()
@@ -324,16 +360,12 @@ impl VirtualForest {
     // Returns a GeoJsonWithTreeCount struct as a JsValue
     #[wasm_bindgen]
     pub async fn geo_json_from_coords(
-        &self,
+        & mut self,
         min_x: f64,
         max_x: f64,
         min_y: f64,
         max_y: f64,
     ) -> Result<JsValue, JsValue> {
-        /*         // Get the ForestPropertyData from the XML content
-        let property = ForestPropertyData::from_xml_str(xml_content);
-
-        log_1(&"Got property".into()); */
 
         let mut bbox = Polygon::new(
             LineString(vec![
@@ -346,83 +378,26 @@ impl VirtualForest {
             vec![],
         );
 
-        let west = min_x;
-        let south = min_y;
-        let east = max_x;
-        let north = max_y;
-
-        let url_buildings = format!(
-            "https://metne-test.onrender.com/geoserver/mml/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=mml:rakennus&maxFeatures=2000&outputFormat=application%2Fjson&BBOX={},{},{},{},EPSG:4326&srsName=EPSG:4326",
-            west, south, east, north
-        );
-        let url_roads = format!(
-            "https://metne-test.onrender.com/geoserver/mml/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=mml:tieviiva&bbox={},{},{},{},EPSG:4326&srsName=EPSG:4326&outputFormat=application/json",
-            west, south, east, north
-        );
-
-        // Create HTTP client for async fetch
-        let client = Client::new();
-
-        // Fetch buildings GeoJSON
-        let buildings_response = client
-            .get(&url_buildings)
-            .send()
-            .await
-            .map_err(|e| JsValue::from_str(&format!("Failed to fetch buildings: {}", e)))?;
-        let buildings_text = buildings_response.text().await.map_err(|e| {
-            JsValue::from_str(&format!("Failed to read buildings response text: {}", e))
-        })?;
-        let buildings_geojson: GeoJson = serde_json::from_str(&buildings_text)
-            .map_err(|e| JsValue::from_str(&format!("Failed to parse buildings GeoJson: {}", e)))?;
-
-        let buildings = geojson_to_polygons(&buildings_geojson);
+        let buildings = geojson_to_polygons(&self.buildings.clone().unwrap());
         let buildings_count = buildings.len();
-        log_1(&format!("Fetched {} buildings", buildings_count).into());
-
+        log_1(&format!("{} buildings in the bounding box", buildings_count).into());
+    
         // Exclude buildings from the bounding box
         for building in buildings.iter() {
             bbox = bbox.difference(building).0.first().unwrap().to_owned();
         }
 
-        // Fetch roads GeoJSON
-        let roads_response = client
-            .get(&url_roads)
-            .send()
-            .await
-            .map_err(|e| JsValue::from_str(&format!("Failed to fetch roads: {}", e)))?;
-        let roads_text = roads_response.text().await.map_err(|e| {
-            JsValue::from_str(&format!("Failed to read roads response text: {}", e))
-        })?;
-        let roads_geojson: GeoJson = serde_json::from_str(&roads_text)
-            .map_err(|e| JsValue::from_str(&format!("Failed to parse roads GeoJson: {}", e)))?;
-
         // Get the ForestPropertyData and stands
         let stands = self._get_selected_realestate().unwrap().get_stands();
-        // let stands = real_estate.get_stands();
 
         // Get compartment areas in the bounding box and convert them to GeoJSON
         if let Some(compartment_areas) = get_compartment_areas_in_bounding_box(stands, &bbox) {
-            /*         let max_tree_count = compartment_areas.1;
-            let tree_count = compartment_areas.2;
-            let buffer_pointer = compartment_areas.3; */
+
             let geojson = all_compartment_areas_to_geojson(
                 compartment_areas.0,
-                &buildings_geojson,
-                &roads_geojson,
+                &self.buildings.clone().unwrap(),
+                &self.roads.clone().unwrap(),
             );
-            /*   log_1(&"Got geojson".into()); */
-
-            // Create a combined struct with both the GeoJSON and tree_count
-            /*        let result = GeoJsonWithTreeCount {
-                       geojson: geojson.into(),
-                       max_tree_count,
-                       tree_count,
-                       buffer_pointer,
-                   };
-            */
-            // Serialize the result to a JsValue to return to JavaScript
-            /*       let result_js_value = serde_wasm_bindgen::to_value(&result)
-            .map_err(|e| JsValue::from_str(&format!("Failed to serialize result: {}", e)))?; */
 
             Ok(JsValue::from(geojson.to_string()))
         } else {
@@ -517,14 +492,12 @@ pub fn generate_random_trees_into_buffer(
             let trees_strata: Vec<Tree> = points
                 .iter()
                 .map(|pair: &[f64; 2]| {
-                    //if clipped_p.contains(&point!(x: pair[0], y: pair[1])) {
                     Tree::new(
                         stand_number,
                         stratum.tree_species,
                         stratum.mean_height,
                         (pair[0], pair[1], 0.0),
                     )
-                    //}
                 })
                 .collect();
 
@@ -579,19 +552,13 @@ pub fn get_compartment_areas_in_bounding_box(
         }
     }
 
-    // Create a shared buffer to store the generated trees
-    //let buffer = SharedBuffer::new(max_tree_count as usize);
-
     // If there are stands in the bounding box, generate random trees for each stand
     if let Some(stands) = stands {
         let mut compartment_areas = Vec::new();
         let mut total_tree_count = 0;
 
-        /*         let mut buffer_index = 0; */
         for stand in stands {
             let polygon = stand.computed_polygon.to_owned().unwrap();
-            /*          let strata = stand.get_strata();
-            let stand_number: f64 = stand.stand_basic_data.stand_number as f64; */
 
             // Clip the stand's polygon to the bounding box
             let intersected_polygons = polygon.intersection(bbox).0;
@@ -599,29 +566,6 @@ pub fn get_compartment_areas_in_bounding_box(
                 .first()
                 .expect("Intersection result should contain at least one polygon")
                 .to_owned();
-
-            // Generate trees and save them to the buffer if strata exist
-            /* let mut tree_count = 0;
-                       if let Some(strata) = strata {
-                           tree_count = generate_random_trees_into_buffer(
-                               &polygon,
-                               &clipped_polygon,
-                               &strata,
-                               stand_number,
-                               &buffer,
-                               buffer_index,
-                           );
-                           buffer_index += tree_count;
-                           log_1(
-                               &format!(
-                                   "Generated {} trees for stand {}",
-                                   tree_count, stand.stand_basic_data.stand_number
-                               )
-                               .into(),
-                           );
-                       }
-                       total_tree_count += tree_count;
-            */
 
             total_tree_count += stand.summary_stem_count().unwrap_or(0) as usize;
             // Add to the compartment areas list
@@ -631,58 +575,50 @@ pub fn get_compartment_areas_in_bounding_box(
             });
         }
         return Some((compartment_areas, max_tree_count as usize, total_tree_count));
-        // Get a slice of the buffer
-        /* let buffer_slice: &[f64] =
-        unsafe { std::slice::from_raw_parts(buffer.ptr(), buffer.len()) }; */
     } else {
         None
     }
-    // Log the buffer contents
-    /*         log_1(&"Bounding box contains:".into());
-    for (i, value) in buffer_slice.iter().enumerate() {
-        if i % 6 == 0 && buffer_slice[i + 3] != 0.0 {
-            let buffer_info = format!(
-                "Tree {}: stand: {}, x = {}, y = {}, species = {}, height = {}, status = {}",
-                i / 6,
-                buffer_slice[i],
-                buffer_slice[i + 1],
-                buffer_slice[i + 2],
-                buffer_slice[i + 3],
-                buffer_slice[i + 4],
-                buffer_slice[i + 5]
-            );
-            log_1(&buffer_info.into());
-        }
-    }
-     */
-    /*         let mut buffer_pointer_string = format!("{:p}", buffer.ptr());
-    buffer_pointer_string = (&buffer_pointer_string[2..]).to_string(); */
-
-    /*         log_1(&format!("Hexadecimal Buffer pointer in rust: {}", buffer_pointer_string).into());
-    let buffer_pointer = hexadecimal_to_decimal(&buffer_pointer_string).unwrap();
-    log_1(&format!("Decimal Buffer pointer in rust: {}", buffer_pointer).into()); */
-    /*  (compartment_areas, max_tree_count as usize, total_tree_count)
-    } else {
-        (vec![], 0, 0, 0)
-    } */
 }
 
-/* pub fn hexadecimal_to_decimal(hexadecimal_str: &str) -> Result<u64, &'static str> {
-    if hexadecimal_str.is_empty() {
-        return Err("Empty input");
-    }
+// Get the bounding box of the whole map
+pub fn get_coords_of_map(xml: &str) -> (f64, f64, f64, f64) {
+    let property = ForestPropertyData::from_xml_str(xml);
+    let mut all_stands = property.real_estates.real_estate[0].get_stands();
 
-    for hexadecimal_str in hexadecimal_str.chars() {
-        if !hexadecimal_str.is_ascii_hexdigit() {
-            return Err("Input was not a hexadecimal number");
+    let mut min_x = f64::MAX;
+    let mut max_x = f64::MIN;
+    let mut min_y = f64::MAX;
+    let mut max_y = f64::MIN;
+
+    for stand in all_stands.iter_mut() {
+        let polygon = stand.computed_polygon.to_owned().unwrap();
+        let (p_min_x, p_max_x, p_min_y, p_max_y) = get_min_max_coordinates(&polygon);
+
+        if p_min_x < min_x {
+            min_x = p_min_x;
+        }
+        if p_max_x > max_x {
+            max_x = p_max_x;
+        }
+        if p_min_y < min_y {
+            min_y = p_min_y;
+        }
+        if p_max_y > max_y {
+            max_y = p_max_y;
         }
     }
-
-    match u64::from_str_radix(hexadecimal_str, 16) {
-        Ok(decimal) => Ok(decimal),
-        Err(_e) => Err("Failed to convert to hexadecimal"),
-    }
+    
+    (min_x, max_x, min_y, max_y)
 }
- */
-#[wasm_bindgen]
-pub fn empty_function(xml_content: String) {}
+
+// Fetches GeoJSON data from the given url
+pub async fn get_geojson_from_url(url: String) -> Result<GeoJson, FetchError> {
+    let client = Client::new();
+
+    let response = client.get(&url).send().await.map_err(FetchError::from)?;
+    let text = response.text().await.map_err(FetchError::from)?;
+    let geojson: GeoJson = serde_json::from_str(&text).map_err(FetchError::from)?;
+
+    Ok(geojson)
+}
+
