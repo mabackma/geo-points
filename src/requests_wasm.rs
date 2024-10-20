@@ -353,48 +353,41 @@ impl VirtualForest {
 
         let compartments = get_compartments_in_bounding_box(stands, &bbox);
 
+        let road_points = self.roads.clone().unwrap_or(vec![])
+            .iter()
+            .flat_map(|r| r.points())
+            .collect::<Vec<geo::Point<f64>>>();
+
         let trees = compartments
             .iter()
-            .enumerate()
-            .flat_map(|(i, f)| {
-                f.trees
+            .flat_map(|compartment| {
+                compartment.trees
                     .iter()
-                    .flat_map(|tree| {
+                    .filter_map(|tree| {
                         let (x, y, z) = tree.position();
                         let specie = tree.species();
                         let height = tree.tree_height();
                         let status = tree.tree_status();
                         let stand_number = tree.stand_number();
 
-                     /*    let l = LineString::new(vec![coord! {x: 10.0,y:10.0},coord! {x: 20.0,y:10.0}]);
-
-                        let remove = l.points().find(|p| {
-
-                            abs( p.x() - x ) > 0.0005 || abs(p.y() - y) > 0.0005
-
-                        });
-
-
-                        let p = point!(x: x,y: y);
-
-                        let distance = p.euclidean_distance(&l); */
-
-                        // let isOk = l.euclidean_distance(&point!(x: x as usize,y: y as usize)) > 5.0 as usize;
-
-
-
-                        vec![
-                            x as f32,
-                            y as f32,
-                            z as f32,
-                            specie as f32,
-                            height,
-                            status as f32,
-                            stand_number as f32,
-                        ]
+                        let five_meters = 0.000045; // 5 meters in degrees
+                        if road_points.iter().any(|p| p.euclidean_distance(&point!(x: x, y: y)) < five_meters) {
+                            log_1(&format!("Skipping tree").into());
+                            None    // Skip trees that are too close to roads
+                        } else {
+                            Some(vec![
+                                x as f32,
+                                y as f32,
+                                z as f32,
+                                specie as f32,
+                                height,
+                                status as f32,
+                                stand_number as f32,
+                            ])
+                        }
                     })
-                    .collect::<Vec<f32>>()
             })
+            .flatten()
             .collect::<Vec<f32>>();
 
         return trees;
@@ -402,7 +395,7 @@ impl VirtualForest {
 
     // Fetches GeoJSON data from the given bounding box and XML content
     // Returns a GeoJson of stand polygons, building polygons, and a roads multi-linestring
-    // Buildings and roads have a property "type" with values "building" and "roads" respectively
+    // Buildings, water bodies, and roads have a property "type" with values "building", "water", and "roads" respectively
     #[wasm_bindgen]
     pub async fn geo_json_from_coords(
         & mut self,
@@ -431,6 +424,11 @@ impl VirtualForest {
         // Exclude buildings from the bounding box
         for building in self.buildings.clone().unwrap().iter() {
             bbox = bbox.difference(building).0.first().unwrap().to_owned();
+        }
+
+        // Exclude water bodies from the bounding box
+        for water_body in self.water.clone().unwrap().iter() {
+            bbox = bbox.difference(water_body).0.first().unwrap().to_owned();
         }
 
         // Get the ForestPropertyData and stands
