@@ -353,10 +353,10 @@ impl VirtualForest {
 
         let compartments = get_compartments_in_bounding_box(stands, &bbox);
 
-        let road_points = self.roads.clone().unwrap_or(vec![])
+        let road_lines = self.roads.clone().unwrap_or(vec![])
             .iter()
-            .flat_map(|r| r.points())
-            .collect::<Vec<geo::Point<f64>>>();
+            .map(|r| r.clone())
+            .collect::<Vec<LineString<f64>>>();
 
         let trees = compartments
             .iter()
@@ -371,7 +371,7 @@ impl VirtualForest {
                         let stand_number = tree.stand_number();
 
                         let five_meters = 0.000045; // 5 meters in degrees
-                        if road_points.iter().any(|p| p.euclidean_distance(&point!(x: x, y: y)) < five_meters) {
+                        if road_lines.iter().any(|rl| rl.euclidean_distance(&point!(x: x, y: y)) < five_meters) {
                             log_1(&format!("Skipping tree").into());
                             None    // Skip trees that are too close to roads
                         } else {
