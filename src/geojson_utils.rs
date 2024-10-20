@@ -144,7 +144,8 @@ pub fn all_compartments_to_geojson(
 pub fn all_compartment_areas_to_geojson(
     compartment_areas: Vec<CompartmentArea>,
     buildings: &Vec<Polygon>, 
-    roads: &Vec<LineString>) -> GeoJson {
+    roads: &Vec<LineString>,
+    water: &Vec<Polygon>) -> GeoJson {
     
     let mut all_features = Vec::new();
 
@@ -156,6 +157,11 @@ pub fn all_compartment_areas_to_geojson(
     for building in buildings.iter() {
         let building_feature = convert_polygon_to_feature(building, Some("building"));
         all_features.push(building_feature);
+    }
+
+    for water_body in water.iter() {
+        let water_feature = convert_polygon_to_feature(water_body, Some("water"));
+        all_features.push(water_feature);
     }
 
     let road_feature = convert_linestrings_to_feature(&roads);

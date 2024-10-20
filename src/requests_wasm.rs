@@ -209,6 +209,38 @@ impl VirtualForest {
                 self.roads = None;
             }
         }
+        
+        // Get water bodies in the bounding box
+        for body_type in ["allas", "jarvi", "meri", "virtavesialue"].iter() {
+            match get_geojson_from_url(Self::get_url_water(body_type, west, south, east, north)).await {
+                Ok(geojson) => {
+                    let water_body_count = match &geojson {
+                        GeoJson::FeatureCollection(collection) => collection.features.len(),
+                        _ => 0,
+                    };
+                    log_1(&format!("Fetched water body of type: {} {}", body_type, water_body_count).into());
+
+                    let new_polygons = geojson_to_polygons(&geojson);
+        
+                    // Append the new bodies of water to the existing ones
+                    if let Some(existing_polygons) = &mut self.water {
+                        existing_polygons.extend(new_polygons);
+                    } else {
+                        self.water = Some(new_polygons);
+                    }
+                }
+                Err(_) => {
+                    log_1(&format!("Failed to fetch water body of type: {}", body_type).into());
+                }
+            }
+        }
+    }
+
+    fn get_url_water(body_type: &str, west: f64, south: f64, east: f64, north: f64) -> String {
+        format!(
+            "https://metne-test.onrender.com/geoserver/mml/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=mml:{}&bbox={},{},{},{},EPSG:4326&srsName=EPSG:4326&outputFormat=application/json",
+            body_type, west, south, east, north
+        )
     }
 
     #[wasm_bindgen]
@@ -394,6 +426,7 @@ impl VirtualForest {
         let buildings_count = self.buildings.clone().unwrap().len();
         log_1(&format!("{} buildings in the bounding box", buildings_count).into());
         log_1(&format!("{} roads in the bounding box", self.roads.clone().unwrap().len()).into());
+        log_1(&format!("{} water bodies in the bounding box", self.water.clone().unwrap().len()).into());
 
         // Exclude buildings from the bounding box
         for building in self.buildings.clone().unwrap().iter() {
@@ -410,6 +443,7 @@ impl VirtualForest {
                 compartment_areas.0,
                 &self.buildings.clone().unwrap_or(vec![]),
                 &self.roads.clone().unwrap_or(vec![]),
+                &self.water.clone().unwrap_or(vec![]),
             );
 
             Ok(JsValue::from(geojson.to_string()))
