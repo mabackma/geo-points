@@ -220,7 +220,7 @@ impl VirtualForest {
                     };
                     log_1(&format!("Fetched water body of type: {} {}", body_type, water_body_count).into());
 
-                    let new_polygons = geojson_to_polygons(&geojson);
+                    let new_polygons = water_geojson_to_polygons(&geojson);
         
                     // Append the new bodies of water to the existing ones
                     if let Some(existing_polygons) = &mut self.water {
@@ -700,3 +700,34 @@ pub fn roads_geojson_to_linestrings(geojson: &GeoJson) -> Vec<LineString<f64>> {
     linestrings
 }
 
+pub fn water_geojson_to_polygons(geojson: &GeoJson) -> Vec<Polygon<f64>> {
+    let mut polygons = Vec::new();
+
+    if let GeoJson::FeatureCollection(collection) = geojson {
+        for feature in collection.features.iter() {
+            if let Some(geometry) = &feature.geometry {
+                match &geometry.value {
+                    Value::Polygon(polygon) => {
+                        let exterior = polygon[0]
+                            .iter()
+                            .filter_map(|point| {
+                                if point[2] >= 0.0 {
+                                    Some(coord!(x: point[0], y: point[1]))
+                                } else {
+                                    None
+                                }
+                            })
+                            .collect::<Vec<_>>();
+                        let poly = Polygon::new(LineString::from(exterior), vec![]);
+                        polygons.push(poly);
+                    }
+                    _ => {
+                        continue;
+                    }
+                }
+            }
+        }
+    }
+
+    polygons
+}
