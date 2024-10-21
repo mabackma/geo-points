@@ -33,8 +33,18 @@ use web_sys::js_sys::{Float32Array, JsString};
 use reqwest_wasm::Error as ReqwestWasmError;
 use serde_json::Error as SerdeJsonError;
 
-const FIVE_METERS_X: f64 = 0.00011; // 5 meters on x-axis in degrees
-const FIVE_METERS_Y: f64 = 0.000045; // 5 meters on y-axis in degrees
+const METERS_IN_ONE_DEGREE_LAT: f64 = 111_320.0;
+
+fn meters_to_degrees_lat(meters: f64) -> f64 {
+    meters / METERS_IN_ONE_DEGREE_LAT
+}
+
+fn meters_to_degrees_lon(meters: f64, latitude: f64) -> f64 {
+    let latitude_radians = latitude.to_radians();
+    let meters_per_degree_lon = METERS_IN_ONE_DEGREE_LAT * latitude_radians.cos();
+    meters / meters_per_degree_lon
+}
+
 const THRESHOLD: f64 = 5.0; // 5 meters in meters
 
 #[derive(Debug)]
@@ -423,7 +433,9 @@ impl VirtualForest {
         let (road_x, road_y) = road_point.x_y();
         let dx = *x - road_x;
         let dy = *y - road_y;
-
+        let five_meters_x = meters_to_degrees_lon(5.0, *y);
+        let five_meters_y = meters_to_degrees_lat(5.0);
+        
         let dist = road_point.euclidean_distance(&point!(x: *x, y: *y));
 
         // Avoid division by zero
@@ -436,8 +448,8 @@ impl VirtualForest {
             ];
 
             for (dx_multiplier, dy_multiplier) in &movements {
-                let new_x = road_x + (dx_multiplier * FIVE_METERS_X);
-                let new_y = road_y + (dy_multiplier * FIVE_METERS_Y);
+                let new_x = road_x + (dx_multiplier * five_meters_x);
+                let new_y = road_y + (dy_multiplier * five_meters_y);
 
                 // Check if the new position is within the compartment
                 if compartment.contains(&point!(x: new_x, y: new_y)) {
@@ -448,8 +460,8 @@ impl VirtualForest {
                 }
             }
         } else {
-            let scale_x = FIVE_METERS_X / dist;
-            let scale_y = FIVE_METERS_Y / dist;
+            let scale_x = five_meters_x / dist;
+            let scale_y = five_meters_y / dist;
 
             // Move the point 5 meters away from the road
             *x = road_x + dx * scale_x;
