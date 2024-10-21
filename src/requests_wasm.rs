@@ -1,5 +1,5 @@
 use crate::forest_property::compartment::{
-    find_stands_in_bounding_box, get_compartments_in_bounding_box, Compartment, CompartmentArea,
+    self, find_stands_in_bounding_box, get_compartments_in_bounding_box, Compartment, CompartmentArea
 };
 use crate::forest_property::forest_property_data::{ForestPropertyData, RealEstate, TreeStratum};
 use crate::forest_property::stand::{self, Stand};
@@ -10,7 +10,8 @@ use crate::geometry_utils::{generate_radius, get_min_max_coordinates};
 use crate::jittered_hexagonal_sampling::{GridOptions, JitteredHexagonalGridSampling};
 use crate::shared_buffer::SharedBuffer;
 
-use geo::{coord, point, Area, BooleanOps, Contains, EuclideanDistance, Line, LineString, Polygon};
+use geo::{coord, point, Area, BooleanOps, Closest, Contains, Coord, EuclideanDistance, Line, LineString, Point, Polygon};
+use geo::algorithm::closest_point::ClosestPoint;
 use geojson::{Error as GeoJsonError, JsonObject};
 use geojson::{GeoJson, Value};
 use rayon::iter::{IntoParallelRefIterator, ParallelIterator};
@@ -30,6 +31,8 @@ use web_sys::console::log_1;
 use web_sys::js_sys::{Float32Array, JsString};
 use reqwest_wasm::Error as ReqwestWasmError;
 use serde_json::Error as SerdeJsonError;
+
+const FIVE_METERS: f64 = 0.000045; // 5 meters in degrees
 
 #[derive(Debug)]
 pub enum FetchError {
@@ -336,6 +339,18 @@ impl VirtualForest {
         }
     }
 
+    fn closest_point_on_road(line: &LineString<f64>, tree_point: &geo::Point<f64>) -> (geo::Point<f64>, f64) {
+        match line.closest_point(tree_point) {
+            Closest::SinglePoint(pt) => {
+                let dist = pt.euclidean_distance(tree_point);
+                (pt, dist) // Return the closest point and the distance
+            }
+            _ => {
+                panic!("Unexpected error, no points found on LineString.");
+            }
+        }
+    }
+
     #[wasm_bindgen]
     pub fn generate_trees_bbox(&self, min_x: f64, max_x: f64, min_y: f64, max_y: f64) -> Vec<f32> {
         let bbox = Polygon::new(
@@ -350,13 +365,8 @@ impl VirtualForest {
         );
 
         let stands = self._get_selected_realestate().unwrap().get_stands();
-
         let compartments = get_compartments_in_bounding_box(stands, &bbox);
-
-        let road_lines = self.roads.clone().unwrap_or(vec![])
-            .iter()
-            .map(|r| r.clone())
-            .collect::<Vec<LineString<f64>>>();
+        let road_lines = self.roads.clone().unwrap_or(vec![]);
 
         let trees = compartments
             .iter()
@@ -364,27 +374,33 @@ impl VirtualForest {
                 compartment.trees
                     .iter()
                     .filter_map(|tree| {
-                        let (x, y, z) = tree.position();
+                        let (mut x, mut y, z) = tree.position();
                         let specie = tree.species();
                         let height = tree.tree_height();
                         let status = tree.tree_status();
                         let stand_number = tree.stand_number();
+                        
+                        let tree_point = point!(x: x, y: y);
+                        let mut road_point = point!(x: x, y: y);
 
-                        let five_meters = 0.000045; // 5 meters in degrees
-                        if road_lines.iter().any(|rl| rl.euclidean_distance(&point!(x: x, y: y)) < five_meters) {
-                            log_1(&format!("Skipping tree").into());
-                            None    // Skip trees that are too close to roads
-                        } else {
-                            Some(vec![
-                                x as f32,
-                                y as f32,
-                                z as f32,
-                                specie as f32,
-                                height,
-                                status as f32,
-                                stand_number as f32,
-                            ])
+                        if road_lines.iter().any(|rl| {
+                            let (_pt, dist) = Self::closest_point_on_road(rl, &tree_point);
+                            road_point = _pt;
+                            dist < FIVE_METERS
+                        }) {
+                            log_1(&format!("Moving point from road").into());
+                            Self::move_point_from_road(&mut x, &mut y, &road_point, &compartment.polygon);
                         }
+
+                        vec![
+                            x as f32,
+                            y as f32,
+                            z as f32,
+                            specie as f32,
+                            height,
+                            status as f32,
+                            stand_number as f32,
+                        ].into()  
                     })
             })
             .flatten()
@@ -393,6 +409,43 @@ impl VirtualForest {
         return trees;
     }
 
+    fn move_point_from_road(x: &mut f64, y: &mut f64, road_point: &Point<f64>, compartment: &Polygon<f64>) {
+        let (road_x, road_y) = road_point.x_y();
+        let dx = *x - road_x;
+        let dy = *y - road_y;
+
+        let dist = road_point.euclidean_distance(&point!(x: *x, y: *y));
+
+        // Avoid division by zero
+        if dist < 1e-9 {
+            let movements = [
+                (1.0, 1.0),  // Move +X +Y
+                (1.0, -1.0), // Move +X -Y
+                (-1.0, 1.0), // Move -X +Y
+                (-1.0, -1.0) // Move -X -Y
+            ];
+
+            for (dx_multiplier, dy_multiplier) in &movements {
+                let new_x = road_x + (dx_multiplier * FIVE_METERS);
+                let new_y = road_y + (dy_multiplier * FIVE_METERS);
+
+                // Check if the new position is within the compartment
+                if compartment.contains(&point!(x: new_x, y: new_y)) {
+                    *x = new_x; 
+                    *y = new_y;
+                    log_1(&format!("Moved tree from road").into());
+                    break;
+                }
+            }
+        } else {
+            let scale = FIVE_METERS / dist; 
+
+            // Move the point 5 meters away from the road
+            *x = road_x + dx * scale;
+            *y = road_y + dy * scale;
+        }
+    }
+    
     // Fetches GeoJSON data from the given bounding box and XML content
     // Returns a GeoJson of stand polygons, building polygons, and a roads multi-linestring
     // Buildings, water bodies, and roads have a property "type" with values "building", "water", and "roads" respectively
