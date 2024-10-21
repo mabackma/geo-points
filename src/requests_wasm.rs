@@ -352,11 +352,10 @@ impl VirtualForest {
         }
     }
 
-    fn closest_point_on_road(line: &LineString<f64>, tree_point: &geo::Point<f64>) -> (geo::Point<f64>, f64) {
+    fn closest_point_on_road(line: &LineString<f64>, tree_point: &geo::Point<f64>) -> geo::Point<f64> {
         match line.closest_point(tree_point) {
             Closest::SinglePoint(pt) => {
-                let dist = pt.euclidean_distance(tree_point);
-                (pt, dist) // Return the closest point and the distance
+                pt // Return the closest point on the road
             }
             _ => {
                 panic!("Unexpected error, no points found on LineString.");
@@ -405,7 +404,8 @@ impl VirtualForest {
                         let mut road_point = Point::new(0.0, 0.0);
 
                         if road_lines.iter().any(|rl| {
-                            let (_pt, dist) = Self::closest_point_on_road(rl, &tree_point);
+                            let _pt = Self::closest_point_on_road(rl, &tree_point);
+                            road_point = _pt;
                             Self::is_point_within_threshold(&_pt, &tree_point, THRESHOLD)
                         }) {
                             log_1(&format!("Moving point from road").into());
