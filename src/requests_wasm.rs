@@ -406,7 +406,7 @@ impl VirtualForest {
                         if road_lines.iter().any(|rl| {
                             let _pt = Self::closest_point_on_road(rl, &tree_point);
                             road_point = _pt;
-                            Self::is_point_within_threshold(&_pt, &tree_point, THRESHOLD)
+                            Self::is_point_within_threshold(&road_point, &tree_point, THRESHOLD)
                         }) {
                             log_1(&format!("Moving point from road").into());
                             Self::move_point_from_road(&mut x, &mut y, &road_point, &compartment.polygon);
