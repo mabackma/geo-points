@@ -352,17 +352,6 @@ impl VirtualForest {
         }
     }
 
-    fn closest_point_on_road(line: &LineString<f64>, tree_point: &geo::Point<f64>) -> geo::Point<f64> {
-        match line.closest_point(tree_point) {
-            Closest::SinglePoint(pt) => {
-                pt // Return the closest point on the road
-            }
-            _ => {
-                panic!("Unexpected error, no points found on LineString.");
-            }
-        }
-    }
-
     fn is_point_within_threshold(road_point: &Point<f64>, point: &Point<f64>, threshold_in_meters: f64) -> bool {
         // Calculate the minimum distance from the point to any segment of the line
         let min_distance = road_point.haversine_distance(point);
@@ -401,13 +390,15 @@ impl VirtualForest {
                         let stand_number = tree.stand_number();
                         
                         let tree_point = point!(x: x, y: y);
-                        let mut road_point = Point::new(0.0, 0.0);
 
-                        if road_lines.iter().any(|rl| {
-                            let _pt = Self::closest_point_on_road(rl, &tree_point);
-                            road_point = _pt;
-                            Self::is_point_within_threshold(&road_point, &tree_point, THRESHOLD)
-                        }) {
+                        if let Some(road_point) = road_lines.iter().filter_map(|rl| {
+                            // Find the closest point on the road line to the tree point
+                            match rl.closest_point(&tree_point) {
+                                // If the point is within the threshold, return the point
+                                Closest::SinglePoint(pt) if Self::is_point_within_threshold(&pt, &tree_point, THRESHOLD) => Some(pt),
+                                _ => None,
+                            }
+                        }).next() {
                             log_1(&format!("Moving point from road").into());
                             Self::move_point_from_road(&mut x, &mut y, &road_point, &compartment.polygon);
                         }
