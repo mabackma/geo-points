@@ -381,7 +381,7 @@ impl VirtualForest {
                         let stand_number = tree.stand_number();
                         
                         let tree_point = point!(x: x, y: y);
-                        let mut road_point = point!(x: x, y: y);
+                        let mut road_point = Point::new(0.0, 0.0);
 
                         if road_lines.iter().any(|rl| {
                             let (_pt, dist) = Self::closest_point_on_road(rl, &tree_point);
