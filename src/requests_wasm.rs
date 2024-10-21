@@ -12,6 +12,7 @@ use crate::shared_buffer::SharedBuffer;
 
 use geo::{coord, point, Area, BooleanOps, Closest, Contains, Coord, EuclideanDistance, Line, LineString, Point, Polygon};
 use geo::algorithm::closest_point::ClosestPoint;
+use geo::algorithm::haversine_distance::HaversineDistance;
 use geojson::{Error as GeoJsonError, JsonObject};
 use geojson::{GeoJson, Value};
 use rayon::iter::{IntoParallelRefIterator, ParallelIterator};
@@ -32,7 +33,9 @@ use web_sys::js_sys::{Float32Array, JsString};
 use reqwest_wasm::Error as ReqwestWasmError;
 use serde_json::Error as SerdeJsonError;
 
-const FIVE_METERS: f64 = 0.000045; // 5 meters in degrees
+const FIVE_METERS_X: f64 = 0.00011; // 5 meters on x-axis in degrees
+const FIVE_METERS_Y: f64 = 0.000045; // 5 meters on y-axis in degrees
+const THRESHOLD: f64 = 5.0; // 5 meters in meters
 
 #[derive(Debug)]
 pub enum FetchError {
@@ -351,6 +354,14 @@ impl VirtualForest {
         }
     }
 
+    fn is_point_within_threshold(road_point: &Point<f64>, point: &Point<f64>, threshold_in_meters: f64) -> bool {
+        // Calculate the minimum distance from the point to any segment of the line
+        let min_distance = road_point.haversine_distance(point);
+    
+        // Check if the minimum distance is within the threshold (e.g., 5 meters)
+        min_distance <= threshold_in_meters
+    }
+
     #[wasm_bindgen]
     pub fn generate_trees_bbox(&self, min_x: f64, max_x: f64, min_y: f64, max_y: f64) -> Vec<f32> {
         let bbox = Polygon::new(
@@ -385,8 +396,7 @@ impl VirtualForest {
 
                         if road_lines.iter().any(|rl| {
                             let (_pt, dist) = Self::closest_point_on_road(rl, &tree_point);
-                            road_point = _pt;
-                            dist < FIVE_METERS
+                            Self::is_point_within_threshold(&_pt, &tree_point, THRESHOLD)
                         }) {
                             log_1(&format!("Moving point from road").into());
                             Self::move_point_from_road(&mut x, &mut y, &road_point, &compartment.polygon);
@@ -426,8 +436,8 @@ impl VirtualForest {
             ];
 
             for (dx_multiplier, dy_multiplier) in &movements {
-                let new_x = road_x + (dx_multiplier * FIVE_METERS);
-                let new_y = road_y + (dy_multiplier * FIVE_METERS);
+                let new_x = road_x + (dx_multiplier * FIVE_METERS_X);
+                let new_y = road_y + (dy_multiplier * FIVE_METERS_Y);
 
                 // Check if the new position is within the compartment
                 if compartment.contains(&point!(x: new_x, y: new_y)) {
@@ -438,11 +448,12 @@ impl VirtualForest {
                 }
             }
         } else {
-            let scale = FIVE_METERS / dist; 
+            let scale_x = FIVE_METERS_X / dist;
+            let scale_y = FIVE_METERS_Y / dist;
 
             // Move the point 5 meters away from the road
-            *x = road_x + dx * scale;
-            *y = road_y + dy * scale;
+            *x = road_x + dx * scale_x;
+            *y = road_y + dy * scale_y;
         }
     }
     
