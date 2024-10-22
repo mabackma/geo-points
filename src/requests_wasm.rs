@@ -1,37 +1,17 @@
-use crate::forest_property::compartment::{
-    self, find_stands_in_bounding_box, get_compartment_areas_in_bounding_box, get_compartments_in_bounding_box, Compartment, CompartmentArea
-};
-use crate::forest_property::forest_property_data::{ForestPropertyData, RealEstate, TreeStratum};
-use crate::forest_property::stand::{self, Stand};
-use crate::forest_property::tree::Tree;
+use crate::forest_property::compartment::{get_compartment_areas_in_bounding_box, get_compartments_in_bounding_box};
+use crate::forest_property::forest_property_data::{ForestPropertyData, RealEstate};
 use crate::forest_property::tree_stand_data::TreeStrata;
 use crate::geojson_utils::{all_compartment_areas_to_geojson, geojson_to_polygons, get_geojson_from_url, roads_geojson_to_linestrings, water_geojson_to_polygons};
-use crate::geometry_utils::{generate_radius, get_coords_of_map, get_min_max_coordinates};
-use crate::jittered_hexagonal_sampling::{GridOptions, JitteredHexagonalGridSampling};
-use crate::shared_buffer::SharedBuffer;
+use crate::geometry_utils::get_coords_of_map;
 
-use geo::{coord, point, Area, BooleanOps, Closest, Contains, Coord, EuclideanDistance, Line, LineString, Point, Polygon};
+use geo::{coord, point, BooleanOps, Closest, Contains, EuclideanDistance, LineString, Point, Polygon};
 use geo::algorithm::closest_point::ClosestPoint;
 use geo::algorithm::haversine_distance::HaversineDistance;
-use geojson::{Error as GeoJsonError, JsonObject};
-use geojson::{GeoJson, Value};
-use rayon::iter::{IntoParallelRefIterator, ParallelIterator};
-use reqwest::Error as ReqwestError;
-use reqwest_wasm::Client;
+use geojson::GeoJson;
 use serde::{Deserialize, Serialize};
-use serde_json::{json, Value as SerdeJsonValue};
-use serde_wasm_bindgen;
-use web_sys::js_sys::Math::abs;
-use std::error::Error;
-use std::fmt;
-use std::slice::from_raw_parts;
 use wasm_bindgen::prelude::wasm_bindgen;
-use wasm_bindgen::{JsCast, JsValue};
-use wasm_bindgen_futures::JsFuture;
+use wasm_bindgen::JsValue;
 use web_sys::console::log_1;
-use web_sys::js_sys::{Float32Array, JsString};
-use reqwest_wasm::Error as ReqwestWasmError;
-use serde_json::Error as SerdeJsonError;
 
 const METERS_IN_ONE_DEGREE_LAT: f64 = 111_320.0;
 
