@@ -328,35 +328,37 @@ impl VirtualForest {
         let five_meters_x = meters_to_degrees_lon(5.0, *y);
         let five_meters_y = meters_to_degrees_lat(5.0);
         
-        let dist = road_point.euclidean_distance(&point!(x: *x, y: *y));
+        let dist_x = road_point.euclidean_distance(&point!(x: *x, y: road_point.y()));
+        let dist_y = road_point.euclidean_distance(&point!(x: road_point.x(), y: *y));
 
         // Avoid division by zero
-        if dist < 1e-9 {
-            let movements = [
-                (1.0, 1.0),  // Move +X +Y
-                (1.0, -1.0), // Move +X -Y
-                (-1.0, 1.0), // Move -X +Y
-                (-1.0, -1.0) // Move -X -Y
-            ];
-
-            for (dx_multiplier, dy_multiplier) in &movements {
+        if dist_x < 1e-9 {
+            for dx_multiplier in [-1.0, 1.0] {
                 let new_x = road_x + (dx_multiplier * five_meters_x);
-                let new_y = road_y + (dy_multiplier * five_meters_y);
 
-                // Check if the new position is within the compartment
-                if compartment.contains(&point!(x: new_x, y: new_y)) {
+                if compartment.contains(&point!(x: new_x, y: *y)) {
                     *x = new_x; 
-                    *y = new_y;
-                    log_1(&format!("Moved tree from road").into());
+                    log_1(&format!("Moved tree on x-axis from road").into());
                     break;
                 }
             }
-        } else {
-            let scale_x = five_meters_x / dist;
-            let scale_y = five_meters_y / dist;
-
-            // Move the point 5 meters away from the road
+        } else if dist_x < five_meters_x {
+            let scale_x = five_meters_x / dist_x;
             *x = road_x + dx * scale_x;
+        }
+        
+        if dist_y < 1e-9 {
+            for dy_multiplier in [-1.0, 1.0] {
+                let new_y = road_y + (dy_multiplier * five_meters_y);
+
+                if compartment.contains(&point!(x: *x, y: new_y)) {
+                    *y = new_y; 
+                    log_1(&format!("Moved tree on y-axis from road").into());
+                    break;
+                }
+            }
+        } else if dist_y < five_meters_y {
+            let scale_y = five_meters_y / dist_y;
             *y = road_y + dy * scale_y;
         }
     }
