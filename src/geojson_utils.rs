@@ -1,11 +1,8 @@
-use std::collections::HashMap;
-
 use crate::{forest_property::{compartment::{Compartment, CompartmentArea}, tree::Tree}, geometry_utils::get_min_max_coordinates};
 
-use geo::{coord, LineString, MultiLineString, Polygon};
+use geo::{coord, LineString, Polygon};
 use geojson::{Feature, FeatureCollection, GeoJson, Geometry as GeoJsonGeometry, JsonObject, JsonValue, Value};
-use serde_json::json;
-use geojson::{Error as GeoJsonError};
+use geojson::Error as GeoJsonError;
 use reqwest::Error as ReqwestError;
 use reqwest_wasm::Error as ReqwestWasmError;
 use serde_json::Error as SerdeJsonError;

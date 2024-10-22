@@ -129,3 +129,55 @@ pub struct CompartmentArea {
     pub polygon: Polygon,
 }
 
+// Get compartment areas in a bounding box.
+// Returns a tuple of compartment areas, max tree count, tree count, and buffer pointer in decimal
+pub fn get_compartment_areas_in_bounding_box(
+    all_stands: Vec<Stand>,
+    bbox: &Polygon,
+) -> Option<(Vec<CompartmentArea>, usize, usize)> {
+    // Find stands in the bounding box
+    let stands = find_stands_in_bounding_box(&all_stands, bbox);
+
+    // Count the total number of trees in the bounding box
+    let mut max_tree_count = 0;
+    if let Some(stands) = &stands {
+        for stand in stands {
+            let strata = stand.get_strata();
+
+            if let Some(strata) = strata {
+                let strata_stem_count = strata.tree_stratum.iter().fold(0, |mut acc: u32, f| {
+                    acc += f.stem_count;
+                    acc
+                });
+                max_tree_count += strata_stem_count;
+            }
+        }
+    }
+
+    // If there are stands in the bounding box, generate random trees for each stand
+    if let Some(stands) = stands {
+        let mut compartment_areas = Vec::new();
+        let mut total_tree_count = 0;
+
+        for stand in stands {
+            let polygon = stand.computed_polygon.to_owned().unwrap();
+
+            // Clip the stand's polygon to the bounding box
+            let intersected_polygons = polygon.intersection(bbox).0;
+            let clipped_polygon = intersected_polygons
+                .first()
+                .expect("Intersection result should contain at least one polygon")
+                .to_owned();
+
+            total_tree_count += stand.summary_stem_count().unwrap_or(0) as usize;
+            // Add to the compartment areas list
+            compartment_areas.push(CompartmentArea {
+                stand_number: stand.stand_basic_data.stand_number.to_string(),
+                polygon: clipped_polygon,
+            });
+        }
+        return Some((compartment_areas, max_tree_count as usize, total_tree_count));
+    } else {
+        None
+    }
+}
