@@ -19,7 +19,8 @@ rayon = "1.10.0"
 geo-rasterize = "0.1.2"
 proj4rs = "0.1.3"
 geojson = "0.24.1"
-web-sys = "0.3.70"
+web-sys = { version = "0.3.70", features = ["console"] }
+rand_distr = "0.4.3"
 
 # Include reqwest only for non-WASM builds
 #[cfg(not(target_arch = "wasm32"))]
@@ -36,6 +37,7 @@ futures = "0.3.30"
 wasm-bindgen-futures = "0.4.43"
 #[cfg(target_arch = "wasm32")]
 serde-wasm-bindgen = "0.6.5"
+ndarray = "0.16.1"
 
 [lib]
 name = "geo_points"

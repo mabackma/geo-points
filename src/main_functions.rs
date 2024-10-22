@@ -226,6 +226,7 @@ pub fn draw_stands_in_bbox(bbox: &Polygon<f64>, property: &ForestPropertyData, b
 pub fn draw_selected_stand(property: &ForestPropertyData) -> ImageProcessor {
     let mut stand = property.get_stand_cli();
     let polygon = stand.create_polygon();
+    let stand_number: f64 = stand.stand_basic_data.stand_number as f64;
 
     // Create an image for the polygon and random points
     let img_width = 800;
@@ -242,7 +243,7 @@ pub fn draw_selected_stand(property: &ForestPropertyData) -> ImageProcessor {
 
     let summary_stem_count = stand.summary_stem_count();
     let strata = stand.get_strata().expect("No treeStrata/stratums found");
-    let random_trees = generate_random_trees(&polygon, &strata, 1.0);
+    let random_trees = generate_random_trees(&polygon, &strata, 1.0, stand_number);
 
     // Convert the Polygon and the trees to GeoJSON
     let geojson = polygon_to_geojson(&polygon, &random_trees);
