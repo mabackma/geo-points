@@ -292,16 +292,16 @@ impl VirtualForest {
                         
                         let tree_point = point!(x: x, y: y);
 
-                        if let Some(road_point) = road_lines.iter().filter_map(|rl| {
+                        if let Some((mut road_point, road_line)) = road_lines.iter().filter_map(|rl| {
                             // Find the closest point on the road line to the tree point
                             match rl.closest_point(&tree_point) {
-                                // If the point is within the threshold, return the point
-                                Closest::SinglePoint(pt) if Self::is_point_within_threshold(&pt, &tree_point, THRESHOLD) => Some(pt),
+                                // If the point is within the threshold, return the point and the road line
+                                Closest::SinglePoint(pt) if Self::is_point_within_threshold(&pt, &tree_point, THRESHOLD) => Some((pt, rl)),
                                 _ => None,
                             }
                         }).next() {
                             log_1(&format!("Moving point from road").into());
-                            Self::move_point_from_road(&mut x, &mut y, &road_point, &compartment.polygon);
+                            Self::move_point_from_road(&mut x, &mut y, &mut road_point, road_line, &compartment.polygon);
                         }
 
                         vec![
@@ -321,35 +321,46 @@ impl VirtualForest {
         return trees;
     }
 
-    fn move_point_from_road(x: &mut f64, y: &mut f64, road_point: &Point<f64>, compartment: &Polygon<f64>) {
-        let (road_x, road_y) = road_point.x_y();
-        let dx = *x - road_x;
-        let dy = *y - road_y;
+    fn move_point_from_road(x: &mut f64, y: &mut f64, road_point: &mut Point<f64>, road_line: &LineString<f64>, compartment: &Polygon<f64>) {
         let five_meters_x = meters_to_degrees_lon(5.0, *y);
         let five_meters_y = meters_to_degrees_lat(5.0);
         
-        let dist_x = road_point.euclidean_distance(&point!(x: *x, y: road_point.y()));
-        let dist_y = road_point.euclidean_distance(&point!(x: road_point.x(), y: *y));
+        let dx = *x - road_point.x();
+        let dist_x = dx.abs();
 
         // Avoid division by zero
         if dist_x < 1e-9 {
             for dx_multiplier in [-1.0, 1.0] {
-                let new_x = road_x + (dx_multiplier * five_meters_x);
+                let new_x = road_point.x() + (dx_multiplier * five_meters_x);
 
                 if compartment.contains(&point!(x: new_x, y: *y)) {
                     *x = new_x; 
+                    
+                    // Update the road's point after moving on x-axis
+                    if let Closest::SinglePoint(pt) = road_line.closest_point(&point!(x: *x, y: *y)) {
+                        *road_point = pt;
+                    }
+
                     log_1(&format!("Moved tree on x-axis from road").into());
                     break;
                 }
             }
         } else if dist_x < five_meters_x {
             let scale_x = five_meters_x / dist_x;
-            *x = road_x + dx * scale_x;
+            *x = road_point.x() + dx * scale_x;
+
+            // Update the road's point after moving on x-axis
+            if let Closest::SinglePoint(pt) = road_line.closest_point(&point!(x: *x, y: *y)) {
+                *road_point = pt;
+            }
         }
-        
+
+        let dy = *y - road_point.y();
+        let dist_y = (*y - road_point.y()).abs();
+
         if dist_y < 1e-9 {
             for dy_multiplier in [-1.0, 1.0] {
-                let new_y = road_y + (dy_multiplier * five_meters_y);
+                let new_y = road_point.y() + (dy_multiplier * five_meters_y);
 
                 if compartment.contains(&point!(x: *x, y: new_y)) {
                     *y = new_y; 
@@ -359,7 +370,7 @@ impl VirtualForest {
             }
         } else if dist_y < five_meters_y {
             let scale_y = five_meters_y / dist_y;
-            *y = road_y + dy * scale_y;
+            *y = road_point.y() + dy * scale_y;
         }
     }
     
