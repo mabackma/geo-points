@@ -176,7 +176,8 @@ pub fn generate_random_trees(p: &Polygon, strata: &TreeStrata, area_ratio: f64, 
                     stand_number,
                     stratum.tree_species,
                     stratum.mean_height,
-                    (pair[0], pair[1], 0.0)
+                    (pair[0], pair[1], 0.0),
+                    None
                 )
             }).collect();
             trees_strata
@@ -235,6 +236,7 @@ pub fn generate_random_trees_into_buffer(
                         stratum.tree_species,
                         stratum.mean_height,
                         (pair[0], pair[1], 0.0),
+                        None
                     )
                 })
                 .collect();

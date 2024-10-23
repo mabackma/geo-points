@@ -1,6 +1,8 @@
 use crate::forest_property::compartment::{get_compartment_areas_in_bounding_box, get_compartments_in_bounding_box};
 use crate::forest_property::forest_property_data::{ForestPropertyData, RealEstate};
+use crate::forest_property::tree::Tree;
 use crate::forest_property::tree_stand_data::TreeStrata;
+use crate::forest_property::trees::Trees;
 use crate::geojson_utils::{all_compartment_areas_to_geojson, geojson_to_polygons, get_geojson_from_url, roads_geojson_to_linestrings, water_geojson_to_polygons};
 use crate::geometry_utils::get_coords_of_map;
 
@@ -262,7 +264,7 @@ impl VirtualForest {
     }
 
     #[wasm_bindgen]
-    pub fn generate_trees_bbox(&self, min_x: f64, max_x: f64, min_y: f64, max_y: f64) -> Vec<f32> {
+    pub fn generate_trees_bbox(&self, min_x: f64, max_x: f64, min_y: f64, max_y: f64) -> Trees {
         let bbox = Polygon::new(
             LineString(vec![
                 coord!(x: min_x, y: min_y),
@@ -278,45 +280,35 @@ impl VirtualForest {
         let compartments = get_compartments_in_bounding_box(stands, &bbox);
         let road_lines = self.roads.clone().unwrap_or(vec![]);
 
-        let trees = compartments
-            .iter()
-            .flat_map(|compartment| {
-                compartment.trees
-                    .iter()
-                    .filter_map(|tree| {
-                        let (mut x, mut y, z) = tree.position();
-                        let specie = tree.species();
-                        let height = tree.tree_height();
-                        let status = tree.tree_status();
-                        let stand_number = tree.stand_number();
-                        
-                        let tree_point = point!(x: x, y: y);
+        let mut trees = Trees::new(Vec::new(), Vec::new(), Vec::new(), Vec::new(), Vec::new(), Vec::new(), Vec::new());
+        
+        compartments.iter().for_each(|compartment| {
+            compartment.trees.iter().for_each(|tree| {
+                let (mut x, mut y, z) = tree.position();
+                let species = tree.species();
+                let height = tree.tree_height();
+                let status = tree.tree_status();
+                let stand_number = tree.stand_number();
+                
+                let tree_point = point!(x: x, y: y);
 
-                        if let Some((mut road_point, road_line)) = road_lines.iter().filter_map(|rl| {
-                            // Find the closest point on the road line to the tree point
-                            match rl.closest_point(&tree_point) {
-                                // If the point is within the threshold, return the point and the road line
-                                Closest::SinglePoint(pt) if Self::is_point_within_threshold(&pt, &tree_point, THRESHOLD) => Some((pt, rl)),
-                                _ => None,
-                            }
-                        }).next() {
-                            log_1(&format!("Moving point from road").into());
-                            Self::move_point_from_road(&mut x, &mut y, &mut road_point, road_line, &compartment.polygon);
-                        }
+                if let Some((mut road_point, road_line)) = road_lines.iter().filter_map(|rl| {
+                    // Find the closest point on the road line to the tree point
+                    match rl.closest_point(&tree_point) {
+                        // If the point is within the threshold, return the point and the road line
+                        Closest::SinglePoint(pt) if Self::is_point_within_threshold(&pt, &tree_point, THRESHOLD) => Some((pt, rl)),
+                        _ => None,
+                    }
+                }).next() {
+                    log_1(&format!("Moving point from road").into());
+                    Self::move_point_from_road(&mut x, &mut y, &mut road_point, road_line, &compartment.polygon);
+                }
 
-                        vec![
-                            x as f32,
-                            y as f32,
-                            z as f32,
-                            specie as f32,
-                            height,
-                            status as f32,
-                            stand_number as f32,
-                        ].into()  
-                    })
+                let tree = Tree::new(stand_number, species, height, (x, y, z), Some(status));
+                
+                trees.insert(tree);
             })
-            .flatten()
-            .collect::<Vec<f32>>();
+        });
 
         return trees;
     }
