@@ -356,7 +356,7 @@ impl VirtualForest {
         }
 
         let dy = *y - road_point.y();
-        let dist_y = (*y - road_point.y()).abs();
+        let dist_y = dy.abs();
 
         if dist_y < 1e-9 {
             for dy_multiplier in [-1.0, 1.0] {
