@@ -1,4 +1,4 @@
-use crate::forest_property::compartment::{get_compartment_areas_in_bounding_box, get_compartments_in_bounding_box, Compartment};
+use crate::forest_property::compartment::{get_compartment_areas_in_bounding_box, get_compartments_in_bounding_box};
 use crate::forest_property::forest_property_data::{ForestPropertyData, RealEstate};
 use crate::forest_property::tree::Tree;
 use crate::forest_property::tree_stand_data::TreeStrata;
@@ -6,7 +6,7 @@ use crate::forest_property::trees::Trees;
 use crate::geojson_utils::{all_compartment_areas_to_geojson, geojson_to_polygons, get_geojson_from_url, roads_geojson_to_linestrings, water_geojson_to_polygons};
 use crate::geometry_utils::get_coords_of_map;
 
-use geo::{coord, point, BooleanOps, Closest, Contains, EuclideanDistance, LineString, Point, Polygon};
+use geo::{coord, point, BooleanOps, Closest, Contains, LineString, Point, Polygon};
 use geo::algorithm::closest_point::ClosestPoint;
 use geo::algorithm::haversine_distance::HaversineDistance;
 use geojson::GeoJson;
@@ -38,7 +38,7 @@ enum OperationType {
 
 fn check_simulation(op: &OperationType) -> bool {
     match op {
-        OperationType::Simulation(tree_strata_vec) => {
+        OperationType::Simulation(_tree_strata_vec) => {
             // The variant is `Simulation`, and it contains `Vec<TreeStrata>`
             true
         }
@@ -250,7 +250,7 @@ impl VirtualForest {
     }
 
     fn _get_selected_realestate(&self) -> Option<RealEstate> {
-        if let Some((index, result)) = self
+        if let Some((_index, result)) = self
             .property
             .real_estates
             .real_estate
