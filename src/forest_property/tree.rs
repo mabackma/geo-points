@@ -48,6 +48,10 @@ impl Tree {
     pub fn cut_tree(&mut self) {
         self.tree_status = 0.0;
     }
+
+    pub fn set_position(&mut self, position: (f64, f64, f64)) {
+        self.position = position;
+    }
 }
 
 pub fn calculate_height(base_height: f32) -> f32 {

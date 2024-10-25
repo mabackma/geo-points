@@ -289,9 +289,11 @@ impl VirtualForest {
         }
     }
 
-    fn is_point_within_threshold(road_point: &Point<f64>, point: &Point<f64>, threshold_in_meters: f64) -> bool {
+    fn is_point_within_threshold(road_point: &Point<f64>, tree: &mut Tree, threshold_in_meters: f64) -> bool {
+        let point = point!(x: tree.position().0, y: tree.position().1);
+
         // Calculate the minimum distance from the point to any segment of the line
-        let min_distance = road_point.haversine_distance(point);
+        let min_distance = road_point.haversine_distance(&point);
     
         // Check if the minimum distance is within the threshold (e.g., 5 meters)
         min_distance <= threshold_in_meters
@@ -328,42 +330,37 @@ impl VirtualForest {
         let road_lines = self.roads.clone().unwrap_or(vec![]);
         let mut trees = Trees::new(Vec::new(), Vec::new(), Vec::new(), Vec::new(), Vec::new(), Vec::new(), Vec::new());
         
-        compartments.iter().for_each(|compartment| {
-            compartment.trees.iter().for_each(|tree| {
-                let (mut x, mut y, z) = tree.position();
-                let species = tree.species();
-                let height = tree.tree_height();
-                let status = tree.tree_status();
-                let stand_number = tree.stand_number();
-                
+        compartments.iter_mut().for_each(|compartment| {
+            compartment.trees.iter_mut().for_each(|tree| {
+                let (x, y, _) = tree.position();
                 let tree_point = point!(x: x, y: y);
 
                 if let Some((mut road_point, road_line)) = road_lines.iter().filter_map(|rl| {
                     // Find the closest point on the road line to the tree point
                     match rl.closest_point(&tree_point) {
                         // If the point is within the threshold, return the point and the road line
-                        Closest::SinglePoint(pt) if Self::is_point_within_threshold(&pt, &tree_point, THRESHOLD) => Some((pt, rl)),
+                        Closest::SinglePoint(pt) if Self::is_point_within_threshold(&pt, tree, THRESHOLD) => Some((pt, rl)),
                         _ => None,
                     }
                 }).next() {
                     log_1(&format!("Moving point from road").into());
-                    Self::move_point_from_road(&mut x, &mut y, &mut road_point, road_line, &compartment.polygon);
+                    Self::move_point_from_road(tree, &mut road_point, road_line, &compartment.polygon);
                 }
-
-                let tree = Tree::new(stand_number, species, height, (x, y, z), Some(status));
                 
-                trees.insert(tree);
+                trees.insert(*tree);
             })
         });
 
         return trees;
     }
 
-    fn move_point_from_road(x: &mut f64, y: &mut f64, road_point: &mut Point<f64>, road_line: &LineString<f64>, compartment: &Polygon<f64>) {
-        let five_meters_x = meters_to_degrees_lon(5.0, *y);
+    fn move_point_from_road(tree: &mut Tree, road_point: &mut Point<f64>, road_line: &LineString<f64>, compartment: &Polygon<f64>) {
+        let (mut x, mut y, _) = tree.position();
+        
+        let five_meters_x = meters_to_degrees_lon(5.0, y);
         let five_meters_y = meters_to_degrees_lat(5.0);
         
-        let dx = *x - road_point.x();
+        let dx = x - road_point.x();
         let dist_x = dx.abs();
 
         // Avoid division by zero
@@ -371,11 +368,11 @@ impl VirtualForest {
             for dx_multiplier in [-1.0, 1.0] {
                 let new_x = road_point.x() + (dx_multiplier * five_meters_x);
 
-                if compartment.contains(&point!(x: new_x, y: *y)) {
-                    *x = new_x; 
-                    
+                if compartment.contains(&point!(x: new_x, y: y)) {
+                    x = new_x;
+
                     // Update the road's point after moving on x-axis
-                    if let Closest::SinglePoint(pt) = road_line.closest_point(&point!(x: *x, y: *y)) {
+                    if let Closest::SinglePoint(pt) = road_line.closest_point(&point!(x: x, y: y)) {
                         *road_point = pt;
                     }
 
@@ -385,31 +382,34 @@ impl VirtualForest {
             }
         } else if dist_x < five_meters_x {
             let scale_x = five_meters_x / dist_x;
-            *x = road_point.x() + dx * scale_x;
+            x = road_point.x() + dx * scale_x;
 
             // Update the road's point after moving on x-axis
-            if let Closest::SinglePoint(pt) = road_line.closest_point(&point!(x: *x, y: *y)) {
+            if let Closest::SinglePoint(pt) = road_line.closest_point(&point!(x: x, y: y)) {
                 *road_point = pt;
             }
         }
 
-        let dy = *y - road_point.y();
+        let dy = y - road_point.y();
         let dist_y = dy.abs();
 
         if dist_y < 1e-9 {
             for dy_multiplier in [-1.0, 1.0] {
                 let new_y = road_point.y() + (dy_multiplier * five_meters_y);
 
-                if compartment.contains(&point!(x: *x, y: new_y)) {
-                    *y = new_y; 
+                if compartment.contains(&point!(x: x, y: new_y)) {
+                    y = new_y; 
+
                     log_1(&format!("Moved tree on y-axis from road").into());
                     break;
                 }
             }
         } else if dist_y < five_meters_y {
             let scale_y = five_meters_y / dist_y;
-            *y = road_point.y() + dy * scale_y;
+            y = road_point.y() + dy * scale_y;
         }
+
+        tree.set_position((x, y, 0.0));
     }
     
     // Fetches GeoJSON data from the given bounding box and XML content
