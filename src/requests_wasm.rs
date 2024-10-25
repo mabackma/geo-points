@@ -1,5 +1,6 @@
 use crate::forest_property::compartment::{get_compartment_areas_in_bounding_box, get_compartments_in_bounding_box, Compartment};
 use crate::forest_property::forest_property_data::{ForestPropertyData, RealEstate};
+use crate::forest_property::geometry::PolygonGeometry;
 use crate::forest_property::tree::Tree;
 use crate::forest_property::tree_stand_data::TreeStrata;
 use crate::forest_property::trees::Trees;
@@ -13,6 +14,7 @@ use geojson::GeoJson;
 use serde::{Deserialize, Serialize};
 use wasm_bindgen::prelude::wasm_bindgen;
 use wasm_bindgen::JsValue;
+use serde_wasm_bindgen::from_value;
 use web_sys::console::log_1;
 
 const METERS_IN_ONE_DEGREE_LAT: f64 = 111_320.0;
@@ -29,17 +31,17 @@ fn meters_to_degrees_lon(meters: f64, latitude: f64) -> f64 {
 
 const THRESHOLD: f64 = 5.0; // 5 meters in meters
 
-#[derive(Serialize, Deserialize, Clone, PartialEq)]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
 pub enum OperationType {
     Thinning(f64),
     Cutting(f64),
-    Simulation(Vec<TreeStrata>),
+    Simulation(TreeStrata),
 }
 
 pub fn check_simulation(op: &OperationType) -> bool {
     match op {
         OperationType::Simulation(_tree_strata_vec) => {
-            // The variant is `Simulation`, and it contains `Vec<TreeStrata>`
+            // The variant is `Simulation`, and it contains `TreeStrata`
             true
         }
         _ => {
@@ -49,15 +51,15 @@ pub fn check_simulation(op: &OperationType) -> bool {
     }
 }
 
-pub fn get_simulation_strata(op: &OperationType) -> Vec<TreeStrata> {
+pub fn get_simulation_strata(op: &OperationType) -> TreeStrata {
     match op {
-        OperationType::Simulation(tree_strata_vec) => {
+        OperationType::Simulation(tree_strata) => {
             // The variant is `Simulation`, and it contains `Vec<TreeStrata>`
-            tree_strata_vec.to_owned()
+            tree_strata.to_owned()
         }
         _ => {
             // It's not the `Simulation` variant
-            Vec::new()
+            TreeStrata::new(Vec::new())
         }
     }
 }
@@ -70,14 +72,23 @@ pub fn get_cutting_volume(op: &OperationType) -> f64 {
     }
 }
 
-#[derive(Serialize, Deserialize, Clone, PartialEq)]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
 #[wasm_bindgen]
 struct Operation {
     operation_type: OperationType,
     cutting_areas: Vec<Polygon>,
 }
 
-#[derive(Serialize, Deserialize, Clone, PartialEq)]
+impl Operation {
+    pub fn new(operation_type: OperationType, cutting_areas: Vec<Polygon>) -> Self {
+        Operation {
+            operation_type,
+            cutting_areas,
+        }
+    }
+}
+
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
 #[wasm_bindgen]
 struct StandOperation {
     id: u32,
@@ -411,6 +422,51 @@ impl VirtualForest {
 
         tree.set_position((x, y, 0.0));
     }
+    
+    #[wasm_bindgen]
+    pub fn set_operation(
+        &mut self, 
+        stand_id: u32, 
+        operation_name: u32, 
+        area_polygon: String, 
+        cutting_volume: Option<f64>, 
+        new_strata: JsValue
+    ) {
+        let polygon_geometry: PolygonGeometry = serde_json::from_str(&area_polygon)
+            .map_err(|e| JsValue::from_str(&e.to_string())).expect("REASON");
+
+        let polygon = polygon_geometry.polygon_property.polygon.clone();
+        let polygon = polygon.to_geo_polygon();
+ 
+        let mut polygons = Vec::new();
+        polygons.push(polygon.clone());
+
+        let operation_type = match operation_name {
+            1 => OperationType::Cutting(cutting_volume.unwrap_or(0.0)),
+            2 => OperationType::Thinning(cutting_volume.unwrap_or(0.0)),
+            3 => {
+                let strata = if new_strata.is_null() || new_strata.is_undefined() {
+                    TreeStrata::new(Vec::new())
+                } else {
+                    from_value(new_strata).unwrap_or(TreeStrata::new(Vec::new()))
+                };
+                OperationType::Simulation(strata)
+            },
+            _ => OperationType::Cutting(0.0),
+        };
+
+        let operation = Operation::new(operation_type, polygons);
+        let stand_operation = StandOperation {
+            id: self.stand_operations.len() as u32 + 1,
+            stand_id,
+            operation,
+            active_operation: 1,
+        };
+    
+        log_1(&format!("Setting operation: {:#?}", stand_operation).into());
+        self.stand_operations.push(stand_operation);
+    }
+    
     
     // Fetches GeoJSON data from the given bounding box and XML content
     // Returns a GeoJson of stand polygons, building polygons, and a roads multi-linestring
