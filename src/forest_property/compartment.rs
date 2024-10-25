@@ -1,8 +1,9 @@
 use crate::forest_property::tree::Tree;
 use crate::geometry_utils::generate_random_trees;
+use crate::requests_wasm::{check_simulation, get_cutting_volume, get_simulation_strata, OperationType};
 use super::stand::Stand;
 
-use geo::{Polygon, Area, BooleanOps};
+use geo::{Area, BooleanOps, Contains, Polygon};
 use geo::Intersects;
 use rayon::iter::{IntoParallelIterator, ParallelIterator};
 
@@ -55,6 +56,54 @@ impl Compartment {
             let (x, y, _) = tree.position();
             x >= min_x && x <= max_x && y >= min_y && y <= max_y  // Keep the tree if it is inside the bounding box
         }).collect()
+    }
+
+    pub fn operate_compartment(&mut self, op_type: OperationType, areas: Vec<Polygon>) {
+        let cutting_volume = get_cutting_volume(&op_type);
+
+        if op_type == OperationType::Cutting(cutting_volume) {
+
+            // Count the trees within the specified areas
+            let tree_count = self.trees.iter().filter(|tree| {
+                let (x, y, _) = tree.position();
+                areas.iter().any(|area| area.contains(&geo::Point::new(x, y)))
+            }).count();
+
+            // Calculate the number of trees to cut
+            let trees_to_cut = ((cutting_volume / 100.0) * tree_count as f64).round() as usize;
+
+            let mut cut_count = 0;
+            for tree in self.trees.iter_mut() {
+
+                // Check if the tree is within any of the specified areas
+                let (x, y, _) = tree.position();
+                if areas.iter().any(|area| area.contains(&geo::Point::new(x, y))) {
+
+                    // Cut the tree if the number of trees to cut has not been reached
+                    if cut_count < trees_to_cut {
+                        tree.cut_tree();
+                        cut_count += 1;
+                    } else {
+                        break; 
+                    }
+                }
+            }
+        } 
+        
+        if op_type == OperationType::Thinning(cutting_volume) {
+            // Count the trees within the specified areas
+            let tree_count = self.trees.iter().filter(|tree| {
+                let (x, y, _) = tree.position();
+                areas.iter().any(|area| area.contains(&geo::Point::new(x, y)))
+            }).count();
+
+            // implement thinning operation
+        } 
+
+        if check_simulation(&op_type) {
+            // implement simulation operation
+            let strata = get_simulation_strata(&op_type);
+        }
     }
 }
 

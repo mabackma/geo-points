@@ -1,4 +1,4 @@
-use crate::forest_property::compartment::{get_compartment_areas_in_bounding_box, get_compartments_in_bounding_box};
+use crate::forest_property::compartment::{get_compartment_areas_in_bounding_box, get_compartments_in_bounding_box, Compartment};
 use crate::forest_property::forest_property_data::{ForestPropertyData, RealEstate};
 use crate::forest_property::tree::Tree;
 use crate::forest_property::tree_stand_data::TreeStrata;
@@ -30,13 +30,13 @@ fn meters_to_degrees_lon(meters: f64, latitude: f64) -> f64 {
 const THRESHOLD: f64 = 5.0; // 5 meters in meters
 
 #[derive(Serialize, Deserialize, Clone, PartialEq)]
-enum OperationType {
-    Thinning,
-    Cutting,
+pub enum OperationType {
+    Thinning(f64),
+    Cutting(f64),
     Simulation(Vec<TreeStrata>),
 }
 
-fn check_simulation(op: &OperationType) -> bool {
+pub fn check_simulation(op: &OperationType) -> bool {
     match op {
         OperationType::Simulation(_tree_strata_vec) => {
             // The variant is `Simulation`, and it contains `Vec<TreeStrata>`
@@ -49,7 +49,7 @@ fn check_simulation(op: &OperationType) -> bool {
     }
 }
 
-fn get_simulation_strata(op: &OperationType) -> Vec<TreeStrata> {
+pub fn get_simulation_strata(op: &OperationType) -> Vec<TreeStrata> {
     match op {
         OperationType::Simulation(tree_strata_vec) => {
             // The variant is `Simulation`, and it contains `Vec<TreeStrata>`
@@ -59,6 +59,14 @@ fn get_simulation_strata(op: &OperationType) -> Vec<TreeStrata> {
             // It's not the `Simulation` variant
             Vec::new()
         }
+    }
+}
+
+pub fn get_cutting_volume(op: &OperationType) -> f64 {
+    match op {
+        OperationType::Thinning(volume) => *volume,
+        OperationType::Cutting(volume) => *volume,
+        _ => 0.0,
     }
 }
 
@@ -289,51 +297,6 @@ impl VirtualForest {
         min_distance <= threshold_in_meters
     }
 
-    pub fn generate_trees(&self, min_x: f64, max_x: f64, min_y: f64, max_y: f64) -> Trees {
-
-        // Check if there is an active operation
-        if let Some(so) = self.stand_operations.iter().find(|so| so.active_operation == 1) {
-            let op_type = &so.operation.operation_type;
-            let is_simulation = check_simulation(&op_type);
-
-            if is_simulation {
-                let simulation_strata = get_simulation_strata(&op_type);
-                self.generate_trees_from_strata(min_x, max_x, min_y, max_y, so.stand_id)
-            } else {
-                self.generate_trees_operation(min_x, max_x, min_y, max_y, &so.operation, so.stand_id)
-            }
-        } else {
-            // If there is no active operation, generate trees normally
-            self.generate_trees_bbox(min_x, max_x, min_y, max_y)
-        }
-    }
-
-    #[wasm_bindgen]
-    pub fn generate_trees_from_strata(&self, min_x: f64, max_x: f64, min_y: f64, max_y: f64, stand_id: u32 /* , strata: Vec<TreeStrata> */) -> Trees {
-        Trees::new(Vec::new(), Vec::new(), Vec::new(), Vec::new(), Vec::new(), Vec::new(), Vec::new())
-    }
-
-    pub fn generate_trees_operation(&self, min_x: f64, max_x: f64, min_y: f64, max_y: f64, operation: &Operation, stand_id: u32) -> Trees {
-        let bbox = Polygon::new(
-            LineString(vec![
-                coord!(x: min_x, y: min_y),
-                coord!(x: max_x, y: min_y),
-                coord!(x: max_x, y: max_y),
-                coord!(x: min_x, y: max_y),
-                coord!(x: min_x, y: min_y),
-            ]),
-            vec![],
-        );
-
-        let stands = self._get_selected_realestate().unwrap().get_stands();
-        let compartments = get_compartments_in_bounding_box(stands, &bbox);
-        let road_lines = self.roads.clone().unwrap_or(vec![]);
-
-        let mut trees = Trees::new(Vec::new(), Vec::new(), Vec::new(), Vec::new(), Vec::new(), Vec::new(), Vec::new());
-        
-        trees
-    }
-
     #[wasm_bindgen]
     pub fn generate_trees_bbox(&self, min_x: f64, max_x: f64, min_y: f64, max_y: f64) -> Trees {
         let bbox = Polygon::new(
@@ -348,9 +311,21 @@ impl VirtualForest {
         );
 
         let stands = self._get_selected_realestate().unwrap().get_stands();
-        let compartments = get_compartments_in_bounding_box(stands, &bbox);
-        let road_lines = self.roads.clone().unwrap_or(vec![]);
+        let mut compartments = get_compartments_in_bounding_box(stands, &bbox);
+ 
+        if let Some(so) = self.stand_operations.iter().find(|so| so.active_operation == 1) {
+            log_1(&format!("Found active operation").into());
+            let stand_number = so.stand_id.to_string();
+            let op_type = so.operation.operation_type.clone();
+            let areas = so.operation.cutting_areas.clone();
+     
+            if let Some(compartment) = compartments.iter_mut().find(|comp| comp.stand_number == stand_number) {
+                // Operate on the compartment with the specified operation type and areas
+                compartment.operate_compartment(op_type, areas);
+            }
+        }
 
+        let road_lines = self.roads.clone().unwrap_or(vec![]);
         let mut trees = Trees::new(Vec::new(), Vec::new(), Vec::new(), Vec::new(), Vec::new(), Vec::new(), Vec::new());
         
         compartments.iter().for_each(|compartment| {

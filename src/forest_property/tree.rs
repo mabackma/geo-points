@@ -44,6 +44,10 @@ impl Tree {
     pub fn stand_number(&self) -> f64 {
         self.stand_number
     }
+
+    pub fn cut_tree(&mut self) {
+        self.tree_status = 0.0;
+    }
 }
 
 pub fn calculate_height(base_height: f32) -> f32 {
