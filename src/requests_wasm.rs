@@ -334,6 +334,7 @@ impl VirtualForest {
      
             if let Some(compartment) = compartments.iter_mut().find(|comp| comp.stand_number == stand_number) {
                 // Operate on the compartment with the specified operation type and areas
+                log_1(&format!("Operating on compartment with stand number {}", stand_number).into());
                 compartment.operate_compartment(op_type, areas);
             }
         }
@@ -463,7 +464,6 @@ impl VirtualForest {
             active_operation: 1,
         };
     
-        log_1(&format!("Setting operation: {:#?}", stand_operation).into());
         self.stand_operations.push(stand_operation);
     }
     

@@ -1,6 +1,7 @@
 use rand::{thread_rng, Rng};
 use rand_distr::{Distribution, Normal};
 use wasm_bindgen::prelude::wasm_bindgen;
+use web_sys::console::log_1;
 
 #[derive(Default, Debug, Clone, Copy)]
 #[wasm_bindgen]
@@ -47,6 +48,7 @@ impl Tree {
 
     pub fn cut_tree(&mut self) {
         self.tree_status = 0.0;
+        log_1(&format!("Tree status after cutting: {}", self.tree_status).into());
     }
 
     pub fn set_position(&mut self, position: (f64, f64, f64)) {
