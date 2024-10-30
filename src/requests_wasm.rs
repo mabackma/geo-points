@@ -471,7 +471,8 @@ impl VirtualForest {
                 let strata = if new_strata.is_null() || new_strata.is_undefined() {
                     TreeStrata::new(Vec::new())
                 } else {
-                    from_value(new_strata).unwrap_or(TreeStrata::new(Vec::new()))
+                    let json_string = new_strata.as_string().unwrap(); // Get JSON string from JsValue
+                    serde_json::from_str(&json_string).expect("REASON") // Deserialize into TreeStrata
                 };
                 OperationType::Simulation(strata)
             },
@@ -540,7 +541,7 @@ impl VirtualForest {
                 &self.roads.clone().unwrap_or(vec![]),
                 &self.water.clone().unwrap_or(vec![]),
             );
-
+        
             Ok(JsValue::from(geojson.to_string()))
         } else {
             Err(JsValue::from_str("could not create compartments"))

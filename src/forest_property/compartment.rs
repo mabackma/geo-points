@@ -90,7 +90,7 @@ impl Compartment {
 
         if op_type.check_simulation() {
             let strata = op_type.get_simulation_strata();
-            self.simulation(trees_to_cut, &areas, strata);
+            self.simulation(strata);
         }
     }
 
@@ -117,8 +117,11 @@ impl Compartment {
         // implement thinning operation
     }
 
-    fn simulation(&mut self, trees_to_cut: usize, areas: &Vec<Polygon>, strata: TreeStrata) {
-        // implement simulation operation
+    fn simulation(&mut self, strata: TreeStrata) {
+        log_1(&format!("Simulation operation with strata: {:#?}", strata).into());
+        log_1(&format!("Trees in the compartment: {}", self.trees.len()).into());
+        self.trees = generate_random_trees(&self.polygon, &strata, 1.0, self.stand_number.parse().unwrap());
+        log_1(&format!("Trees in the compartment after simulation: {}", self.trees.len()).into());
     }
 }
 
