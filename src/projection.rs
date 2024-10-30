@@ -1,4 +1,5 @@
 use std::fmt;
+use geo::{Coord, Polygon};
 use proj4rs::proj::Proj;
 
 pub struct Projection {
@@ -64,6 +65,31 @@ impl Projection {
         proj4rs::transform::transform(&self.from, &self.to, &mut point_3d).unwrap();
 
         (point_3d.0, point_3d.1)
+    }
+
+    pub fn polygons_3067_to_4326(&self, area_polygons: Vec<Polygon>) -> Vec<Polygon> {
+        let mut areas = Vec::new();
+        
+        for area in area_polygons {
+            let exterior = area.exterior();
+            let exterior_coords: Vec<Coord> = exterior.0.iter().map(|c| {
+                let (x, y) = self.transform(c.x, c.y);
+                geo::Coord::from((x, y))
+            }).collect();
+
+            let interior = area.interiors();
+            let interior_coords = interior.iter().map(|i| {
+                let coords: Vec<Coord> = i.0.iter().map(|c| {
+                    let (x, y) = self.transform(c.x, c.y);
+                    geo::Coord::from((x, y))
+                }).collect();
+                geo::LineString::from(coords)
+            }).collect();
+
+            areas.push(Polygon::new(geo::LineString::from(exterior_coords), interior_coords));
+        }
+        
+        areas
     }
 }
 

@@ -1,16 +1,20 @@
-use crate::forest_property::compartment::{get_compartment_areas_in_bounding_box, get_compartments_in_bounding_box};
+use crate::forest_property::compartment::{get_compartment_areas_in_bounding_box, get_compartments_in_bounding_box, Compartment};
 use crate::forest_property::forest_property_data::{ForestPropertyData, RealEstate};
+use crate::forest_property::geometry::PolygonGeometry;
+use crate::forest_property::tree::Tree;
 use crate::forest_property::tree_stand_data::TreeStrata;
+use crate::forest_property::trees::Trees;
 use crate::geojson_utils::{all_compartment_areas_to_geojson, geojson_to_polygons, get_geojson_from_url, roads_geojson_to_linestrings, water_geojson_to_polygons};
 use crate::geometry_utils::get_coords_of_map;
 
-use geo::{coord, point, BooleanOps, Closest, Contains, EuclideanDistance, LineString, Point, Polygon};
+use geo::{coord, point, BooleanOps, Closest, Contains, LineString, Point, Polygon};
 use geo::algorithm::closest_point::ClosestPoint;
 use geo::algorithm::haversine_distance::HaversineDistance;
 use geojson::GeoJson;
 use serde::{Deserialize, Serialize};
 use wasm_bindgen::prelude::wasm_bindgen;
 use wasm_bindgen::JsValue;
+use serde_wasm_bindgen::from_value;
 use web_sys::console::log_1;
 
 const METERS_IN_ONE_DEGREE_LAT: f64 = 111_320.0;
@@ -27,26 +31,91 @@ fn meters_to_degrees_lon(meters: f64, latitude: f64) -> f64 {
 
 const THRESHOLD: f64 = 5.0; // 5 meters in meters
 
-#[derive(Serialize, Deserialize, Clone, PartialEq)]
-enum OperationType {
-    Thinning,
-    Cutting,
-    Simulation,
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
+pub enum OperationType {
+    Thinning(f64),
+    Cutting(f64),
+    Simulation(TreeStrata),
 }
 
-#[derive(Serialize, Deserialize, Clone, PartialEq)]
+impl OperationType {
+    pub fn new_thinning(volume: f64) -> Self {
+        OperationType::Thinning(volume)
+    }
+
+    pub fn new_cutting(volume: f64) -> Self {
+        OperationType::Cutting(volume)
+    }
+
+    pub fn new_simulation(strata: TreeStrata) -> Self {
+        OperationType::Simulation(strata)
+    }
+
+    pub fn check_simulation(&self) -> bool {
+        match self {
+            OperationType::Simulation(_tree_strata_vec) => {
+                // The variant is `Simulation`, and it contains `TreeStrata`
+                true
+            }
+            _ => {
+                // It's not the `Simulation` variant
+                false
+            }
+        }
+    }
+    
+    pub fn get_simulation_strata(&self) -> TreeStrata {
+        match self {
+            OperationType::Simulation(tree_strata) => {
+                // The variant is `Simulation`, and it contains `Vec<TreeStrata>`
+                tree_strata.to_owned()
+            }
+            _ => {
+                // It's not the `Simulation` variant
+                TreeStrata::new(Vec::new())
+            }
+        }
+    }
+    
+    pub fn get_cutting_volume(&self) -> f64 {
+        match self {
+            OperationType::Thinning(volume) => *volume,
+            OperationType::Cutting(volume) => *volume,
+            _ => 0.0,
+        }
+    }
+
+    pub fn get_type(&self) -> String {
+        match self {
+            OperationType::Thinning(_) => "Thinning".to_string(),
+            OperationType::Cutting(_) => "Cutting".to_string(),
+            OperationType::Simulation(_) => "Simulation".to_string(),
+        }
+    }
+}
+
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
 #[wasm_bindgen]
 struct Operation {
     operation_type: OperationType,
     cutting_areas: Vec<Polygon>,
 }
 
-#[derive(Serialize, Deserialize, Clone, PartialEq)]
+impl Operation {
+    pub fn new(operation_type: OperationType, cutting_areas: Vec<Polygon>) -> Self {
+        Operation {
+            operation_type,
+            cutting_areas,
+        }
+    }
+}
+
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
 #[wasm_bindgen]
 struct StandOperation {
     id: u32,
     stand_id: u32,
-    operations: Vec<TreeStrata>,
+    operation: Operation,
     active_operation: u32,
 }
 
@@ -222,7 +291,7 @@ impl VirtualForest {
     }
 
     fn _get_selected_realestate(&self) -> Option<RealEstate> {
-        if let Some((index, result)) = self
+        if let Some((_index, result)) = self
             .property
             .real_estates
             .real_estate
@@ -253,16 +322,18 @@ impl VirtualForest {
         }
     }
 
-    fn is_point_within_threshold(road_point: &Point<f64>, point: &Point<f64>, threshold_in_meters: f64) -> bool {
+    fn is_point_within_threshold(road_point: &Point<f64>, tree: &mut Tree, threshold_in_meters: f64) -> bool {
+        let point = point!(x: tree.position().0, y: tree.position().1);
+
         // Calculate the minimum distance from the point to any segment of the line
-        let min_distance = road_point.haversine_distance(point);
+        let min_distance = road_point.haversine_distance(&point);
     
         // Check if the minimum distance is within the threshold (e.g., 5 meters)
         min_distance <= threshold_in_meters
     }
 
     #[wasm_bindgen]
-    pub fn generate_trees_bbox(&self, min_x: f64, max_x: f64, min_y: f64, max_y: f64) -> Vec<f32> {
+    pub fn generate_trees_bbox(&self, min_x: f64, max_x: f64, min_y: f64, max_y: f64) -> Trees {
         let bbox = Polygon::new(
             LineString(vec![
                 coord!(x: min_x, y: min_y),
@@ -275,57 +346,55 @@ impl VirtualForest {
         );
 
         let stands = self._get_selected_realestate().unwrap().get_stands();
-        let compartments = get_compartments_in_bounding_box(stands, &bbox);
+        let mut compartments = get_compartments_in_bounding_box(stands, &bbox);
+ 
+        if let Some(so) = self.stand_operations.iter().find(|so| so.active_operation == 1) {
+            log_1(&format!("Found active operation").into());
+            let stand_number = so.stand_id.to_string();
+            let op_type = so.operation.operation_type.clone();
+            let areas = so.operation.cutting_areas.clone();
+     
+            if let Some(compartment) = compartments.iter_mut().find(|comp| comp.stand_number == stand_number) {
+                // Operate on the compartment with the specified operation type and areas
+                log_1(&format!("Operating on compartment with stand number {}", stand_number).into());
+                compartment.operate_compartment(op_type, areas);
+            }
+        }
+
         let road_lines = self.roads.clone().unwrap_or(vec![]);
+        let mut trees = Trees::new(Vec::new(), Vec::new(), Vec::new(), Vec::new(), Vec::new(), Vec::new(), Vec::new());
+        
+        compartments.iter_mut().for_each(|compartment| {
+            compartment.trees.iter_mut().for_each(|tree| {
+                let (x, y, _) = tree.position();
+                let tree_point = point!(x: x, y: y);
 
-        let trees = compartments
-            .iter()
-            .flat_map(|compartment| {
-                compartment.trees
-                    .iter()
-                    .filter_map(|tree| {
-                        let (mut x, mut y, z) = tree.position();
-                        let specie = tree.species();
-                        let height = tree.tree_height();
-                        let status = tree.tree_status();
-                        let stand_number = tree.stand_number();
-                        
-                        let tree_point = point!(x: x, y: y);
-
-                        if let Some((mut road_point, road_line)) = road_lines.iter().filter_map(|rl| {
-                            // Find the closest point on the road line to the tree point
-                            match rl.closest_point(&tree_point) {
-                                // If the point is within the threshold, return the point and the road line
-                                Closest::SinglePoint(pt) if Self::is_point_within_threshold(&pt, &tree_point, THRESHOLD) => Some((pt, rl)),
-                                _ => None,
-                            }
-                        }).next() {
-                            log_1(&format!("Moving point from road").into());
-                            Self::move_point_from_road(&mut x, &mut y, &mut road_point, road_line, &compartment.polygon);
-                        }
-
-                        vec![
-                            x as f32,
-                            y as f32,
-                            z as f32,
-                            specie as f32,
-                            height,
-                            status as f32,
-                            stand_number as f32,
-                        ].into()  
-                    })
+                if let Some((mut road_point, road_line)) = road_lines.iter().filter_map(|rl| {
+                    // Find the closest point on the road line to the tree point
+                    match rl.closest_point(&tree_point) {
+                        // If the point is within the threshold, return the point and the road line
+                        Closest::SinglePoint(pt) if Self::is_point_within_threshold(&pt, tree, THRESHOLD) => Some((pt, rl)),
+                        _ => None,
+                    }
+                }).next() {
+                    log_1(&format!("Moving point from road").into());
+                    Self::move_point_from_road(tree, &mut road_point, road_line, &compartment.polygon);
+                }
+                
+                trees.insert(*tree);
             })
-            .flatten()
-            .collect::<Vec<f32>>();
+        });
 
         return trees;
     }
 
-    fn move_point_from_road(x: &mut f64, y: &mut f64, road_point: &mut Point<f64>, road_line: &LineString<f64>, compartment: &Polygon<f64>) {
-        let five_meters_x = meters_to_degrees_lon(5.0, *y);
+    fn move_point_from_road(tree: &mut Tree, road_point: &mut Point<f64>, road_line: &LineString<f64>, compartment: &Polygon<f64>) {
+        let (mut x, mut y, _) = tree.position();
+        
+        let five_meters_x = meters_to_degrees_lon(5.0, y);
         let five_meters_y = meters_to_degrees_lat(5.0);
         
-        let dx = *x - road_point.x();
+        let dx = x - road_point.x();
         let dist_x = dx.abs();
 
         // Avoid division by zero
@@ -333,11 +402,11 @@ impl VirtualForest {
             for dx_multiplier in [-1.0, 1.0] {
                 let new_x = road_point.x() + (dx_multiplier * five_meters_x);
 
-                if compartment.contains(&point!(x: new_x, y: *y)) {
-                    *x = new_x; 
-                    
+                if compartment.contains(&point!(x: new_x, y: y)) {
+                    x = new_x;
+
                     // Update the road's point after moving on x-axis
-                    if let Closest::SinglePoint(pt) = road_line.closest_point(&point!(x: *x, y: *y)) {
+                    if let Closest::SinglePoint(pt) = road_line.closest_point(&point!(x: x, y: y)) {
                         *road_point = pt;
                     }
 
@@ -347,32 +416,80 @@ impl VirtualForest {
             }
         } else if dist_x < five_meters_x {
             let scale_x = five_meters_x / dist_x;
-            *x = road_point.x() + dx * scale_x;
+            x = road_point.x() + dx * scale_x;
 
             // Update the road's point after moving on x-axis
-            if let Closest::SinglePoint(pt) = road_line.closest_point(&point!(x: *x, y: *y)) {
+            if let Closest::SinglePoint(pt) = road_line.closest_point(&point!(x: x, y: y)) {
                 *road_point = pt;
             }
         }
 
-        let dy = *y - road_point.y();
+        let dy = y - road_point.y();
         let dist_y = dy.abs();
 
         if dist_y < 1e-9 {
             for dy_multiplier in [-1.0, 1.0] {
                 let new_y = road_point.y() + (dy_multiplier * five_meters_y);
 
-                if compartment.contains(&point!(x: *x, y: new_y)) {
-                    *y = new_y; 
+                if compartment.contains(&point!(x: x, y: new_y)) {
+                    y = new_y; 
+
                     log_1(&format!("Moved tree on y-axis from road").into());
                     break;
                 }
             }
         } else if dist_y < five_meters_y {
             let scale_y = five_meters_y / dist_y;
-            *y = road_point.y() + dy * scale_y;
+            y = road_point.y() + dy * scale_y;
         }
+
+        tree.set_position((x, y, 0.0));
     }
+    
+    #[wasm_bindgen]
+    pub fn set_operation(
+        &mut self, 
+        stand_id: u32, 
+        operation_name: u32, 
+        area_polygon: String, 
+        cutting_volume: Option<f64>, 
+        new_strata: JsValue
+    ) {
+        let polygon_geometry: PolygonGeometry = serde_json::from_str(&area_polygon)
+            .map_err(|e| JsValue::from_str(&e.to_string())).expect("REASON");
+
+        let polygon = polygon_geometry.polygon_property.polygon.clone();
+        let polygon = polygon.to_geo_polygon();
+ 
+        let mut polygons = Vec::new();
+        polygons.push(polygon.clone());
+
+        let operation_type = match operation_name {
+            1 => OperationType::Cutting(cutting_volume.unwrap_or(0.0)),
+            2 => OperationType::Thinning(cutting_volume.unwrap_or(0.0)),
+            3 => {
+                let strata = if new_strata.is_null() || new_strata.is_undefined() {
+                    TreeStrata::new(Vec::new())
+                } else {
+                    let json_string = new_strata.as_string().unwrap(); // Get JSON string from JsValue
+                    serde_json::from_str(&json_string).expect("REASON") // Deserialize into TreeStrata
+                };
+                OperationType::Simulation(strata)
+            },
+            _ => OperationType::Cutting(0.0),
+        };
+
+        let operation = Operation::new(operation_type, polygons);
+        let stand_operation = StandOperation {
+            id: self.stand_operations.len() as u32 + 1,
+            stand_id,
+            operation,
+            active_operation: 1,
+        };
+    
+        self.stand_operations.push(stand_operation);
+    }
+    
     
     // Fetches GeoJSON data from the given bounding box and XML content
     // Returns a GeoJson of stand polygons, building polygons, and a roads multi-linestring
@@ -424,7 +541,7 @@ impl VirtualForest {
                 &self.roads.clone().unwrap_or(vec![]),
                 &self.water.clone().unwrap_or(vec![]),
             );
-
+        
             Ok(JsValue::from(geojson.to_string()))
         } else {
             Err(JsValue::from_str("could not create compartments"))

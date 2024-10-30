@@ -1,10 +1,14 @@
 use crate::forest_property::tree::Tree;
 use crate::geometry_utils::generate_random_trees;
+use crate::projection::{Projection, CRS};
+use crate::requests_wasm::{OperationType};
 use super::stand::Stand;
+use super::tree_stand_data::TreeStrata;
 
-use geo::{Polygon, Area, BooleanOps};
+use geo::{Area, BooleanOps, Contains, Coord, Polygon};
 use geo::Intersects;
 use rayon::iter::{IntoParallelIterator, ParallelIterator};
+use web_sys::console::log_1;
 
 // Struct that represents a stand of trees
 
@@ -55,6 +59,69 @@ impl Compartment {
             let (x, y, _) = tree.position();
             x >= min_x && x <= max_x && y >= min_y && y <= max_y  // Keep the tree if it is inside the bounding box
         }).collect()
+    }
+
+    pub fn operate_compartment(&mut self, op_type: OperationType, area_polygons: Vec<Polygon>) {
+        // Make a projection from epsg3067 to epsg4326
+        let projection = Projection::new(CRS::Epsg3067, CRS::Epsg4326);
+        let areas = projection.polygons_3067_to_4326(area_polygons);
+
+        let cutting_volume = op_type.get_cutting_volume();
+
+        // Count the trees within the specified areas
+        let tree_count = self.trees.iter().filter(|tree| {
+            let (x, y, _) = tree.position();
+            areas.iter().any(|area| area.contains(&geo::Point::new(x, y)))
+        }).count();
+    
+        // Calculate the number of trees to cut
+        let trees_to_cut = ((cutting_volume / 100.0) * tree_count as f64).round() as usize;
+        
+        log_1(&format!("{} operation with volume {} on {} / {} trees", op_type.get_type(), cutting_volume, trees_to_cut, tree_count).into());
+        log_1(&format!("Areas: {:?}", areas).into());
+
+        if op_type == OperationType::Cutting(cutting_volume) {
+            self.cutting_operation(trees_to_cut, &areas);
+        } 
+        
+        if op_type == OperationType::Thinning(cutting_volume) {
+            self.thinning_operation(trees_to_cut, &areas);
+        } 
+
+        if op_type.check_simulation() {
+            let strata = op_type.get_simulation_strata();
+            self.simulation(strata);
+        }
+    }
+
+    fn cutting_operation(&mut self, trees_to_cut: usize, areas: &Vec<Polygon>) {
+        let mut cut_count = 0;
+        for tree in self.trees.iter_mut() {
+    
+            // Check if the tree is within any of the specified areas
+            let (x, y, _) = tree.position();
+            if areas.iter().any(|area| area.contains(&geo::Point::new(x, y))) {
+    
+                // Cut the tree if the number of trees to cut has not been reached
+                if cut_count < trees_to_cut {
+                    tree.cut_tree();
+                    cut_count += 1;
+                } else {
+                    break; 
+                }
+            }
+        }
+    }
+
+    fn thinning_operation(&mut self, trees_to_cut: usize, areas: &Vec<Polygon>) {
+        // implement thinning operation
+    }
+
+    fn simulation(&mut self, strata: TreeStrata) {
+        log_1(&format!("Simulation operation with strata: {:#?}", strata).into());
+        log_1(&format!("Trees in the compartment: {}", self.trees.len()).into());
+        self.trees = generate_random_trees(&self.polygon, &strata, 1.0, self.stand_number.parse().unwrap());
+        log_1(&format!("Trees in the compartment after simulation: {}", self.trees.len()).into());
     }
 }
 

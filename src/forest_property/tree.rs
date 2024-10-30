@@ -1,7 +1,10 @@
 use rand::{thread_rng, Rng};
 use rand_distr::{Distribution, Normal};
+use wasm_bindgen::prelude::wasm_bindgen;
+use web_sys::console::log_1;
 
 #[derive(Default, Debug, Clone, Copy)]
+#[wasm_bindgen]
 pub struct Tree {
     stand_number: f64,
     species: u8,
@@ -11,7 +14,7 @@ pub struct Tree {
 }
 
 impl Tree {
-    pub fn new(stand_number: f64, species: u8, mean_height: f32, position: (f64, f64, f64)) -> Self {
+    pub fn new(stand_number: f64, species: u8, mean_height: f32, position: (f64, f64, f64), tree_status: Option<f64>) -> Self {
         let height = calculate_height(mean_height);
 
         Tree {
@@ -19,7 +22,7 @@ impl Tree {
             species,
             tree_height: height,
             position,
-            tree_status: 1.0,
+            tree_status: tree_status.unwrap_or(1.0),
         }
     }
 
@@ -41,6 +44,15 @@ impl Tree {
 
     pub fn stand_number(&self) -> f64 {
         self.stand_number
+    }
+
+    pub fn cut_tree(&mut self) {
+        self.tree_status = 0.0;
+        log_1(&format!("Tree status after cutting: {}", self.tree_status).into());
+    }
+
+    pub fn set_position(&mut self, position: (f64, f64, f64)) {
+        self.position = position;
     }
 }
 

@@ -1,4 +1,5 @@
 use serde::{Deserialize, Serialize};
+
 #[derive(Serialize, Deserialize, Debug,Default, Clone, PartialEq)]
 #[serde(rename_all = "camelCase")]
 pub struct PolygonGeometry {
@@ -52,6 +53,14 @@ pub struct Polygon {
     pub exterior: Exterior,
 }
 
+impl Polygon {
+    pub fn to_geo_polygon(&self) -> geo_types::Polygon<f64> {
+        let exterior = self.exterior.linear_ring.to_geo_line_string();
+        let interiors = self.interior.iter().map(|i| i.linear_ring.to_geo_line_string()).collect();
+        geo_types::Polygon::new(exterior, interiors)
+    }
+}
+
 #[derive(Serialize, Deserialize, Debug,Default, Clone, PartialEq)]
 #[serde(rename_all = "camelCase")]
 pub struct Interior {
@@ -78,4 +87,19 @@ pub struct LinearRing {
     pub text: Option<String>,
     #[serde(rename = "coordinates")]
     pub coordinates: String,
+}
+
+use geo_types::{LineString, Coordinate};
+
+impl LinearRing {
+    pub fn to_geo_line_string(&self) -> LineString<f64> {
+        let coords: Vec<Coordinate<f64>> = self.coordinates.split_whitespace().map(|c| {
+            let mut split = c.split(",");
+            let x = split.next().unwrap().parse::<f64>().unwrap();
+            let y = split.next().unwrap().parse::<f64>().unwrap();
+            Coordinate { x, y } // Create a Coord from x and y
+        }).collect();
+
+        LineString(coords) // Create a LineString from the vector of Coord
+    }
 }
