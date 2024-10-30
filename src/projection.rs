@@ -1,7 +1,6 @@
 use std::fmt;
 use geo::{Coord, Polygon};
 use proj4rs::proj::Proj;
-use web_sys::console::log_1;
 
 pub struct Projection {
     from: Proj,

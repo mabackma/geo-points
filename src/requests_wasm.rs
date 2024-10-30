@@ -38,37 +38,59 @@ pub enum OperationType {
     Simulation(TreeStrata),
 }
 
-pub fn check_simulation(op: &OperationType) -> bool {
-    match op {
-        OperationType::Simulation(_tree_strata_vec) => {
-            // The variant is `Simulation`, and it contains `TreeStrata`
-            true
-        }
-        _ => {
-            // It's not the `Simulation` variant
-            false
+impl OperationType {
+    pub fn new_thinning(volume: f64) -> Self {
+        OperationType::Thinning(volume)
+    }
+
+    pub fn new_cutting(volume: f64) -> Self {
+        OperationType::Cutting(volume)
+    }
+
+    pub fn new_simulation(strata: TreeStrata) -> Self {
+        OperationType::Simulation(strata)
+    }
+
+    pub fn check_simulation(&self) -> bool {
+        match self {
+            OperationType::Simulation(_tree_strata_vec) => {
+                // The variant is `Simulation`, and it contains `TreeStrata`
+                true
+            }
+            _ => {
+                // It's not the `Simulation` variant
+                false
+            }
         }
     }
-}
-
-pub fn get_simulation_strata(op: &OperationType) -> TreeStrata {
-    match op {
-        OperationType::Simulation(tree_strata) => {
-            // The variant is `Simulation`, and it contains `Vec<TreeStrata>`
-            tree_strata.to_owned()
-        }
-        _ => {
-            // It's not the `Simulation` variant
-            TreeStrata::new(Vec::new())
+    
+    pub fn get_simulation_strata(&self) -> TreeStrata {
+        match self {
+            OperationType::Simulation(tree_strata) => {
+                // The variant is `Simulation`, and it contains `Vec<TreeStrata>`
+                tree_strata.to_owned()
+            }
+            _ => {
+                // It's not the `Simulation` variant
+                TreeStrata::new(Vec::new())
+            }
         }
     }
-}
+    
+    pub fn get_cutting_volume(&self) -> f64 {
+        match self {
+            OperationType::Thinning(volume) => *volume,
+            OperationType::Cutting(volume) => *volume,
+            _ => 0.0,
+        }
+    }
 
-pub fn get_cutting_volume(op: &OperationType) -> f64 {
-    match op {
-        OperationType::Thinning(volume) => *volume,
-        OperationType::Cutting(volume) => *volume,
-        _ => 0.0,
+    pub fn get_type(&self) -> String {
+        match self {
+            OperationType::Thinning(_) => "Thinning".to_string(),
+            OperationType::Cutting(_) => "Cutting".to_string(),
+            OperationType::Simulation(_) => "Simulation".to_string(),
+        }
     }
 }
 
