@@ -91,6 +91,31 @@ impl Projection {
         
         areas
     }
+
+    pub fn polygons_4326_to_3067(&self, area_polygons: Vec<Polygon>) -> Vec<Polygon> {
+        let mut areas = Vec::new();
+        
+        for area in area_polygons {
+            let exterior = area.exterior();
+            let exterior_coords: Vec<Coord> = exterior.0.iter().map(|c| {
+                let (x, y) = self.transform_back(c.x, c.y);
+                geo::Coord::from((x, y))
+            }).collect();
+
+            let interior = area.interiors();
+            let interior_coords = interior.iter().map(|i| {
+                let coords: Vec<Coord> = i.0.iter().map(|c| {
+                    let (x, y) = self.transform_back(c.x, c.y);
+                    geo::Coord::from((x, y))
+                }).collect();
+                geo::LineString::from(coords)
+            }).collect();
+
+            areas.push(Polygon::new(geo::LineString::from(exterior_coords), interior_coords));
+        }
+        
+        areas
+    }
 }
 
 // Implement Debug for Projection

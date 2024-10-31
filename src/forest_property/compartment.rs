@@ -122,16 +122,19 @@ impl Compartment {
 
     fn calculate_thinning_distance(&self, areas: &Vec<Polygon>, trees_left: f64) -> f64 {
         let mut radius = 0.1; 
-        // TODO: Convert to meters
-        //let total_area = areas.iter().fold(0.0, |acc, area| acc + area.unsigned_area());
-        let total_area = 100000.0;
+
+        // Project areas to EPSG:3067 for area calculation in m^2
+        let proj = Projection::new(CRS::Epsg4326, CRS::Epsg3067);
+        let areas = proj.polygons_4326_to_3067(areas.clone());
+        let total_area = areas.iter().fold(0.0, |acc, area| acc + area.unsigned_area());
+        
         let ratio_fix = 2.0;
         let square_to_circle_ratio = 1.273 / ratio_fix;
 
         let tree_needed_area = total_area / trees_left / square_to_circle_ratio;
-        log_1(&format!("Trees left: {}", trees_left).into());
+        log_1(&format!("Trees left after thinning: {}", trees_left).into());
         log_1(&format!("Total area: {}", total_area).into());
-        log_1(&format!("Tree needed area: {}", tree_needed_area).into());
+        log_1(&format!("Tree-needed area: {}", tree_needed_area).into());
         radius = (tree_needed_area / std::f64::consts::PI).sqrt();
         radius = radius.max(0.1); 
 
@@ -160,7 +163,7 @@ impl Compartment {
     // Thinning Logic: The trees that are added to all_removed_positions will be the ones to be removed
     // Points to be removed have neighbors that are too close together.
     fn thinning_operation(&mut self, thinning_distance: f64, trees_to_cut: usize, areas: &Vec<Polygon<f64>>) {
-        log_1(&format!("Thinning operation with distance: {} and trees to cut: {}", thinning_distance, trees_to_cut).into());
+        log_1(&format!("Thinning operation with distance: {} and {} trees to cut", thinning_distance, trees_to_cut).into());
         let mut all_removed_positions = HashSet::new();
 
         for area in areas {
@@ -192,7 +195,7 @@ impl Compartment {
                     if all_removed_positions.len() + removed_positions_in_area.len() >= trees_to_cut {
                         break;
                     }
-                    
+
                     if HaversineDistance::haversine_distance(&tree_point.0, &other_point.0) < thinning_distance {
                         removed_positions_in_area.insert(tree_point);
                         break;
