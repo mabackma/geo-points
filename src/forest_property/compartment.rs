@@ -13,6 +13,7 @@ use geo::Intersects;
 use rayon::iter::{IntoParallelIterator, ParallelIterator};
 use web_sys::console::log_1;
 use std::hash::{Hash, Hasher};
+use rand::seq::SliceRandom;
 
 #[derive(Debug, Clone)]
 struct HashablePoint(Point<f64>);
@@ -167,7 +168,7 @@ impl Compartment {
         let mut all_removed_positions = HashSet::new();
 
         for area in areas {
-            let trees_in_area: Vec<_> = self.trees.iter()
+            let mut trees_in_area: Vec<_> = self.trees.iter()
                 .filter(|tree| {
                     let (x, y, _) = tree.position();
                     area.contains(&Point::new(x, y))
@@ -175,6 +176,9 @@ impl Compartment {
                 .cloned()
                 .collect();
 
+            // Shuffle trees within the area before thinning
+            trees_in_area.shuffle(&mut rand::thread_rng());
+            
             let mut removed_positions_in_area = HashSet::new();
 
             for (i, tree) in trees_in_area.iter().enumerate() {
