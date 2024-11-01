@@ -1,17 +1,41 @@
+use std::collections::HashSet;
+
 use crate::forest_property::tree::Tree;
 use crate::geometry_utils::generate_random_trees;
 use crate::projection::{Projection, CRS};
-use crate::requests_wasm::{OperationType};
+use crate::requests_wasm::OperationType;
 use super::stand::Stand;
 use super::tree_stand_data::TreeStrata;
 
-use geo::{Area, BooleanOps, Contains, Coord, Polygon};
+use geo::{BooleanOps, Contains, HaversineDistance, Point, Polygon};
+use geo::algorithm::area::Area;
 use geo::Intersects;
 use rayon::iter::{IntoParallelIterator, ParallelIterator};
 use web_sys::console::log_1;
+use std::hash::{Hash, Hasher};
+use rand::seq::SliceRandom;
+
+#[derive(Debug, Clone)]
+struct HashablePoint(Point<f64>);
+
+impl Hash for HashablePoint {
+    fn hash<H: Hasher>(&self, state: &mut H) {
+        // Access x and y coordinates directly from Point
+        let (x, y) = (self.0.x(), self.0.y());
+        x.to_bits().hash(state); // Hash the x-coordinate
+        y.to_bits().hash(state); // Hash the y-coordinate
+    }
+}
+
+impl PartialEq for HashablePoint {
+    fn eq(&self, other: &Self) -> bool {
+        self.0 == other.0
+    }
+}
+
+impl Eq for HashablePoint {}
 
 // Struct that represents a stand of trees
-
 #[derive(Debug, Clone)]
 pub struct Compartment {
     pub stand_number: String,
@@ -85,7 +109,10 @@ impl Compartment {
         } 
         
         if op_type == OperationType::Thinning(cutting_volume) {
-            self.thinning_operation(trees_to_cut, &areas);
+            let trees_left = tree_count - trees_to_cut;
+            let thinning_distance = self.calculate_thinning_distance(&areas, trees_left as f64);
+
+            self.thinning_operation(thinning_distance, trees_to_cut, &areas);
         } 
 
         if op_type.check_simulation() {
@@ -94,6 +121,27 @@ impl Compartment {
         }
     }
 
+    fn calculate_thinning_distance(&self, areas: &Vec<Polygon>, trees_left: f64) -> f64 {
+        let mut radius = 0.1; 
+
+        // Project areas to EPSG:3067 for area calculation in m^2
+        let proj = Projection::new(CRS::Epsg4326, CRS::Epsg3067);
+        let areas = proj.polygons_4326_to_3067(areas.clone());
+        let total_area = areas.iter().fold(0.0, |acc, area| acc + area.unsigned_area());
+        
+        let ratio_fix = 2.0;
+        let square_to_circle_ratio = 1.273 / ratio_fix;
+
+        let tree_needed_area = total_area / trees_left / square_to_circle_ratio;
+        log_1(&format!("Trees left after thinning: {}", trees_left).into());
+        log_1(&format!("Total area: {}", total_area).into());
+        log_1(&format!("Tree-needed area: {}", tree_needed_area).into());
+        radius = (tree_needed_area / std::f64::consts::PI).sqrt();
+        radius = radius.max(0.1); 
+
+        radius * 2.0
+    }
+    
     fn cutting_operation(&mut self, trees_to_cut: usize, areas: &Vec<Polygon>) {
         let mut cut_count = 0;
         for tree in self.trees.iter_mut() {
@@ -113,8 +161,71 @@ impl Compartment {
         }
     }
 
-    fn thinning_operation(&mut self, trees_to_cut: usize, areas: &Vec<Polygon>) {
-        // implement thinning operation
+    // Thinning Logic: The trees that are added to all_removed_positions will be the ones to be removed
+    // Points to be removed have neighbors that are too close together.
+    fn thinning_operation(&mut self, thinning_distance: f64, trees_to_cut: usize, areas: &Vec<Polygon<f64>>) {
+        log_1(&format!("Thinning operation with distance: {} and {} trees to cut", thinning_distance, trees_to_cut).into());
+        let mut all_removed_positions = HashSet::new();
+
+        for area in areas {
+            let mut trees_in_area: Vec<_> = self.trees.iter()
+                .filter(|tree| {
+                    let (x, y, _) = tree.position();
+                    area.contains(&Point::new(x, y))
+                })
+                .cloned()
+                .collect();
+
+            // Shuffle trees within the area before thinning
+            trees_in_area.shuffle(&mut rand::thread_rng());
+            
+            let mut removed_positions_in_area = HashSet::new();
+
+            for (i, tree) in trees_in_area.iter().enumerate() {
+                let (tree_x, tree_y, _) = tree.position();
+                let tree_point = HashablePoint(Point::new(tree_x, tree_y)); // Use the wrapper type
+
+                // Skip trees that are already marked for removal in this area
+                if removed_positions_in_area.contains(&tree_point) {
+                    continue;
+                }
+
+                // Check all remaining trees in the area for thinning distance
+                for other_tree in trees_in_area.iter().skip(i + 1) {
+                    let (other_x, other_y, _) = other_tree.position();
+                    let other_point = HashablePoint(Point::new(other_x, other_y)); // Use the wrapper type
+
+                    // Stop thinning if we exceed the trees_to_cut limit
+                    if all_removed_positions.len() + removed_positions_in_area.len() >= trees_to_cut {
+                        break;
+                    }
+
+                    if HaversineDistance::haversine_distance(&tree_point.0, &other_point.0) < thinning_distance {
+                        removed_positions_in_area.insert(tree_point);
+                        break;
+                    }
+                }
+            }
+
+            all_removed_positions.extend(removed_positions_in_area);
+
+            // Stop thinning if we exceed the trees_to_cut limit
+            if all_removed_positions.len() >= trees_to_cut {
+                break; 
+            }
+        }
+
+        log_1(&format!("Removing {} trees", all_removed_positions.len()).into());
+
+        // Cut the trees based on `all_removed_positions`
+        for tree in self.trees.iter_mut() {
+            let (tree_x, tree_y, _) = tree.position();
+            let tree_point = HashablePoint(Point::new(tree_x, tree_y));
+            
+            if all_removed_positions.contains(&tree_point) {
+                tree.cut_tree();
+            }
+        }
     }
 
     fn simulation(&mut self, strata: TreeStrata) {
