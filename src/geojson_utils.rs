@@ -116,7 +116,7 @@ fn convert_linestrings_to_feature(line_strings: &Vec<LineString>) -> Feature {
 }
 
 // Function to convert a Tree into a GeoJSON Feature
-fn convert_tree_to_feature(tree: &Tree) -> Feature {
+pub fn convert_tree_to_feature(tree: &Tree) -> Feature {
     let point = vec![tree.position().0, tree.position().1];
     let point_geometry = GeoJsonGeometry {
         bbox: None,
@@ -126,6 +126,8 @@ fn convert_tree_to_feature(tree: &Tree) -> Feature {
 
     let mut properties = serde_json::Map::new();
     properties.insert("species".to_string(), serde_json::json!(tree.species()));
+    properties.insert("stand_number".to_string(), serde_json::json!(tree.stand_number()));
+    properties.insert("status".to_string(), serde_json::json!(tree.tree_status()));
 
     Feature {
         geometry: Some(point_geometry),

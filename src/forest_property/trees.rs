@@ -1,5 +1,8 @@
-use crate::forest_property::tree::Tree;
+use crate::{forest_property::tree::Tree, geojson_utils::convert_tree_to_feature};
 
+use geo::Point;
+use geojson::{Feature, FeatureCollection, GeoJson};
+use serde_wasm_bindgen::to_value;
 use wasm_bindgen::prelude::wasm_bindgen;
 use wasm_bindgen::JsValue;
 use web_sys::js_sys::{self, Array};
@@ -64,6 +67,40 @@ impl Trees {
             let this = JsValue::null();
             callback.call1(&this, &tree_args).unwrap();
         }
+    }
+
+    pub fn to_geojson(&self) -> JsValue {
+        let mut trees = Vec::new();
+        let trees_length = self.x.len();
+
+        for i in 0..trees_length {
+            let stand_number = self.stand_number[i] as f64;
+            let species = self.species[i];
+            let height = self.height[i];
+            let position = (self.x[i] as f64, self.y[i] as f64, self.z[i] as f64);
+            let status = self.status[i] as f64;
+
+            let tree = Tree::new(stand_number, species, height, position, Some(status));
+            trees.push(tree);
+        }
+
+        // Convert the trees to GeoJSON
+        let tree_features: Vec<Feature> = trees.iter().map(|tree| convert_tree_to_feature(tree)).collect();
+
+        // Create the GeoJSON FeatureCollection
+        let feature_collection = FeatureCollection {
+            features: tree_features,
+            bbox: None,
+            foreign_members: None,
+        };
+
+        // Return a GeoJson object
+        let geojson = GeoJson::FeatureCollection(feature_collection);
+
+        let geojson_string = geojson.to_string();
+        
+        // Convert the String to JsValue
+        JsValue::from_str(&geojson_string)
     }
 
     // Getters for each field returning JavaScript arrays
