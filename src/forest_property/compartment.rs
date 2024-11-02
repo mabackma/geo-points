@@ -125,7 +125,7 @@ impl Compartment {
         let mut radius = 0.1; 
 
         // Project areas to EPSG:3067 for area calculation in m^2
-        let proj = Projection::new(CRS::Epsg4326, CRS::Epsg3067);
+        let proj = Projection::new(CRS::Epsg3067, CRS::Epsg4326);
         let areas = proj.polygons_4326_to_3067(areas.clone());
         let total_area = areas.iter().fold(0.0, |acc, area| acc + area.unsigned_area());
         

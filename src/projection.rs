@@ -48,6 +48,7 @@ impl Projection {
         self
     }
 
+    // Converts EPSG:3067 to EPSG:4326 (meters to degrees).
     pub fn transform(&self, x:f64, y:f64) -> (f64, f64) {
 
         let mut point_3d = (x, y, 0.0);
@@ -58,11 +59,12 @@ impl Projection {
         (point_3d.0.to_degrees(), point_3d.1.to_degrees())
     }
 
-    pub fn transform_back(&self, x:f64, y:f64) -> (f64, f64) {
+    // Converts EPSG:4326 to EPSG:3067 (degrees to meters).
+    pub fn transform_inverse(&self, x:f64, y:f64) -> (f64, f64) {
         // Convert degrees to radians
         let mut point_3d = (x.to_radians(), y.to_radians(), 0.0);
 
-        proj4rs::transform::transform(&self.from, &self.to, &mut point_3d).unwrap();
+        proj4rs::transform::transform(&self.to, &self.from, &mut point_3d).unwrap();
 
         (point_3d.0, point_3d.1)
     }
@@ -98,14 +100,14 @@ impl Projection {
         for area in area_polygons {
             let exterior = area.exterior();
             let exterior_coords: Vec<Coord> = exterior.0.iter().map(|c| {
-                let (x, y) = self.transform_back(c.x, c.y);
+                let (x, y) = self.transform_inverse(c.x, c.y);
                 geo::Coord::from((x, y))
             }).collect();
 
             let interior = area.interiors();
             let interior_coords = interior.iter().map(|i| {
                 let coords: Vec<Coord> = i.0.iter().map(|c| {
-                    let (x, y) = self.transform_back(c.x, c.y);
+                    let (x, y) = self.transform_inverse(c.x, c.y);
                     geo::Coord::from((x, y))
                 }).collect();
                 geo::LineString::from(coords)
