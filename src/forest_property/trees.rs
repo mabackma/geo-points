@@ -16,7 +16,7 @@ pub struct Trees {
     species: Vec<u8>,
     height: Vec<f32>,
     status: Vec<u8>,
-    stand_number: Vec<u16>,
+    stand_id: Vec<u16>,
 }
 
 #[wasm_bindgen]
@@ -29,7 +29,7 @@ impl Trees {
         species: Vec<u8>,
         height: Vec<f32>,
         status: Vec<u8>,
-        stand_number: Vec<u16>,
+        stand_id: Vec<u16>,
     ) -> Trees {
         Trees {
             x,
@@ -38,7 +38,7 @@ impl Trees {
             species,
             height,
             status,
-            stand_number,
+            stand_id,
         }
     }
 
@@ -49,7 +49,7 @@ impl Trees {
         self.species.push(tree.species());
         self.height.push(tree.tree_height());
         self.status.push(tree.tree_status() as u8);
-        self.stand_number.push(tree.stand_number() as u16);
+        self.stand_id.push(tree.stand_id() as u16);
     }
 
     pub fn for_each(&self, callback: &Function) {
@@ -62,7 +62,7 @@ impl Trees {
             tree_args.push(&JsValue::from(self.species[i]));
             tree_args.push(&JsValue::from_f64(self.height[i] as f64));
             tree_args.push(&JsValue::from(self.status[i]));
-            tree_args.push(&JsValue::from(self.stand_number[i]));
+            tree_args.push(&JsValue::from(self.stand_id[i]));
 
             let this = JsValue::null();
             callback.call1(&this, &tree_args).unwrap();
@@ -74,13 +74,13 @@ impl Trees {
         let trees_length = self.x.len();
 
         for i in 0..trees_length {
-            let stand_number = self.stand_number[i] as f64;
+            let stand_id = self.stand_id[i] as f64;
             let species = self.species[i];
             let height = self.height[i];
             let position = (self.x[i] as f64, self.y[i] as f64, self.z[i] as f64);
             let status = self.status[i] as f64;
 
-            let tree = Tree::new(stand_number, species, height, position, Some(status));
+            let tree = Tree::new(stand_id, species, height, position, Some(status));
             trees.push(tree);
         }
 
@@ -159,9 +159,9 @@ impl Trees {
     }
 
     #[wasm_bindgen]
-    pub fn stand_number(&self) -> Array {
+    pub fn stand_id(&self) -> Array {
         let array = Array::new();
-        for &val in &self.stand_number {
+        for &val in &self.stand_id {
             array.push(&JsValue::from_f64(val as f64));
         }
         array

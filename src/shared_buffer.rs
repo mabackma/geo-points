@@ -34,13 +34,13 @@ impl SharedBuffer {
         self.len
     }
 
-    /// Fills the buffer with data for a single tree (stand_number, x, y, species, tree_height, tree_status=1.0)
+    /// Fills the buffer with data for a single tree (stand_id, x, y, species, tree_height, tree_status=1.0)
     /// `index` is the index of the tree in the buffer (0-based)
-    pub fn fill_tree(&self, index: usize, stand_number: f64, x: f64, y: f64, species: u8, tree_height: f32) {
-        let base = index * 6; // 6 values per tree: stand_number, x, y, species, tree_height, tree_status
+    pub fn fill_tree(&self, index: usize, stand_id: f64, x: f64, y: f64, species: u8, tree_height: f32) {
+        let base = index * 6; // 6 values per tree: stand_id, x, y, species, tree_height, tree_status
         if base + 6 < self.len && species != 0 {
             unsafe {
-                *self.ptr.add(base) = stand_number;     // stand id in f64
+                *self.ptr.add(base) = stand_id;     // stand id in f64
                 *self.ptr.add(base + 1) = x;           // x coordinate
                 *self.ptr.add(base + 2) = y;       // y coordinate
                 *self.ptr.add(base + 3) = species as f64; // species as u8 stored in f64
@@ -51,7 +51,7 @@ impl SharedBuffer {
     }
 
     /// Clears trees from chosen stand. 
-    pub fn forest_clearing(&self, stand_number: f64, amount: usize, tree_count: usize, area_ratio: f64) {
+    pub fn forest_clearing(&self, stand_id: f64, amount: usize, tree_count: usize, area_ratio: f64) {
         let mut rng = rand::thread_rng();
         let mut indices = HashSet::new();
         let mut trees_cleared = 0;
@@ -64,7 +64,7 @@ impl SharedBuffer {
                 let base = index * 6;
 
                 unsafe {
-                    if base + 6 < self.len && *self.ptr.add(base) == stand_number {
+                    if base + 6 < self.len && *self.ptr.add(base) == stand_id {
                         *self.ptr.add(base + 5) = 0.0; // Change tree status to 0.0 (stump)
                         trees_cleared += 1;
                     }

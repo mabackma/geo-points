@@ -38,22 +38,22 @@ impl Eq for HashablePoint {}
 // Struct that represents a stand of trees
 #[derive(Debug, Clone)]
 pub struct Compartment {
-    pub stand_number: String,
+    pub stand_id: String,
     pub trees: Vec<Tree>,
     pub polygon: Polygon,
 }
 
 impl Compartment {
-    pub fn new(stand_number: String, trees: Vec<Tree>, polygon: Polygon) -> Self {
+    pub fn new(stand_id: String, trees: Vec<Tree>, polygon: Polygon) -> Self {
         Compartment {
-            stand_number,
+            stand_id,
             trees,
             polygon,
         }
     }
 
-    pub fn stand_number(&self) -> &String {
-        &self.stand_number
+    pub fn stand_id(&self) -> &String {
+        &self.stand_id
     }
 
     pub fn trees(&self) -> &Vec<Tree> {
@@ -231,7 +231,7 @@ impl Compartment {
     fn simulation(&mut self, strata: TreeStrata) {
         log_1(&format!("Simulation operation with strata: {:#?}", strata).into());
         log_1(&format!("Trees in the compartment: {}", self.trees.len()).into());
-        self.trees = generate_random_trees(&self.polygon, &strata, 1.0, self.stand_number.parse().unwrap());
+        self.trees = generate_random_trees(&self.polygon, &strata, 1.0, self.stand_id.parse().unwrap());
         log_1(&format!("Trees in the compartment after simulation: {}", self.trees.len()).into());
     }
 }
@@ -267,7 +267,7 @@ pub fn get_compartments_in_bounding_box(
             .map(|stand| {
                 let polygon = stand.computed_polygon.to_owned().unwrap();
                 let strata = stand.get_strata();
-                let stand_number = stand.stand_basic_data.stand_number as f64;
+                let stand_id = stand.id.parse::<f64>().unwrap();
 
                 // Clip the stand's polygon to the bounding box
                 let intersected_polygons = polygon.intersection(bbox).0;
@@ -282,14 +282,14 @@ pub fn get_compartments_in_bounding_box(
 
                 // Generate trees if strata exist
                 let trees = if let Some(strata) = strata {
-                    generate_random_trees(&clipped_polygon, &strata, area_ratio, stand_number)
+                    generate_random_trees(&clipped_polygon, &strata, area_ratio, stand_id)
                 } else {
                     vec![]
                 };
 
                 // Create and return the compartment
                 Compartment {
-                    stand_number: stand.stand_basic_data.stand_number.to_string(),
+                    stand_id: stand.id.clone(),
                     trees,
                     polygon: clipped_polygon,
                 }
@@ -303,7 +303,7 @@ pub fn get_compartments_in_bounding_box(
 }
 
 pub struct CompartmentArea {
-    pub stand_number: String,
+    pub stand_id: String,
     pub polygon: Polygon,
 }
 
@@ -350,7 +350,7 @@ pub fn get_compartment_areas_in_bounding_box(
             total_tree_count += stand.summary_stem_count().unwrap_or(0) as usize;
             // Add to the compartment areas list
             compartment_areas.push(CompartmentArea {
-                stand_number: stand.stand_basic_data.stand_number.to_string(),
+                stand_id: stand.id.clone(),
                 polygon: clipped_polygon,
             });
         }
