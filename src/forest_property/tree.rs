@@ -6,7 +6,7 @@ use web_sys::console::log_1;
 #[derive(Default, Debug, Clone, Copy)]
 #[wasm_bindgen]
 pub struct Tree {
-    stand_number: f64,
+    stand_id: f64,
     species: u8,
     tree_height: f32,
     position: (f64, f64, f64),
@@ -14,11 +14,11 @@ pub struct Tree {
 }
 
 impl Tree {
-    pub fn new(stand_number: f64, species: u8, mean_height: f32, position: (f64, f64, f64), tree_status: Option<f64>) -> Self {
+    pub fn new(stand_id: f64, species: u8, mean_height: f32, position: (f64, f64, f64), tree_status: Option<f64>) -> Self {
         let height = calculate_height(mean_height);
 
         Tree {
-            stand_number,
+            stand_id,
             species,
             tree_height: height,
             position,
@@ -42,8 +42,8 @@ impl Tree {
         self.tree_status
     }
 
-    pub fn stand_number(&self) -> f64 {
-        self.stand_number
+    pub fn stand_id(&self) -> f64 {
+        self.stand_id
     }
 
     pub fn cut_tree(&mut self) {

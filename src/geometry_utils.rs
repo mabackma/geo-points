@@ -92,7 +92,7 @@ pub fn generate_radius(total_stem_count: u32, area: f32) -> f32 {
 #[wasm_bindgen]
 pub fn get_area_ratio(
     xml_content: &str,
-    stand_number: u16,
+    stand_id: u16,
     x_min: f64,
     x_max: f64,
     y_min: f64,
@@ -117,7 +117,7 @@ pub fn get_area_ratio(
 
     let stand = stands
         .iter()
-        .find(|stand| stand.stand_basic_data.stand_number == stand_number)
+        .find(|stand| stand.id.parse::<f64>().unwrap() == stand_id as f64)
         .unwrap();
 
     let polygon = stand.computed_polygon.to_owned().unwrap();
@@ -131,7 +131,7 @@ pub fn get_area_ratio(
 }
 
 // Generates random trees in stand for all strata with jittered grid sampling
-pub fn generate_random_trees(p: &Polygon, strata: &TreeStrata, area_ratio: f64, stand_number: f64) -> Vec<Tree> {
+pub fn generate_random_trees(p: &Polygon, strata: &TreeStrata, area_ratio: f64, stand_id: f64) -> Vec<Tree> {
     let total_stem_count = strata.tree_stratum.iter().fold(0, |mut acc: u32, f| {
         acc += f.stem_count;
         acc
@@ -173,7 +173,7 @@ pub fn generate_random_trees(p: &Polygon, strata: &TreeStrata, area_ratio: f64, 
 
             let trees_strata: Vec<Tree> = points.iter().map(|pair: &[f64; 2]| {
                 Tree::new(
-                    stand_number,
+                    stand_id,
                     stratum.tree_species,
                     stratum.mean_height,
                     (pair[0], pair[1], 0.0),
@@ -192,7 +192,7 @@ pub fn generate_random_trees_into_buffer(
     stand_p: &Polygon,
     clipped_p: &Polygon,
     strata: &TreeStrata,
-    stand_number: f64,
+    stand_id: f64,
     buffer: &SharedBuffer, // Pass in the SharedBuffer to fill
     start_index: usize,
 ) -> usize {
@@ -232,7 +232,7 @@ pub fn generate_random_trees_into_buffer(
                 .iter()
                 .map(|pair: &[f64; 2]| {
                     Tree::new(
-                        stand_number,
+                        stand_id,
                         stratum.tree_species,
                         stratum.mean_height,
                         (pair[0], pair[1], 0.0),
@@ -253,7 +253,7 @@ pub fn generate_random_trees_into_buffer(
             // Fill the buffer with tree data
             buffer.fill_tree(
                 buffer_index,
-                tree.stand_number(),
+                tree.stand_id(),
                 tree.position().0,
                 tree.position().1,
                 tree.species(),

@@ -126,7 +126,7 @@ pub fn convert_tree_to_feature(tree: &Tree) -> Feature {
 
     let mut properties = serde_json::Map::new();
     properties.insert("species".to_string(), serde_json::json!(tree.species()));
-    properties.insert("stand_number".to_string(), serde_json::json!(tree.stand_number()));
+    properties.insert("stand_id".to_string(), serde_json::json!(tree.stand_id()));
     properties.insert("status".to_string(), serde_json::json!(tree.tree_status()));
 
     Feature {

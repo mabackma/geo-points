@@ -350,13 +350,13 @@ impl VirtualForest {
  
         if let Some(so) = self.stand_operations.iter().find(|so| so.active_operation == 1) {
             log_1(&format!("Found active operation").into());
-            let stand_number = so.stand_id.to_string();
+            let stand_id = so.stand_id.to_string();
             let op_type = so.operation.operation_type.clone();
             let areas = so.operation.cutting_areas.clone();
      
-            if let Some(compartment) = compartments.iter_mut().find(|comp| comp.stand_number == stand_number) {
+            if let Some(compartment) = compartments.iter_mut().find(|comp| comp.stand_id == stand_id) {
                 // Operate on the compartment with the specified operation type and areas
-                log_1(&format!("Operating on compartment with stand number {}", stand_number).into());
+                log_1(&format!("Operating on compartment with stand number {}", stand_id).into());
                 compartment.operate_compartment(op_type, areas);
             }
         }
