@@ -1,5 +1,5 @@
 use crate::forest_property::compartment::{get_compartment_areas_in_bounding_box, get_compartments_in_bounding_box, Compartment};
-use crate::forest_property::forest_property_data::{ForestPropertyData, RealEstate};
+use crate::forest_property::forest_property_data::{ForestPropertyData, RealEstate, ForestPropertyDataSchema};
 use crate::forest_property::geometry::PolygonGeometry;
 use crate::forest_property::tree::Tree;
 use crate::forest_property::tree_stand_data::TreeStrata;

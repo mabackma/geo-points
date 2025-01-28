@@ -25,28 +25,35 @@ pub fn read_number_cli(min: usize, max: usize) -> usize {
     number
 }
 
-impl ForestPropertyData {
-    pub fn from_xml_file(path: &str) -> ForestPropertyData {
+pub trait ForestPropertyDataSchema {
+    fn from_xml_file(path: &str) -> ForestPropertyData;
+    fn from_xml_str(xml_str: &str) -> ForestPropertyData;
+    fn from_json_file(path: &str) -> ForestPropertyData;
+    fn write_to_json_file(&self, path: &str) -> anyhow::Result<(), anyhow::Error>;
+    fn parse_from_str(xml: &str) -> ForestPropertyData;
+    fn choose_parcel(&self) -> Parcel;
+    fn get_stand_cli(&self) -> Stand;
+}
+
+impl ForestPropertyDataSchema for ForestPropertyData {
+    fn from_xml_file(path: &str) -> ForestPropertyData {
         let xml = fs::read_to_string(path).expect("Could not read the XML file");
         ForestPropertyData::parse_from_str(xml.as_str())
     }
 
-    pub fn from_xml_str(xml_str: &str) -> ForestPropertyData {
+    fn from_xml_str(xml_str: &str) -> ForestPropertyData {
         ForestPropertyData::parse_from_str(xml_str)
     }
 
-    #[cfg(test)]
-    pub fn from_json_file(path: &str) -> ForestPropertyData {
+    fn from_json_file(path: &str) -> ForestPropertyData {
         let json = fs::read_to_string(path).expect("Could not read the JSON file");
 
-        
         let property : ForestPropertyData = serde_json::from_str(json.as_str()).expect("Error parsing json file");
         
         property
     }
 
-    #[cfg(test)]
-    pub fn write_to_json_file(&self, path: &str) -> anyhow::Result<(), anyhow::Error> {
+    fn write_to_json_file(&self, path: &str) -> anyhow::Result<(), anyhow::Error> {
         let json_file = File::create(path)?;
 
         serde_json::to_writer(json_file, &self)?;
@@ -54,12 +61,12 @@ impl ForestPropertyData {
         Ok(())
     }
 
-    pub fn parse_from_str(xml: &str) -> ForestPropertyData {
+    fn parse_from_str(xml: &str) -> ForestPropertyData {
         quick_xml::de::from_str(xml).expect("Could not parse the XML")
     }
 
     // Parcels are not probably needed in this context but its good to keep them just in case
-    pub fn choose_parcel(&self) -> Parcel {
+    fn choose_parcel(&self) -> Parcel {
         let parcels: &Vec<Parcel> = &self.real_estates.real_estate.first().unwrap().parcels.parcel;
 
         println!("\nParcels:");
@@ -72,7 +79,7 @@ impl ForestPropertyData {
         parcels[parcel_index].to_owned()
     }
 
-    pub fn get_stand_cli(&self) -> Stand {
+    fn get_stand_cli(&self) -> Stand {
         let real_estates = &self.real_estates.real_estate;
 
         println!("Realestates:");

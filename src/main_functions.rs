@@ -2,7 +2,7 @@ use std::fs::File;
 use crate::geometry_utils::{generate_random_trees, get_min_max_coordinates};
 use crate::geojson_utils::{polygon_to_geojson, all_compartments_to_geojson};
 use crate::forest_property::compartment::get_compartments_in_bounding_box;
-use crate::forest_property::forest_property_data::ForestPropertyData;
+use crate::forest_property::forest_property_data::{ForestPropertyData, ForestPropertyDataSchema};
 use crate::forest_property::image_processor::ImageProcessor;
 use geo::{coord, Coord, LineString, Polygon};
 use geojson::GeoJson;
@@ -273,7 +273,7 @@ pub fn draw_selected_stand(property: &ForestPropertyData) -> ImageProcessor {
             image.draw_random_point(&scale, img_width, img_height, point, Rgb([255, 0, 0])) // Draw points in red
         }
     }
-    println!("\nTotal stem count: {:?}", summary_stem_count);
+    println!("\nTotal stem count: {:?}", summary_stem_count.unwrap_or(0));
 
     image
 }

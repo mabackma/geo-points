@@ -1,5 +1,5 @@
 use geo::BooleanOps;
-use geo_points::forest_property::forest_property_data::ForestPropertyData;
+use geo_points::forest_property::forest_property_data::{ForestPropertyData, ForestPropertyDataSchema};
 use geo_points::main_functions::{
     create_geo_json_from_coords, 
     draw_selected_stand, 

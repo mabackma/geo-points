@@ -1,5 +1,5 @@
 use crate::forest_property::compartment::find_stands_in_bounding_box;
-use crate::forest_property::forest_property_data::ForestPropertyData;
+use crate::forest_property::forest_property_data::{ForestPropertyData, ForestPropertyDataSchema};
 use crate::forest_property::tree_stand_data::TreeStrata;
 use crate::forest_property::tree::Tree;
 use crate::jittered_hexagonal_sampling::{GridOptions, JitteredHexagonalGridSampling};
