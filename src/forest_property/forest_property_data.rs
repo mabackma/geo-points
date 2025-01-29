@@ -28,6 +28,7 @@ pub fn read_number_cli(min: usize, max: usize) -> usize {
 pub trait ForestPropertyDataSchema {
     fn from_xml_file(path: &str) -> ForestPropertyData;
     fn from_xml_str(xml_str: &str) -> ForestPropertyData;
+    fn from_xml_url(url: &str) -> ForestPropertyData;
     fn from_json_file(path: &str) -> ForestPropertyData;
     fn write_to_json_file(&self, path: &str) -> anyhow::Result<(), anyhow::Error>;
     fn parse_from_str(xml: &str) -> ForestPropertyData;
@@ -43,6 +44,11 @@ impl ForestPropertyDataSchema for ForestPropertyData {
 
     fn from_xml_str(xml_str: &str) -> ForestPropertyData {
         ForestPropertyData::parse_from_str(xml_str)
+    }
+
+    fn from_xml_url(url: &str) -> ForestPropertyData {
+        let xml = reqwest::blocking::get(url).expect("Could not fetch the XML file").text().expect("Could not read the XML file");
+        ForestPropertyData::parse_from_str(xml.as_str())
     }
 
     fn from_json_file(path: &str) -> ForestPropertyData {

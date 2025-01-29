@@ -14,7 +14,9 @@ use geojson::{FeatureCollection, GeoJson};
 use std::error::Error;
 
 fn main() -> Result<(), Box<dyn Error>>{
-    let mut bbox = get_bounding_box_of_map();
+    let property = ForestPropertyData::from_xml_file("forestpropertydata.xml");
+    
+    let mut bbox = get_bounding_box_of_map(&property);
     bbox = random_bbox(&bbox);
     println!("Bounding box: {:#?}", bbox);
     let empty_geojson = GeoJson::FeatureCollection(FeatureCollection {

@@ -14,8 +14,7 @@ use std::error::Error;
 
 
 // Get the bounding box of the whole map
-pub fn get_bounding_box_of_map() -> Polygon<f64> {
-    let property = ForestPropertyData::from_xml_file("forestpropertydata.xml");
+pub fn get_bounding_box_of_map(property: &ForestPropertyData) -> Polygon<f64> {
     let mut all_stands = property.real_estates.real_estate[0].get_stands();
 
     let mut min_x = f64::MAX;
