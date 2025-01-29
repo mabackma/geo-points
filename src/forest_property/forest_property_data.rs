@@ -6,7 +6,9 @@ use super::{geometry::PolygonGeometry, stand::{Stand, Stands}};
 #[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
 pub struct ForestPropertyData {
     #[serde(rename = "RealEstates")]
-    pub real_estates: RealEstates,
+    pub real_estates: Option<RealEstates>,
+    #[serde(rename = "Stands")]
+    pub stands: Option<Stands>,
 }
 
 pub fn read_number_cli(min: usize, max: usize) -> usize {
@@ -73,7 +75,8 @@ impl ForestPropertyDataSchema for ForestPropertyData {
 
     // Parcels are not probably needed in this context but its good to keep them just in case
     fn choose_parcel(&self) -> Parcel {
-        let parcels: &Vec<Parcel> = &self.real_estates.real_estate.first().unwrap().parcels.parcel;
+        let binding = self.real_estates.clone().unwrap();
+        let parcels: &Vec<Parcel> = &binding.real_estate.first().unwrap().parcels.parcel;
 
         println!("\nParcels:");
         for (i, parcel) in parcels.iter().enumerate() {
@@ -86,7 +89,7 @@ impl ForestPropertyDataSchema for ForestPropertyData {
     }
 
     fn get_stand_cli(&self) -> Stand {
-        let real_estates = &self.real_estates.real_estate;
+        let real_estates = &self.real_estates.clone().unwrap().real_estate;
 
         println!("Realestates:");
         for (i, real_estate) in real_estates.iter().enumerate() {
@@ -96,7 +99,8 @@ impl ForestPropertyDataSchema for ForestPropertyData {
 
         let real_estate_index = read_number_cli(0, real_estates.len());
 
-        let real_estate = &self.real_estates.real_estate[real_estate_index];
+        let binding = self.real_estates.clone().unwrap();
+        let real_estate = &binding.real_estate[real_estate_index];
 
         let stands_data: Vec<Stand> = real_estate.get_stands();
 

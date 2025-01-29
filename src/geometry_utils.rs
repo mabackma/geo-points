@@ -29,7 +29,7 @@ pub fn get_min_max_coordinates(p: &Polygon<f64>) -> (f64, f64, f64, f64) {
 // Get the bounding box of the whole map
 pub fn get_coords_of_map(xml: &str) -> (f64, f64, f64, f64) {
     let property = ForestPropertyData::from_xml_str(xml);
-    let mut all_stands = property.real_estates.real_estate[0].get_stands();
+    let mut all_stands = property.real_estates.unwrap().real_estate[0].get_stands();
 
     let mut min_x = f64::MAX;
     let mut max_x = f64::MIN;
@@ -110,7 +110,7 @@ pub fn get_area_ratio(
     );
 
     let property = ForestPropertyData::from_xml_str(xml_content);
-    let real_estate = property.real_estates.real_estate[0].clone();
+    let real_estate = property.real_estates.unwrap().real_estate[0].clone();
     let all_stands = real_estate.get_stands();
 
     let stands = find_stands_in_bounding_box(&all_stands, &bbox).unwrap();

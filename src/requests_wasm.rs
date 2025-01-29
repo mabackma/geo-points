@@ -249,6 +249,8 @@ impl VirtualForest {
         let realestates = self
             .property
             .real_estates
+            .clone()
+            .unwrap()
             .real_estate
             .iter()
             .enumerate()
@@ -273,6 +275,8 @@ impl VirtualForest {
         if let Some((index, result)) = self
             .property
             .real_estates
+            .clone()
+            .unwrap()
             .real_estate
             .iter()
             .enumerate()
@@ -293,6 +297,8 @@ impl VirtualForest {
         if let Some((_index, result)) = self
             .property
             .real_estates
+            .clone()
+            .unwrap()
             .real_estate
             .iter()
             .enumerate()

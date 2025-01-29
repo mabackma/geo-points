@@ -15,6 +15,17 @@ pub struct Stands {
     pub stand: Vec<Stand>,
 }
 
+impl Stands {
+    
+    pub fn get_stands(&self) -> Vec<Stand> {
+
+        let stands_data: Vec<Stand> = self.stand.iter().map( | f| f.to_owned().compute_polygon().to_owned()).collect();
+
+        stands_data
+    } 
+
+}
+
 #[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
 #[serde(rename_all = "camelCase")]
 pub struct Stand {

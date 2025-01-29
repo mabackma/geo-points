@@ -15,7 +15,16 @@ use std::error::Error;
 
 // Get the bounding box of the whole map
 pub fn get_bounding_box_of_map(property: &ForestPropertyData) -> Polygon<f64> {
-    let mut all_stands = property.real_estates.real_estate[0].get_stands();
+
+    let mut all_stands = if property.real_estates.is_some() {
+        println!("Real estate found");
+        property.real_estates.clone().unwrap().real_estate[0].get_stands()
+    } else {
+        println!("Stands found");
+        property.stands.clone().unwrap().get_stands()
+    };
+
+    //println!("Stands {:#?}", all_stands);
 
     let mut min_x = f64::MAX;
     let mut max_x = f64::MIN;
@@ -150,7 +159,7 @@ pub fn create_geo_json_from_coords(min_x: f64, max_x: f64, min_y: f64, max_y: f6
         vec![],
     );
 
-    let real_estate = property.real_estates.real_estate[0].clone();
+    let real_estate = property.real_estates.clone().unwrap().real_estate[0].clone();
     let stands = real_estate.get_stands();
     println!("Total stands: {:?}", stands.len());
 
@@ -170,7 +179,7 @@ pub fn create_geo_json_from_coords(min_x: f64, max_x: f64, min_y: f64, max_y: f6
 pub fn draw_stands_in_bbox(bbox: &Polygon<f64>, property: &ForestPropertyData, buildings: &Vec<Polygon>) -> ImageProcessor {
     let start = Instant::now();
 
-    let real_estate = property.real_estates.real_estate[0].clone();
+    let real_estate = property.real_estates.clone().unwrap().real_estate[0].clone();
     let stands = real_estate.get_stands();
     println!("Total stands: {:?}\n", stands.len());
 
