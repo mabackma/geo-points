@@ -1,4 +1,4 @@
-use crate::forest_property::compartment::{get_compartment_areas_in_bounding_box, get_compartments_in_bounding_box, Compartment};
+use crate::forest_property::compartment::{get_compartment_areas_in_bounding_box, get_compartments_in_bounding_box};
 use crate::forest_property::forest_property_data::{ForestPropertyData, RealEstate, ForestPropertyDataSchema};
 use crate::forest_property::geometry::PolygonGeometry;
 use crate::forest_property::tree::Tree;
@@ -14,7 +14,6 @@ use geojson::GeoJson;
 use serde::{Deserialize, Serialize};
 use wasm_bindgen::prelude::wasm_bindgen;
 use wasm_bindgen::JsValue;
-use serde_wasm_bindgen::from_value;
 use web_sys::console::log_1;
 
 const METERS_IN_ONE_DEGREE_LAT: f64 = 111_320.0;

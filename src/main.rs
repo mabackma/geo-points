@@ -14,8 +14,11 @@ use geojson::{FeatureCollection, GeoJson};
 use std::error::Error;
 
 fn main() -> Result<(), Box<dyn Error>>{
-    let property = ForestPropertyData::from_xml_file("forestpropertydata.xml");
-    
+    //let property = ForestPropertyData::from_xml_file("forestpropertydata.xml");
+
+    let url = "https://avoin.metsakeskus.fi/rest/mvrest/FRStandData/v1/ByPolygon?wktPolygon=POLYGON%20((393960.156%206801453.126,%20394798.608%206801657.878,%20394930.512%206801670.111,%20395028.723%206802116.858,%20394258.945%206801929.148,%20394261.711%206801810.541,%20394091.166%206801665.961,%20393960.156%206801453.126))&stdVersion=MV1.9";
+    let property = ForestPropertyData::from_xml_url(url);
+
     let mut bbox = get_bounding_box_of_map(&property);
     bbox = random_bbox(&bbox);
     println!("Bounding box: {:#?}", bbox);
