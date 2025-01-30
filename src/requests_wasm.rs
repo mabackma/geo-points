@@ -162,8 +162,8 @@ pub async fn get_xml_from_url(url: String) -> Result<ForestPropertyData, FetchEr
 impl VirtualForest {
     #[wasm_bindgen(constructor)]
     pub fn new(xml: &str) -> Self {
-        //let property = ForestPropertyData::from_xml_str(xml);
-        let property = ForestPropertyData::default();
+        let property = ForestPropertyData::from_xml_str(xml);
+        //let property = ForestPropertyData::default();
 
         VirtualForest {
             property,
