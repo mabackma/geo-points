@@ -14,12 +14,17 @@ use geojson::{FeatureCollection, GeoJson};
 use std::error::Error;
 use reqwest::blocking::get;
 
+pub fn forest_property_data_from_polygon(polygon_string: &str) -> ForestPropertyData {
+    let url = format!("https://avoin.metsakeskus.fi/rest/mvrest/FRStandData/v1/ByPolygon?wktPolygon=POLYGON%20(({}))&stdVersion=MV1.9", polygon_string);
+    let xml = get(url).expect("Could not fetch the XML file").text().expect("Could not read the XML file");
+    ForestPropertyData::parse_from_str(xml.as_str())
+}
+
 fn main() -> Result<(), Box<dyn Error>>{
     //let property = ForestPropertyData::from_xml_file("forestpropertydata.xml");
 
-    let url = "https://avoin.metsakeskus.fi/rest/mvrest/FRStandData/v1/ByPolygon?wktPolygon=POLYGON%20((393960.156%206801453.126,%20394798.608%206801657.878,%20394930.512%206801670.111,%20395028.723%206802116.858,%20394258.945%206801929.148,%20394261.711%206801810.541,%20394091.166%206801665.961,%20393960.156%206801453.126))&stdVersion=MV1.9";
-    let xml = get(url).expect("Could not fetch the XML file").text().expect("Could not read the XML file");
-    let property = ForestPropertyData::parse_from_str(xml.as_str());
+    let polygon_string = "393960.156%206801453.126,%20394798.608%206801657.878,%20394930.512%206801670.111,%20395028.723%206802116.858,%20394258.945%206801929.148,%20394261.711%206801810.541,%20394091.166%206801665.961,%20393960.156%206801453.126";
+    let property = forest_property_data_from_polygon(polygon_string);
 
     let mut bbox = get_bounding_box_of_map(&property);
     bbox = random_bbox(&bbox);

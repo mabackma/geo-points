@@ -28,6 +28,7 @@ pub fn read_number_cli(min: usize, max: usize) -> usize {
 }
 
 pub trait ForestPropertyDataSchema {
+    fn default() -> Self;
     fn from_xml_file(path: &str) -> ForestPropertyData;
     fn from_xml_str(xml_str: &str) -> ForestPropertyData;
     fn from_json_file(path: &str) -> ForestPropertyData;
@@ -38,6 +39,13 @@ pub trait ForestPropertyDataSchema {
 }
 
 impl ForestPropertyDataSchema for ForestPropertyData {
+    fn default() -> Self {
+        ForestPropertyData {
+            real_estates: None,
+            stands: None,
+        }
+    }
+
     fn from_xml_file(path: &str) -> ForestPropertyData {
         let xml = fs::read_to_string(path).expect("Could not read the XML file");
         ForestPropertyData::parse_from_str(xml.as_str())

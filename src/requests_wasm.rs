@@ -1,20 +1,28 @@
+use crate::forest_property;
 use crate::forest_property::compartment::{get_compartment_areas_in_bounding_box, get_compartments_in_bounding_box};
 use crate::forest_property::forest_property_data::{ForestPropertyData, RealEstate, ForestPropertyDataSchema};
 use crate::forest_property::geometry::PolygonGeometry;
 use crate::forest_property::tree::Tree;
 use crate::forest_property::tree_stand_data::TreeStrata;
 use crate::forest_property::trees::Trees;
-use crate::geojson_utils::{all_compartment_areas_to_geojson, geojson_to_polygons, get_geojson_from_url, roads_geojson_to_linestrings, water_geojson_to_polygons};
+use crate::geojson_utils::{all_compartment_areas_to_geojson, geojson_to_polygons, get_geojson_from_url, roads_geojson_to_linestrings, water_geojson_to_polygons, FetchError};
 use crate::geometry_utils::get_coords_of_map;
 
 use geo::{coord, point, BooleanOps, Closest, Contains, LineString, Point, Polygon};
 use geo::algorithm::closest_point::ClosestPoint;
 use geo::algorithm::haversine_distance::HaversineDistance;
 use geojson::GeoJson;
+use reqwest_wasm::Client;
 use serde::{Deserialize, Serialize};
 use wasm_bindgen::prelude::wasm_bindgen;
 use wasm_bindgen::JsValue;
 use web_sys::console::log_1;
+
+use std::rc::Rc;
+use std::cell::RefCell;
+use wasm_bindgen_futures::spawn_local;
+use serde_wasm_bindgen::to_value;
+use serde_wasm_bindgen::from_value;
 
 const METERS_IN_ONE_DEGREE_LAT: f64 = 111_320.0;
 
@@ -139,11 +147,23 @@ pub struct RealEstateValue {
     pub area_number: u16,
 }
 
+// Fetches ForestPropertyData from the given url
+pub async fn get_xml_from_url(url: String) -> Result<ForestPropertyData, FetchError> {
+    let client = Client::new();
+
+    let response = client.get(&url).send().await.map_err(FetchError::from)?;
+    let xml = response.text().await.map_err(FetchError::from)?;
+    let property = ForestPropertyData::parse_from_str(xml.as_str());
+
+    Ok(property)
+}
+
 #[wasm_bindgen]
 impl VirtualForest {
     #[wasm_bindgen(constructor)]
     pub fn new(xml: &str) -> Self {
-        let property = ForestPropertyData::from_xml_str(xml);
+        //let property = ForestPropertyData::from_xml_str(xml);
+        let property = ForestPropertyData::default();
 
         VirtualForest {
             property,
@@ -153,6 +173,29 @@ impl VirtualForest {
             roads: None,
             water: None,
             buildings: None,
+        }
+    }
+
+    // Method to fetch forest property data from a polygon string and update the VirtualForest instance
+    #[wasm_bindgen]
+    pub async fn update_property_data_from_polygon_string(&mut self, polygon_string: String) -> Result<(), JsValue> {
+        // Construct the URL based on the polygon string
+        let url = format!(
+            "https://avoin.metsakeskus.fi/rest/mvrest/FRStandData/v1/ByPolygon?wktPolygon=POLYGON%20(({}))&stdVersion=MV1.9",
+            polygon_string
+        );
+
+        // Fetch the data and update the property field
+        match get_xml_from_url(url).await {
+            Ok(property) => {
+                // Update the VirtualForest's property field with the fetched data
+                self.property = property;
+                Ok(())
+            }
+            Err(_) => {
+                log_1(&format!("Failed to fetch the ForestPropertyData from the URL").into());
+                Err(JsValue::from_str("Failed to fetch the ForestPropertyData"))
+            }
         }
     }
 
