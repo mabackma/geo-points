@@ -199,13 +199,13 @@ pub struct StandBasicData {
     #[serde(rename = "DitchingYear")]
     pub ditching_year: Option<u16>,
     #[serde(rename = "ChangeTime")]
-    pub change_time: String,
+    pub change_time: Option<String>,
     #[serde(rename = "CompleteState")]
     pub complete_state: u8,
     #[serde(rename = "StandNumber")]
     pub stand_number: u16,
     #[serde(rename = "StandNumberExtension")]
-    pub stand_number_extension: String,
+    pub stand_number_extension: Option<String>,
     #[serde(rename = "MainGroup")]
     pub main_group: u8,
     #[serde(rename = "StandBasicDataDate")]
@@ -236,9 +236,8 @@ pub struct StandBasicData {
 
 #[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
 pub struct Identifiers {
-    
     #[serde(rename = "Identifier")]
-    pub identifier: Identifier,
+    pub identifier: Vec<Identifier>,
 }
 
 #[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
@@ -290,11 +289,11 @@ pub struct Operation {
     #[serde(rename = "Silviculture")]
     pub silviculture: Option<Silviculture>,
     #[serde(rename = "ChangeTime")]
-    pub change_time: String,
+    pub change_time: Option<String>,
     #[serde(rename = "OperationType")]
     pub operation_type: String,
     #[serde(rename = "ProposalData")]
-    pub proposal_data: ProposalData,
+    pub proposal_data: Option<ProposalData>,
     #[serde(rename = "Cutting")]
     pub cutting: Option<Cutting>,
 }
@@ -372,12 +371,11 @@ pub struct TreeStandDataDate {
     #[serde(rename = "@date", default)]
     pub date: String,
     #[serde(rename = "@type", default)]
-    pub tree_stand_data_date_type: u8,
-    
+    pub tree_stand_data_date_type: u8, 
     #[serde(rename = "DeadTreeStrata")]
     pub dead_tree_strata: Option<DeadTreeStrata>,
     #[serde(rename = "TreeStrata")]
-    pub tree_strata: TreeStrata,
+    pub tree_strata: Option<TreeStrata>,
     #[serde(rename = "TreeStandSummary")]
     pub tree_stand_summary: Option<TreeStandSummary>,
 }
@@ -439,7 +437,7 @@ pub struct TreeStratum {
     #[serde(rename = "MeanHeight")]
     pub mean_height: f32,
     #[serde(rename = "DataSource")]
-    pub data_source: u32,
+    pub data_source: Option<u32>,
     #[serde(rename = "BasalArea",  default = "default_zero_f32")]
     pub basal_area: f32,
     #[serde(rename = "SawLogPercent", default = "default_zero_f32")]

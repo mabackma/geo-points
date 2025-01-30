@@ -141,7 +141,7 @@ impl Stand {
             None => return None 
         };
 
-        let stratums = last_data_date.tree_strata.tree_stratum.to_owned();
+        let stratums = last_data_date.tree_strata.unwrap().tree_stratum.to_owned();
         Some(stratums)
     }
 
@@ -151,7 +151,7 @@ impl Stand {
             None => return None 
         };
 
-        let strata = &last_data_date.tree_strata.tree_stratum;
+        let strata = &last_data_date.tree_strata.unwrap().tree_stratum;
         let strata = TreeStrata::new(strata.to_vec());
         Some(strata)
     }
