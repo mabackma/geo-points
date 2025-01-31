@@ -5,188 +5,172 @@
         "coordinates": [
           [
             [
-              25.393695379074344,
-              66.4484992189005
+              25.035020473157704,
+              61.337154321544645
             ],
             [
-              25.393981374948652,
-              66.4484124247084
+              25.034950081446667,
+              61.33710402317742
             ],
             [
-              25.394447581314417,
-              66.4483140221064
+              25.034627654973377,
+              61.33680670756116
             ],
             [
-              25.39451944502971,
-              66.44824297290857
+              25.035539074276645,
+              61.33773676760366
             ],
             [
-              25.395189426892905,
-              66.44811525517252
+              25.034937242349343,
+              61.33791099551905
             ],
             [
-              25.395725467925587,
-              66.44797718563896
+              25.034856642858212,
+              61.33814953843923
             ],
             [
-              25.396448317733046,
-              66.44789935963622
+              25.034739599305762,
+              61.33816940370514
             ],
             [
-              25.397191856091002,
-              66.44784866300552
+              25.03482425690331,
+              61.338502727052926
             ],
             [
-              25.398033395907667,
-              66.4474938701103
+              25.034831337423924,
+              61.338503665526
             ],
             [
-              25.398204112836858,
-              66.44728025762193
+              25.03583632864126,
+              61.3386368996534
             ],
             [
-              25.39825411993732,
-              66.44720000921953
+              25.035855660134807,
+              61.338580442448475
             ],
             [
-              25.39826906386038,
-              66.44714183493313
+              25.03584047435502,
+              61.33852341982046
             ],
             [
-              25.39758877992653,
-              66.44690603445575
+              25.035644396341333,
+              61.33836278424474
             ],
             [
-              25.396663638606547,
-              66.44681578004108
+              25.035609404430275,
+              61.33831313454261
             ],
             [
-              25.39634232847321,
-              66.44675415411699
+              25.035609394161295,
+              61.338282474739565
             ],
             [
-              25.395657166272944,
-              66.44676955214193
+              25.035630983434142,
+              61.338245811361965
             ],
             [
-              25.39553387184163,
-              66.44676828576208
+              25.035743587684507,
+              61.33816636958221
             ],
             [
-              25.395053918050767,
-              66.44673194797865
+              25.035932095421632,
+              61.33808133460591
             ],
             [
-              25.394504410509064,
-              66.4467307877429
+              25.036041452865298,
+              61.33804967834222
             ],
             [
-              25.394347273685504,
-              66.44659876732254
+              25.036128731638556,
+              61.33803549644669
             ],
             [
-              25.39369800019977,
-              66.44665665252782
+              25.036769401240143,
+              61.33801735968746
             ],
             [
-              25.392768554963226,
-              66.44677326356378
+              25.036958045926283,
+              61.33802619548062
             ],
             [
-              25.39233088376591,
-              66.44678817106218
+              25.037068080058223,
+              61.338049494143085
             ],
             [
-              25.391992688975694,
-              66.44676527852448
+              25.03714556334613,
+              61.3380807226541
             ],
             [
-              25.391509645356177,
-              66.44673118893088
+              25.037201697406967,
+              61.33812149051059
             ],
             [
-              25.390919999412098,
-              66.44665699558195
+              25.03723222924399,
+              61.33816961874778
             ],
             [
-              25.390607157239774,
-              66.44669236490863
+              25.037229132330896,
+              61.3382528079126
             ],
             [
-              25.390216288682737,
-              66.44672923840137
+              25.03715940052258,
+              61.338387801822414
             ],
             [
-              25.390051722994862,
-              66.44694939573735
+              25.037148274615653,
+              61.33844575081583
             ],
             [
-              25.390039445400248,
-              66.4469784150903
+              25.0371551890287,
+              61.33850375297512
             ],
             [
-              25.389990284056243,
-              66.44725687713165
+              25.037219920754325,
+              61.33860413769783
             ],
             [
-              25.390031574838396,
-              66.44742385156378
+              25.03725318930914,
+              61.3386979675787
             ],
             [
-              25.390104609315046,
-              66.44752923426637
+              25.03724618812777,
+              61.33873147700767
             ],
             [
-              25.39018599621262,
-              66.44769915777712
+              25.03718666864665,
+              61.33881590401282
             ],
             [
-              25.390367099392765,
-              66.447843572374
+              25.0380286942775,
+              61.33892751551802
             ],
             [
-              25.39062682824722,
-              66.44798958737394
+              25.038013891426864,
+              61.33888504139784
             ],
             [
-              25.390919651021008,
-              66.44812410767719
+              25.037649461223253,
+              61.337839771327566
             ],
             [
-              25.391154273696362,
-              66.44821645654007
+              25.037167770340012,
+              61.33778635852254
             ],
             [
-              25.39133069438566,
-              66.44826663511937
+              25.03645771434772,
+              61.33765448694605
             ],
             [
-              25.391601894989645,
-              66.44830481374225
+              25.036298726021258,
+              61.33761015783854
             ],
             [
-              25.392023955063458,
-              66.4483305300528
+              25.03516894073063,
+              61.337207268422596
             ],
             [
-              25.392402716990162,
-              66.44838802520084
-            ],
-            [
-              25.392837676320777,
-              66.44844730184178
-            ],
-            [
-              25.393205114459157,
-              66.44850264332572
-            ],
-            [
-              25.393340450877503,
-              66.44853936570367
-            ],
-            [
-              25.393695379074344,
-              66.4484992189005
+              25.035020473157704,
+              61.337154321544645
             ]
           ]
         ],
@@ -198,1544 +182,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.395114794342728,
-          66.44761677673243
+          25.03665377662905,
+          61.3379300268327
         ],
         "type": "Point"
       },
       "properties": {
-        "species": 4,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.392253929409478,
-          66.44788172095367
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 4,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.391998378811465,
-          66.44804539368236
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 4,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.394323185972947,
-          66.4475004621651
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 4,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.39795214228387,
-          66.4473177922772
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 4,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.39188839636339,
-          66.44758863678533
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 4,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.393900384132497,
-          66.44840792571712
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 4,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.392508531540585,
-          66.447951751618
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 4,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.39061676809984,
-          66.4467346890394
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 4,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.391884533079455,
-          66.447827969552
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 4,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.39269396083151,
-          66.44757155162502
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 4,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.390902939024595,
-          66.44782589781542
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 4,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.396890588849445,
-          66.44689805582307
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 4,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.393561033016894,
-          66.4473211684563
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 4,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.39430394464056,
-          66.44690321058178
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 4,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.391287946772415,
-          66.44774462846455
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.396891936355246,
-          66.44719962250596
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.391470138380043,
-          66.44676841344375
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.392482485297645,
-          66.44826385069604
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.396197405165786,
-          66.4479254167896
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.392387194787894,
-          66.44792876947615
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.395625434013088,
-          66.44685712520128
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.39146519379071,
-          66.44822002534018
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.390502776997,
-          66.44688814305938
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.394639290873794,
-          66.44737638643088
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.39173186443222,
-          66.4481078837289
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.39489495949992,
-          66.44775390705453
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.39301482374063,
-          66.4481899871232
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.391363190796728,
-          66.44755112769134
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.394654531398697,
-          66.4477445785298
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.39637129110803,
-          66.44677868369068
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.393994102579764,
-          66.44798201667992
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.39725859366347,
-          66.44710744490425
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.393967207109394,
-          66.44784314753842
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.39060556073023,
-          66.44714836398194
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.392137608957935,
-          66.4483342967718
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.390637817473458,
-          66.44745343724293
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.396531480207432,
-          66.44724609779057
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.391659758593214,
-          66.4478797827302
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.39144604830771,
-          66.44766534930177
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.39158784894983,
-          66.44724134467319
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.394711861034594,
-          66.44808594779501
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.395707826818786,
-          66.44710260238412
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.390784922178767,
-          66.44720898638627
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.3965840208134,
-          66.44714525706324
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.395352338448024,
-          66.44756663933806
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.397769719956965,
-          66.44741185946732
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.392772102611953,
-          66.44809879656447
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.391808598978283,
-          66.44707204171114
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.396770769883016,
-          66.44732391644239
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.39140097042033,
-          66.44774435516942
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.392873666352163,
-          66.4480850982098
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.39363381354401,
-          66.44732161143409
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.39348313302116,
-          66.44774521853182
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.39363034643823,
-          66.4481365266186
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.3942849167254,
-          66.4471268065859
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.393912377423646,
-          66.447681133032
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.393993041629173,
-          66.44668169661391
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.393323416307627,
-          66.44674391210832
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.39244911581828,
-          66.4481721629827
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.39322610705563,
-          66.44777189204675
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.393201410980588,
-          66.44755324262624
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.394737719723818,
-          66.44744881702738
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.392166826344233,
-          66.4478074996355
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.394595586460948,
-          66.44689661019207
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.392035669336906,
-          66.44715305864005
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.393820925989537,
-          66.44836923633831
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.393335530819435,
-          66.44716389772536
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.39353550031189,
-          66.4477606809398
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.39442324314872,
-          66.44763208857724
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.39408862257005,
-          66.4471001507807
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.39095958667253,
-          66.4476766906579
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.392675681784322,
-          66.44697139194756
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.39104035683379,
-          66.44685716130827
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.396554724264103,
-          66.44781281900276
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.39296853609854,
-          66.44748564825515
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.391826959417866,
-          66.44814738972929
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.39227082428954,
-          66.44813075650887
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.395303624703335,
-          66.44731790207283
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.39307433781546,
-          66.44833710176607
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.394834240467596,
-          66.44684765278387
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.39236906125626,
-          66.44778215153693
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.393770498593224,
-          66.44681641200054
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.39146915188267,
-          66.44797243586167
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.39508772057411,
-          66.44757491804133
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.39377858090047,
-          66.4467725674767
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.39425158175619,
-          66.44819068657318
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.393578404232677,
-          66.44810218171308
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.392679141195394,
-          66.44827944131367
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.39741153381934,
-          66.44761510603098
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.391475110704445,
-          66.44781347865603
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.392086917033275,
-          66.44759982809971
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.395713565740127,
-          66.44778478621923
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.395382586848136,
-          66.44716247299066
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.393317192112136,
-          66.44836554096875
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.390707094697134,
-          66.44671175808507
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.39185081355727,
-          66.44788663081192
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.391909790579312,
-          66.44813452393902
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.391518524896203,
-          66.4468488745624
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.393032349286997,
-          66.44800498388176
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.39259827653709,
-          66.44701857086383
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.396410903160383,
-          66.44745800874065
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "species": 1,
-        "stand_id": 2554750.0,
-        "status": 1.0
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          25.391303991644055,
-          66.44739543739139
-        ],
-        "type": "Point"
-      },
-      "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -1743,14 +197,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39022894241411,
-          66.4471622577997
+          25.03654381918693,
+          61.33795093014422
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -1758,14 +212,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.392080683025448,
-          66.44690253044033
+          25.035541347050483,
+          61.33858566344366
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -1773,14 +227,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39328335512551,
-          66.44851551777622
+          25.035055953233964,
+          61.338231456189526
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -1788,14 +242,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39600394098219,
-          66.44791815282551
+          25.03560858829359,
+          61.33827868907324
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -1803,14 +257,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.391609512782644,
-          66.44813197306745
+          25.037214260887048,
+          61.338038484818945
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -1818,14 +272,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39738424848077,
-          66.44711572070375
+          25.037332879225907,
+          61.33796100118346
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -1833,14 +287,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.391890022744327,
-          66.44681375061751
+          25.03511444747783,
+          61.33812681118259
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -1848,14 +302,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.391237474635005,
-          66.44697291915428
+          25.037709016824063,
+          61.33878786353795
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -1863,14 +317,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39415784682054,
-          66.44671811313228
+          25.034890959525878,
+          61.33834855525304
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -1878,14 +332,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.393647276838312,
-          66.44770991030217
+          25.036854018395765,
+          61.33778299483049
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -1893,14 +347,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.394996692529634,
-          66.44723063543566
+          25.03732010649832,
+          61.33801416852168
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -1908,14 +362,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39798328275554,
-          66.4472701486703
+          25.035728912554625,
+          61.337901505438325
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -1923,14 +377,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.395519971830797,
-          66.44709496391906
+          25.035045389072963,
+          61.33810489724846
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -1938,14 +392,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.392577307926334,
-          66.44707122944176
+          25.03577653984014,
+          61.33770307532257
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -1953,14 +407,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.395461532712865,
-          66.4470142161198
+          25.037357737807344,
+          61.3381985878819
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -1968,14 +422,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39378142193554,
-          66.44801331724723
+          25.037072572130842,
+          61.33803485740559
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -1983,14 +437,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39485820844696,
-          66.44722650548165
+          25.036427638692963,
+          61.33776181389921
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -1998,14 +452,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39639960293095,
-          66.4471157097363
+          25.03597690724059,
+          61.337656618287355
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2013,14 +467,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.393394187289854,
-          66.4483899478053
+          25.037466463348753,
+          61.33882475149357
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2028,14 +482,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.391808858398022,
-          66.44720326765233
+          25.037402347068312,
+          61.3385251824661
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2043,14 +497,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.397167121392314,
-          66.4468989540438
+          25.03518178602513,
+          61.33795019111505
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2058,14 +512,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.397387548882445,
-          66.44688855195595
+          25.037447540242844,
+          61.33863411636422
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2073,14 +527,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.391838703020866,
-          66.44724117859055
+          25.035586405788518,
+          61.33745281400116
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2088,14 +542,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.393177903975136,
-          66.4477506532418
+          25.03563514116874,
+          61.33815383766088
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2103,14 +557,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.391589721757757,
-          66.4476777968892
+          25.03507251731889,
+          61.33725524030392
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2118,14 +572,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39107159023839,
-          66.44780283671285
+          25.035739170718724,
+          61.337961289433004
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2133,14 +587,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39243242095756,
-          66.44705421653624
+          25.03771299812032,
+          61.33859130205072
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2148,14 +602,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.391757169476822,
-          66.44770798445084
+          25.037464730825047,
+          61.338741778657884
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2163,14 +617,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.393686812310758,
-          66.4476140118193
+          25.035487748775054,
+          61.33740072701859
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2178,14 +632,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.393499933475233,
-          66.44745493093356
+          25.037907924898064,
+          61.338736143989344
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2193,14 +647,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.395227425319266,
-          66.44676758606052
+          25.035416545016272,
+          61.33750890968539
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2208,14 +662,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.3942689565124,
-          66.44663593144419
+          25.035924559428747,
+          61.33765168581208
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2223,14 +677,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.393925351642597,
-          66.44668720821139
+          25.037525021817526,
+          61.338238573191774
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2238,14 +692,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39502460034272,
-          66.44813889829022
+          25.035347567066335,
+          61.33796323061291
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2253,14 +707,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.395583736193185,
-          66.44732796252761
+          25.03764582176539,
+          61.33868918796509
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2268,14 +722,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.396290304791222,
-          66.44742528876255
+          25.03596077565343,
+          61.33753861303927
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2283,14 +737,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39794724876595,
-          66.44744188413715
+          25.037241096678354,
+          61.33834988095211
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2298,14 +752,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.393295869875338,
-          66.44849539341384
+          25.035918122568184,
+          61.337730189463684
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2313,14 +767,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.394510747085462,
-          66.44776315357116
+          25.035450847420613,
+          61.33805304615847
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2328,14 +782,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.392747866410712,
-          66.447705275851
+          25.036711048317674,
+          61.337842859354254
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2343,14 +797,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39242528011019,
-          66.44766635405546
+          25.03490633326968,
+          61.33829425841601
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2358,14 +812,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39726213667283,
-          66.44722975887572
+          25.037321854206414,
+          61.33868724595985
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2373,14 +827,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.391090234471626,
-          66.44694134785667
+          25.035383239248564,
+          61.33825250903715
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2388,14 +842,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.397632997687648,
-          66.44748871453021
+          25.03547385005743,
+          61.33734881489739
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2403,14 +857,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.398083816476696,
-          66.44727911840344
+          25.03562337567864,
+          61.337836637574355
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2418,14 +872,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.396823131445537,
-          66.44766099183359
+          25.035569706557254,
+          61.33842568501768
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2433,14 +887,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39203575873809,
-          66.44825182452537
+          25.037072986807978,
+          61.33785033722742
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2448,14 +902,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.3924574557484,
-          66.44720494428897
+          25.036985164778248,
+          61.33790671383772
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2463,14 +917,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.391880757854256,
-          66.4479695669709
+          25.037191696035435,
+          61.33794556703717
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2478,14 +932,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.391906368281173,
-          66.44821239681826
+          25.036273912670566,
+          61.33784551437253
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2493,14 +947,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39134496161137,
-          66.44716373008082
+          25.03515443276068,
+          61.338002182552124
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2508,14 +962,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.391542727615665,
-          66.44740054250863
+          25.03650944505132,
+          61.33799863320878
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2523,14 +977,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.393256083581697,
-          66.4468639010875
+          25.037521986355852,
+          61.3386427430837
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2538,14 +992,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.397252499721276,
-          66.44728218002517
+          25.037567055421306,
+          61.33855488083992
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2553,14 +1007,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.394051030421128,
-          66.44749280257933
+          25.034849076470543,
+          61.338193276201714
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2568,14 +1022,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.396121338040153,
-          66.44752880806875
+          25.03518399328643,
+          61.33724287342763
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2583,14 +1037,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39102560617381,
-          66.44779957347815
+          25.03557517945158,
+          61.33786245366477
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2598,14 +1052,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.391199229543158,
-          66.44816383095619
+          25.037315181791776,
+          61.33858811129686
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2613,14 +1067,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.394560356342335,
-          66.44723423200794
+          25.037300033945574,
+          61.338486642895774
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2628,14 +1082,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39642291733319,
-          66.44728869968623
+          25.03755290534476,
+          61.338574216282595
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2643,14 +1097,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.394423686216452,
-          66.4482306340481
+          25.035726592057923,
+          61.33859364734522
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2658,14 +1112,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39276624179616,
-          66.44694584249079
+          25.034951946034436,
+          61.33803726756624
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2673,14 +1127,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.395160364184314,
-          66.44750631424762
+          25.03676958889743,
+          61.337740557777174
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2688,14 +1142,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.393185464519323,
-          66.44699016856582
+          25.035639103989006,
+          61.33799028681948
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2703,14 +1157,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39781400230033,
-          66.44698789973619
+          25.037364102474072,
+          61.33868777434565
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2718,14 +1172,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.393416074677482,
-          66.44715745334888
+          25.03740462780635,
+          61.33844283349467
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2733,14 +1187,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.392596745071305,
-          66.44840573608153
+          25.037280531243994,
+          61.337856529511015
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2748,14 +1202,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.395099631756914,
-          66.44688642424792
+          25.035095702097617,
+          61.33828520619671
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2763,14 +1217,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39404533861392,
-          66.44752871638701
+          25.036812961257954,
+          61.337991560120976
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2778,14 +1232,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39372093832157,
-          66.44725117314135
+          25.037639333823734,
+          61.33842636747545
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2793,14 +1247,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39711790764153,
-          66.44702342283423
+          25.036685708503075,
+          61.33780470948444
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2808,14 +1262,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39008215906794,
-          66.44745196877068
+          25.037090112829112,
+          61.33787765292331
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2823,14 +1277,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39650639242028,
-          66.44753561556641
+          25.035373066413797,
+          61.33857169331971
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2838,14 +1292,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39081090699346,
-          66.44673891479533
+          25.035994343294558,
+          61.33788565003492
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2853,14 +1307,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.392544489585184,
-          66.44817769422905
+          25.03684252382888,
+          61.337758134140174
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2868,14 +1322,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.391443880039528,
-          66.44714401349478
+          25.035535117545738,
+          61.338289456552374
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2883,14 +1337,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.390864273074683,
-          66.4472790380361
+          25.035276059677212,
+          61.33790189671441
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2898,14 +1352,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.395453190031244,
-          66.44715890251244
+          25.035613928779856,
+          61.33820721009496
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2913,14 +1367,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.393417563835527,
-          66.44742412051589
+          25.03777382116065,
+          61.33829002174132
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2928,14 +1382,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.393127227427932,
-          66.44750172474178
+          25.034774989735716,
+          61.33824458400189
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2943,14 +1397,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39235794112557,
-          66.44703502056728
+          25.035020877661093,
+          61.33720722468992
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2958,14 +1412,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.397737977166543,
-          66.44720967175594
+          25.03564711764689,
+          61.33838739251282
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2973,14 +1427,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.3908779648754,
-          66.44702500425744
+          25.037543041399058,
+          61.3383799876137
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -2988,14 +1442,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.391974512863232,
-          66.4474130690276
+          25.036987825756018,
+          61.337955597397546
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3003,14 +1457,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39186224720856,
-          66.44770852400275
+          25.03694038207342,
+          61.337835022062954
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3018,14 +1472,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.394822713366484,
-          66.44778948920148
+          25.037219920157792,
+          61.33799167077753
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3033,14 +1487,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39021064361323,
-          66.44724900796338
+          25.037214209549205,
+          61.33813745802849
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3048,14 +1502,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39760686227327,
-          66.44714656291144
+          25.037366877373966,
+          61.33810227969134
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3063,14 +1517,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39026169542214,
-          66.44707290105274
+          25.03649014553922,
+          61.3378533942993
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3078,14 +1532,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39127437567505,
-          66.44823672864402
+          25.03780417745437,
+          61.33845593520533
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3093,14 +1547,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39549897891987,
-          66.447754002462
+          25.03597151266454,
+          61.337760801477025
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3108,14 +1562,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.395880316845478,
-          66.44711759827673
+          25.037440144987105,
+          61.33848538741422
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3123,14 +1577,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.391586042958192,
-          66.44680309693072
+          25.03626032563788,
+          61.337638328499864
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3138,14 +1592,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.397666556927508,
-          66.44724897839383
+          25.03616995973282,
+          61.3378143827317
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3153,14 +1607,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.393018622751192,
-          66.44776521158627
+          25.037620283300072,
+          61.33869544710644
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3168,14 +1622,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.396019231780553,
-          66.4470374475836
+          25.03522564830734,
+          61.338549045229556
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3183,14 +1637,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.392774743142166,
-          66.44680474384765
+          25.037684809605835,
+          61.3387254211226
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3198,14 +1652,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.391870124352643,
-          66.44676845865102
+          25.035240062560035,
+          61.337941068915164
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3213,14 +1667,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39747223195838,
-          66.44714403811581
+          25.035466750076793,
+          61.33796150633196
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3228,14 +1682,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39017596388645,
-          66.44693381275928
+          25.035051466159892,
+          61.33815639462192
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3243,14 +1697,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.395177046871197,
-          66.44786991560166
+          25.037390238796423,
+          61.338789356460836
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3258,14 +1712,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.394890989345956,
-          66.44728580348362
+          25.036901820124026,
+          61.33795550846075
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3273,14 +1727,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.3930337840531,
-          66.44742227748351
+          25.037482306460664,
+          61.3382812537503
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3288,14 +1742,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39305651729032,
-          66.448141415507
+          25.035811986108246,
+          61.33857947992788
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3303,14 +1757,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.397269179966194,
-          66.44689922881147
+          25.037018088063917,
+          61.33789511279757
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3318,14 +1772,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39573679197503,
-          66.44792214944457
+          25.037193029396725,
+          61.33790554140165
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3333,14 +1787,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.393055857098584,
-          66.44695122232507
+          25.035424234084797,
+          61.33819391790831
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3348,14 +1802,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39434896791112,
-          66.44707383132511
+          25.03538839974936,
+          61.337537238208334
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3363,14 +1817,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.391960741334696,
-          66.44780435684602
+          25.037910329734032,
+          61.33865016620824
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3378,14 +1832,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.397968574278707,
-          66.44725457847774
+          25.035495819455917,
+          61.338444553218544
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3393,14 +1847,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.391958758192732,
-          66.44754671475577
+          25.035229340527927,
+          61.338141642023714
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3408,14 +1862,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.3948712052304,
-          66.44792224187964
+          25.037272429790566,
+          61.33803747579586
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3423,14 +1877,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39162487804875,
-          66.44737223283515
+          25.03620232050323,
+          61.33796312445166
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3438,14 +1892,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.391614535347436,
-          66.44684151881691
+          25.03546960932683,
+          61.33839791929338
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3453,14 +1907,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.394024800559595,
-          66.44838980273062
+          25.037669216556086,
+          61.337992052906046
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3468,14 +1922,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.394874276964018,
-          66.44763722894707
+          25.03534706749173,
+          61.33805197453156
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3483,14 +1937,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.3972041126492,
-          66.44719120867786
+          25.03532397259606,
+          61.33827804367561
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3498,14 +1952,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.3956567759362,
-          66.44702102420375
+          25.037570054471797,
+          61.33785263821311
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3513,14 +1967,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39229901846395,
-          66.44723047421293
+          25.037532359073563,
+          61.33785112894208
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3528,14 +1982,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.397741473478657,
-          66.44753286564709
+          25.036624827542912,
+          61.337882365233796
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3543,14 +1997,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.391129498658565,
-          66.44704337658679
+          25.03766316745356,
+          61.33788938469874
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3558,14 +2012,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.391717060503954,
-          66.44718756549011
+          25.035066907068497,
+          61.338500382840195
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3573,14 +2027,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.392118490448148,
-          66.44710422513373
+          25.035980277481006,
+          61.33794344341487
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3588,14 +2042,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.393972558747407,
-          66.44671301733808
+          25.03771710614794,
+          61.33819906968701
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3603,14 +2057,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39168676237849,
-          66.44731470680334
+          25.03656838667994,
+          61.33777983169323
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3618,14 +2072,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39631563795247,
-          66.44712143764718
+          25.037524072793754,
+          61.33803031309895
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3633,14 +2087,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.394217943683294,
-          66.44740230169458
+          25.035527537731987,
+          61.3380323905396
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3648,14 +2102,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.390988815149424,
-          66.44761617791619
+          25.036198327701083,
+          61.337762933579086
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3663,14 +2117,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.392166086625046,
-          66.44738263164565
+          25.037492882268324,
+          61.33818226768719
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3678,14 +2132,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.393362130270482,
-          66.44839392242511
+          25.03622606088055,
+          61.337706962575595
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3693,14 +2147,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.391686439427794,
-          66.44715343416217
+          25.035137840970542,
+          61.33818398540287
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3708,14 +2162,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.392344865781645,
-          66.44707861108458
+          25.035888230939307,
+          61.33780414842478
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3723,14 +2177,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.393216876068596,
-          66.44780549509314
+          25.03500732792736,
+          61.338425379415504
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3738,14 +2192,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39286469858661,
-          66.44732263715542
+          25.036312099273403,
+          61.337664652776816
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3753,14 +2207,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.392417504963937,
-          66.44822550784261
+          25.035152608803248,
+          61.33825242758241
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3768,14 +2222,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.390982750935535,
-          66.44709772135519
+          25.036678324370428,
+          61.33783968702596
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3783,14 +2237,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.396397106987493,
-          66.44759238198394
+          25.036600243595963,
+          61.33786770619682
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3798,14 +2252,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.390498643180816,
-          66.44736168731912
+          25.03576152726651,
+          61.33799891751401
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3813,14 +2267,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.391074253437463,
-          66.44729470560266
+          25.03538290920306,
+          61.33749540602801
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3828,14 +2282,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39116971188106,
-          66.4469353189027
+          25.03533747871028,
+          61.338438500728294
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3843,14 +2297,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.391250461292906,
-          66.44691238953283
+          25.035395220474882,
+          61.33745563444949
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3858,14 +2312,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.393256410649013,
-          66.44728687447659
+          25.0359408761144,
+          61.33751489481265
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3873,14 +2327,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.391900522411007,
-          66.4469443127969
+          25.036571809973097,
+          61.33788924532216
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3888,14 +2342,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.392283692069615,
-          66.44817308381768
+          25.036998873495243,
+          61.33775623616245
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3903,14 +2357,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39530735551354,
-          66.44697639958734
+          25.036048448683232,
+          61.33800686493603
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3918,14 +2372,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.391088858212125,
-          66.44724131930376
+          25.035552143046598,
+          61.33740368903329
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3933,14 +2387,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39433827574825,
-          66.44704168444687
+          25.035350480929296,
+          61.33783319743758
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3948,14 +2402,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.393661416332915,
-          66.44750723698348
+          25.03728387339358,
+          61.33845684153644
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3963,14 +2417,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39523910915882,
-          66.44787120721821
+          25.037353555945487,
+          61.33814666477334
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3978,14 +2432,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.394451733539924,
-          66.4468094767177
+          25.035221406107226,
+          61.33832872737755
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -3993,14 +2447,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39507174070202,
-          66.44735372067788
+          25.03623860602816,
+          61.33789731845817
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4008,14 +2462,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39066204851988,
-          66.44706404373373
+          25.035383914853206,
+          61.3378424429529
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4023,14 +2477,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39159786535216,
-          66.44817578707443
+          25.035872899391304,
+          61.33785774615098
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4038,14 +2492,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.393315753840053,
-          66.4481367359789
+          25.03475847044533,
+          61.33819434856729
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4053,14 +2507,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39579465481555,
-          66.44775206299946
+          25.03794767296596,
+          61.338902909475394
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4068,14 +2522,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.396123651025427,
-          66.44685588460884
+          25.03775854613093,
+          61.33824562455181
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4083,14 +2537,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.395807890056407,
-          66.44738001405109
+          25.037803799439065,
+          61.3385275950005
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4098,14 +2552,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39205399399477,
-          66.44740570449957
+          25.035816154652274,
+          61.33774154511608
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4113,14 +2567,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.397335504640477,
-          66.44707754876991
+          25.035046383767565,
+          61.33850079032299
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4128,14 +2582,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.393025410345604,
-          66.44749968328397
+          25.036892372421352,
+          61.337853773906744
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4143,14 +2597,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.393788159439524,
-          66.44846503656964
+          25.035412792251115,
+          61.3379375342666
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4158,14 +2612,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.392435262651457,
-          66.44689524863226
+          25.035745867658637,
+          61.33756012565539
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4173,14 +2627,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39265579391671,
-          66.44838721702219
+          25.035313701676603,
+          61.337977248161465
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4188,14 +2642,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.397285526315603,
-          66.44731551936978
+          25.036082601553172,
+          61.33803393641801
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4203,14 +2657,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39596115552269,
-          66.44701970029607
+          25.035601559693337,
+          61.337408341145526
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4218,14 +2672,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.391464002694608,
-          66.44744125130599
+          25.03536875986825,
+          61.33809352333114
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4233,14 +2687,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.393262714224257,
-          66.44749332928114
+          25.035046533401005,
+          61.33833413086175
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4248,14 +2702,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.397081623611623,
-          66.44707947493377
+          25.035385365997403,
+          61.337799500569
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4263,14 +2717,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.395020516651414,
-          66.44695449986185
+          25.035790181668663,
+          61.338591293849575
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4278,14 +2732,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.394155339545474,
-          66.44808247984015
+          25.034964580079173,
+          61.33828653537278
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4293,14 +2747,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.396722009038342,
-          66.44787790137592
+          25.037456291650212,
+          61.33823009574872
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4308,14 +2762,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.3957893896389,
-          66.44742258161179
+          25.037660310721826,
+          61.338807585798925
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4323,14 +2777,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.392221524997627,
-          66.44698053470346
+          25.035328862086164,
+          61.33790119103714
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4338,14 +2792,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.3957971013835,
-          66.44734006774776
+          25.037459057255347,
+          61.33833548860572
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4353,14 +2807,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.393537619543366,
-          66.44741643776148
+          25.036870833216547,
+          61.33800648711537
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4368,14 +2822,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39452183080103,
-          66.44795622278201
+          25.03483544474847,
+          61.33835867362318
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4383,14 +2837,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.394886351394955,
-          66.44804324942409
+          25.036587436281447,
+          61.33795607977998
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4398,14 +2852,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39392135807449,
-          66.44816665744939
+          25.035638058931156,
+          61.33766431444314
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4413,14 +2867,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.394718737877003,
-          66.44698974549219
+          25.036383402721665,
+          61.33780673525428
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4428,14 +2882,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.394209167626908,
-          66.44833985631806
+          25.036091911869125,
+          61.337932368197805
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4443,14 +2897,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.395483583489362,
-          66.44784150305712
+          25.03732908575613,
+          61.33853772587666
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4458,14 +2912,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.3941799418378,
-          66.44710983999164
+          25.03756799342883,
+          61.33883203452559
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4473,14 +2927,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.390241166174043,
-          66.44693067689245
+          25.03671127190708,
+          61.33774799617521
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4488,14 +2942,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.392205020854746,
-          66.44752836447898
+          25.034855988111126,
+          61.338398176242336
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4503,14 +2957,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.3943896235484,
-          66.44772505419942
+          25.03652858281493,
+          61.33790239712566
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4518,14 +2972,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39261419079085,
-          66.44771110629812
+          25.0357731641521,
+          61.33779757877451
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4533,14 +2987,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39385494662809,
-          66.44694590217635
+          25.03715761971944,
+          61.33789817271705
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4548,14 +3002,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.391979758469468,
-          66.44750329438452
+          25.03755336629189,
+          61.338692839818165
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4563,14 +3017,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.390990922504198,
-          66.44770643463018
+          25.034919931525458,
+          61.338198289945524
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4578,14 +3032,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39303817526962,
-          66.4479212575833
+          25.03573844527944,
+          61.33746767129821
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4593,14 +3047,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.390243210446076,
-          66.44772615561513
+          25.03546561122988,
+          61.33754626358954
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4608,14 +3062,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.391792422441156,
-          66.44699994865668
+          25.03611209684001,
+          61.33761874578954
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4623,14 +3077,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.390102898532458,
-          66.44735952008551
+          25.03590995972523,
+          61.337961830056436
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4638,14 +3092,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.396773507248405,
-          66.447065777001
+          25.037629939924372,
+          61.338040652069125
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4653,14 +3107,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.391826159497665,
-          66.44714560801242
+          25.037641468947022,
+          61.3386288747519
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4668,14 +3122,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.397001911679403,
-          66.44762225981638
+          25.036293549843492,
+          61.33789530313748
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4683,14 +3137,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.397139517748027,
-          66.44780813155475
+          25.035490858944705,
+          61.33781302849044
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4698,14 +3152,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.390463799107184,
-          66.4470840169231
+          25.0352567662159,
+          61.33817491882353
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4713,14 +3167,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39425128728649,
-          66.44716485733005
+          25.035354161203106,
+          61.33829827372471
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4728,14 +3182,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39511840198525,
-          66.44812488563792
+          25.036248653275955,
+          61.337951645939555
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4743,14 +3197,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.391699621690787,
-          66.44783745914232
+          25.037373576079887,
+          61.338278495555805
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4758,14 +3212,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39516836754861,
-          66.44797088147057
+          25.037490006030648,
+          61.3383915818339
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4773,14 +3227,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.397979528053686,
-          66.44744450730845
+          25.036137238966333,
+          61.337634224692096
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4788,14 +3242,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.391018073876012,
-          66.44710477560068
+          25.037423215692705,
+          61.33809220144411
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4803,14 +3257,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.3912112946663,
-          66.44723717126298
+          25.036016251027775,
+          61.33794900430811
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4818,14 +3272,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.391545893756277,
-          66.44774880959999
+          25.035609326236603,
+          61.337905801624736
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4833,14 +3287,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.391123041364143,
-          66.44678144160022
+          25.03528179163078,
+          61.337444929673005
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4848,14 +3302,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.394791939318324,
-          66.44724572432398
+          25.037767773878645,
+          61.33858531307103
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4863,14 +3317,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39423752573463,
-          66.44729021326715
+          25.036182815239965,
+          61.337660077443466
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4878,14 +3332,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.392395264374148,
-          66.44834026492983
+          25.03568891727842,
+          61.33805517465259
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4893,14 +3347,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39595633643603,
-          66.44778729567231
+          25.0371260282736,
+          61.33805312633696
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4908,14 +3362,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39483722714585,
-          66.4471980071285
+          25.03481179717163,
+          61.33819950716213
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4923,14 +3377,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.392935278566668,
-          66.44757427326391
+          25.03563691365317,
+          61.33852405252904
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4938,14 +3392,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.396384974120057,
-          66.4469084359166
+          25.035098855718093,
+          61.33820561388457
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4953,14 +3407,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.398046374031047,
-          66.44710344553334
+          25.035157391282482,
+          61.338086005447735
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4968,14 +3422,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39734800361804,
-          66.44763658050964
+          25.037643535924417,
+          61.338585866186826
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4983,14 +3437,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39296538878062,
-          66.4483022934258
+          25.037344977191616,
+          61.33865039789745
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -4998,14 +3452,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.395404767227046,
-          66.44742527880017
+          25.037368381305136,
+          61.338585815972785
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5013,14 +3467,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39377264651344,
-          66.44791969629125
+          25.03759923108038,
+          61.33840116479232
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5028,14 +3482,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39677378571784,
-          66.446978371366
+          25.035424320773313,
+          61.338572618568875
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5043,14 +3497,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.392932601709337,
-          66.44801370247274
+          25.035627936801312,
+          61.33743861729888
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5058,14 +3512,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.393905110047637,
-          66.44741988601665
+          25.03600902234988,
+          61.337789400262466
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5073,14 +3527,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.395368717573135,
-          66.44720308917317
+          25.03570796654656,
+          61.33800851855211
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5088,14 +3542,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.391339889205494,
-          66.44753838624801
+          25.035744992172237,
+          61.33816445804666
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5103,14 +3557,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.392612342382932,
-          66.44761653940208
+          25.03545519782304,
+          61.33843762217656
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5118,14 +3572,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.390887683019432,
-          66.44672779062469
+          25.03603772559084,
+          61.33785951722758
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5133,14 +3587,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.397949325742864,
-          66.44735553163902
+          25.035668248660883,
+          61.33818342454306
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5148,14 +3602,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.394414888525322,
-          66.44673567628145
+          25.035979755724064,
+          61.33806170396668
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5163,14 +3617,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.395947416037803,
-          66.4473394112905
+          25.036484060725734,
+          61.33775712456138
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5178,14 +3632,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.3974477464011,
-          66.44769487281548
+          25.03615831277064,
+          61.3377041919435
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5193,14 +3647,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39394120487946,
-          66.447965349401
+          25.037461753748396,
+          61.33854784102407
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5208,14 +3662,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.397227352232868,
-          66.44716159876359
+          25.037439575193375,
+          61.33799481688355
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5223,14 +3677,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39305260931833,
-          66.44840005355357
+          25.03516191733648,
+          61.33854184473043
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5238,14 +3692,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.395182746954415,
-          66.44770487108742
+          25.03564000982924,
+          61.337557977396095
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5253,14 +3707,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.391197484307714,
-          66.4467409073236
+          25.035746743816418,
+          61.337855998485644
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5268,14 +3722,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.395160910699268,
-          66.44681864451151
+          25.035179643340058,
+          61.33786033407793
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5283,14 +3737,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.393655956962615,
-          66.44818385455994
+          25.036328446334224,
+          61.33779737504226
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5298,14 +3752,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39348458866224,
-          66.44677407987935
+          25.035586142339405,
+          61.338083474904934
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5313,14 +3767,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39392167197116,
-          66.44697012614697
+          25.035431433650132,
+          61.337981784574666
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5328,14 +3782,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.391631436844275,
-          66.44745602412283
+          25.03768912591868,
+          61.33864315345093
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5343,14 +3797,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.390989479717607,
-          66.44775273958724
+          25.036487854019956,
+          61.33792558971885
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5358,14 +3812,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39201913893932,
-          66.4478881142719
+          25.037325415646073,
+          61.338396592745376
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5373,14 +3827,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39014135057836,
-          66.44701552970038
+          25.03593691380123,
+          61.337903551745995
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5388,14 +3842,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.391342621571283,
-          66.44792095155137
+          25.03753164280392,
+          61.337989000966786
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5403,14 +3857,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39296611251957,
-          66.44817896700057
+          25.03612924414939,
+          61.3377053998667
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5418,14 +3872,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.395530173862852,
-          66.44723883924114
+          25.037503793727684,
+          61.33814086018974
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5433,14 +3887,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.394381052827022,
-          66.44778972357801
+          25.034802198036672,
+          61.33838138388681
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5448,14 +3902,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.391919444716663,
-          66.44738079347648
+          25.035725836960836,
+          61.33749743329786
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5463,14 +3917,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.392914623599577,
-          66.44839543059697
+          25.03638526260596,
+          61.33774756200121
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5478,14 +3932,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39198174348518,
-          66.44774492707306
+          25.03742032909527,
+          61.33793517536339
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5493,14 +3947,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39227156597128,
-          66.4480950142466
+          25.036061204315633,
+          61.33780374299652
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5508,14 +3962,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39193983464238,
-          66.44818866878545
+          25.035411439039432,
+          61.337392611116904
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5523,14 +3977,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.391242427512882,
-          66.44673491113333
+          25.036122268500524,
+          61.33790667279996
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5538,14 +3992,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.392447446393206,
-          66.44724225886901
+          25.03520603619899,
+          61.33819976191415
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5553,14 +4007,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39414317876483,
-          66.44805004503539
+          25.037710939175383,
+          61.338280004772244
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5568,14 +4022,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.3962057891833,
-          66.44778782199035
+          25.035626252738812,
+          61.33805426531143
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5583,14 +4037,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.397286270146786,
-          66.44705964589929
+          25.03757161465102,
+          61.338732406286674
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5598,14 +4052,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.397169029464695,
-          66.44722767581527
+          25.035901129317242,
+          61.33753705501753
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5613,14 +4067,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.396297950690375,
-          66.44703247723058
+          25.03521887795881,
+          61.33849444960053
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5628,14 +4082,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39579527329122,
-          66.4469029289304
+          25.035534333344565,
+          61.337985063743474
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5643,14 +4097,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39439106217549,
-          66.44677474445551
+          25.037454857860393,
+          61.33803377058217
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5658,14 +4112,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.391434216597144,
-          66.4478024964281
+          25.035553223236946,
+          61.33769098935809
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5673,14 +4127,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.395380645469764,
-          66.44753875573784
+          25.034837784390835,
+          61.338239706907885
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5688,14 +4142,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.395115269008524,
-          66.44792643440088
+          25.035491746352765,
+          61.33751023152542
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5703,14 +4157,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.392385876993664,
-          66.44773542401475
+          25.035220714658962,
+          61.338227993446935
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5718,14 +4172,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39710782030641,
-          66.4477178103019
+          25.035875032036817,
+          61.33794402061073
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5733,14 +4187,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39818967723913,
-          66.44718822298735
+          25.037473029816162,
+          61.33867940414215
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5748,14 +4202,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.394197016161108,
-          66.44675994515568
+          25.035184399659794,
+          61.33844421333605
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5763,14 +4217,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.392665249984265,
-          66.44754284930083
+          25.035448659137334,
+          61.33832991288536
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5778,14 +4232,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39133407385636,
-          66.44738172048619
+          25.035381946908327,
+          61.337392723814766
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5793,14 +4247,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39246068071525,
-          66.44814388461914
+          25.035932869207326,
+          61.3379822084635
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5808,14 +4262,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39469812722172,
-          66.44714581357857
+          25.037298944520924,
+          61.33853242819747
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5823,14 +4277,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.392435102074977,
-          66.44680584672385
+          25.036758395097905,
+          61.33785920639118
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5838,14 +4292,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.395717801362593,
-          66.44686472628183
+          25.036896588003003,
+          61.33773784661975
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5853,14 +4307,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.393038170935256,
-          66.44706685604159
+          25.035026497627616,
+          61.33829097485874
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5868,14 +4322,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.393777954261854,
-          66.44830370600265
+          25.035440127783893,
+          61.33813937063812
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5883,14 +4337,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.3966408671402,
-          66.44707630023609
+          25.035188099792954,
+          61.33814985338681
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5898,14 +4352,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39115198722587,
-          66.44808696299049
+          25.03663713847372,
+          61.33797813316973
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5913,14 +4367,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.393575741195892,
-          66.44827333150167
+          25.037638318677043,
+          61.338141227294514
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5928,14 +4382,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.394333470919342,
-          66.44780866499956
+          25.03556750944997,
+          61.33852798602381
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5943,14 +4397,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.395705951438085,
-          66.44754948893693
+          25.037600728461843,
+          61.33819764148459
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5958,14 +4412,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.392740365219925,
-          66.44842625258337
+          25.03731233722936,
+          61.33830382411985
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5973,14 +4427,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39514647482809,
-          66.44799790045086
+          25.03749034627393,
+          61.33799666864508
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -5988,14 +4442,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.390113197832555,
-          66.44725003685045
+          25.035300225132843,
+          61.3373460462639
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -6003,14 +4457,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39571427934162,
-          66.44797130918954
+          25.037319965940174,
+          61.33880629608911
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -6018,14 +4472,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.396197711749863,
-          66.44737610177374
+          25.035248124932526,
+          61.33810717281676
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -6033,14 +4487,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.3922570072235,
-          66.44779883073326
+          25.03751916295253,
+          61.3383544194745
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -6048,14 +4502,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.391149967356263,
-          66.44740865623945
+          25.035669118395504,
+          61.33808415927033
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -6063,14 +4517,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.392525098722395,
-          66.44776582020401
+          25.037876100566187,
+          61.338786449458176
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -6078,14 +4532,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.392711163587858,
-          66.44795629892569
+          25.035660390933145,
+          61.33770067520685
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -6093,14 +4547,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.393755304585916,
-          66.44779043633025
+          25.037534057208532,
+          61.338298722656184
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -6108,14 +4562,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.392237438172437,
-          66.44802445183686
+          25.035771024063436,
+          61.33748811307025
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -6123,14 +4577,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.390583111545055,
-          66.44701759032019
+          25.03506440171789,
+          61.337939342647445
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -6138,14 +4592,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.396992507619796,
-          66.44761563483662
+          25.03722869951722,
+          61.338453584819426
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -6153,14 +4607,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.391773853413355,
-          66.44769935747331
+          25.035438152796825,
+          61.33839085744141
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -6168,14 +4622,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.396961487922695,
-          66.44701618248152
+          25.036157355841897,
+          61.33800249928064
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
@@ -6183,14 +4637,14 @@
     {
       "geometry": {
         "coordinates": [
-          25.39217711626646,
-          66.44745286077658
+          25.03754407991328,
+          61.33818664383492
         ],
         "type": "Point"
       },
       "properties": {
         "species": 1,
-        "stand_id": 2554750.0,
+        "stand_id": 35569495.0,
         "status": 1.0
       },
       "type": "Feature"
