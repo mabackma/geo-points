@@ -44,7 +44,12 @@ pub struct Compartment {
 }
 
 impl Compartment {
-    pub fn new(stand_id: String, trees: Vec<Tree>, polygon: Polygon) -> Self {
+    pub fn new(
+        stand_id: String, 
+        trees: Vec<Tree>, 
+        polygon: Polygon
+    ) -> Self {
+        
         Compartment {
             stand_id,
             trees,
@@ -78,14 +83,25 @@ impl Compartment {
     }
 
     // Get trees in a bounding box
-    pub fn trees_in_bounding_box(&self, min_x: f64, max_x: f64, min_y: f64, max_y: f64) -> Vec<&Tree> {
+    pub fn trees_in_bounding_box(
+        &self, 
+        min_x: f64, 
+        max_x: f64, 
+        min_y: f64, 
+        max_y: f64
+    ) -> Vec<&Tree> {
+
         self.trees.iter().filter(|tree| {
             let (x, y, _) = tree.position();
             x >= min_x && x <= max_x && y >= min_y && y <= max_y  // Keep the tree if it is inside the bounding box
         }).collect()
     }
 
-    pub fn operate_compartment(&mut self, op_type: OperationType, area_polygons: Vec<Polygon>) {
+    pub fn operate_compartment(
+        &mut self, 
+        op_type: OperationType, 
+        area_polygons: Vec<Polygon>
+    ) {
         // Make a projection from epsg3067 to epsg4326
         let projection = Projection::new(CRS::Epsg3067, CRS::Epsg4326);
         let areas = projection.polygons_3067_to_4326(area_polygons);
@@ -121,7 +137,12 @@ impl Compartment {
         }
     }
 
-    fn calculate_thinning_distance(&self, areas: &Vec<Polygon>, trees_left: f64) -> f64 {
+    fn calculate_thinning_distance(
+        &self, 
+        areas: &Vec<Polygon>, 
+        trees_left: f64
+    ) -> f64 {
+
         let mut radius = 0.1; 
 
         // Project areas to EPSG:3067 for area calculation in m^2
@@ -142,7 +163,11 @@ impl Compartment {
         radius * 2.0
     }
     
-    fn cutting_operation(&mut self, trees_to_cut: usize, areas: &Vec<Polygon>) {
+    fn cutting_operation(
+        &mut self, 
+        trees_to_cut: usize, 
+        areas: &Vec<Polygon>
+    ) {
         let mut cut_count = 0;
         for tree in self.trees.iter_mut() {
     
@@ -163,7 +188,12 @@ impl Compartment {
 
     // Thinning Logic: The trees that are added to all_removed_positions will be the ones to be removed
     // Points to be removed have neighbors that are too close together.
-    fn thinning_operation(&mut self, thinning_distance: f64, trees_to_cut: usize, areas: &Vec<Polygon<f64>>) {
+    fn thinning_operation(
+        &mut self, 
+        thinning_distance: f64, 
+        trees_to_cut: usize, 
+        areas: &Vec<Polygon<f64>>
+    ) {
         log_1(&format!("Thinning operation with distance: {} and {} trees to cut", thinning_distance, trees_to_cut).into());
         let mut all_removed_positions = HashSet::new();
 
@@ -228,7 +258,10 @@ impl Compartment {
         }
     }
 
-    fn simulation(&mut self, strata: TreeStrata) {
+    fn simulation(
+        &mut self, 
+        strata: TreeStrata
+    ) {
         log_1(&format!("Simulation operation with strata: {:#?}", strata).into());
         log_1(&format!("Trees in the compartment: {}", self.trees.len()).into());
         self.trees = generate_random_trees(&self.polygon, &strata, 1.0, self.stand_id.parse().unwrap());
@@ -236,7 +269,10 @@ impl Compartment {
     }
 }
 
-pub fn find_stands_in_bounding_box<'a>(stands: &'a Vec<Stand>, bbox: &'a Polygon) -> Option<Vec<&'a Stand>> {
+pub fn find_stands_in_bounding_box<'a>(
+    stands: &'a Vec<Stand>, 
+    bbox: &'a Polygon
+) -> Option<Vec<&'a Stand>> {
 
     // Collect the stands that intersect with the bounding box
     let intersecting_stands: Vec<&Stand> = stands.iter().filter(|stand| {
@@ -257,6 +293,7 @@ pub fn get_compartments_in_bounding_box(
     all_stands: Vec<Stand>,
     bbox: &Polygon
 ) -> Vec<Compartment> {
+
     // Find stands in the bounding box
     let stands = find_stands_in_bounding_box(&all_stands, bbox);
 
@@ -313,11 +350,13 @@ pub fn get_compartment_areas_in_bounding_box(
     all_stands: Vec<Stand>,
     bbox: &Polygon,
 ) -> Option<(Vec<CompartmentArea>, usize, usize)> {
+
     // Find stands in the bounding box
     let stands = find_stands_in_bounding_box(&all_stands, bbox);
 
     // Count the total number of trees in the bounding box
     let mut max_tree_count = 0;
+
     if let Some(stands) = &stands {
         for stand in stands {
             let strata = stand.get_strata();
@@ -327,6 +366,7 @@ pub fn get_compartment_areas_in_bounding_box(
                     acc += f.stem_count;
                     acc
                 });
+
                 max_tree_count += strata_stem_count;
             }
         }
@@ -348,12 +388,14 @@ pub fn get_compartment_areas_in_bounding_box(
                 .to_owned();
 
             total_tree_count += stand.summary_stem_count().unwrap_or(0) as usize;
+
             // Add to the compartment areas list
             compartment_areas.push(CompartmentArea {
                 stand_id: stand.id.clone(),
                 polygon: clipped_polygon,
             });
         }
+
         return Some((compartment_areas, max_tree_count as usize, total_tree_count));
     } else {
         None

@@ -57,6 +57,7 @@ impl Polygon {
     pub fn to_geo_polygon(&self) -> geo_types::Polygon<f64> {
         let exterior = self.exterior.linear_ring.to_geo_line_string();
         let interiors = self.interior.iter().map(|i| i.linear_ring.to_geo_line_string()).collect();
+        
         geo_types::Polygon::new(exterior, interiors)
     }
 }

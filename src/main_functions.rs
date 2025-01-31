@@ -1,5 +1,5 @@
 use std::fs::File;
-use crate::geometry_utils::{generate_random_trees, get_min_max_coordinates};
+use crate::geometry_utils::{generate_random_trees, generate_random_trees_no_strata, get_min_max_coordinates};
 use crate::geojson_utils::{polygon_to_geojson, all_compartments_to_geojson};
 use crate::forest_property::compartment::get_compartments_in_bounding_box;
 use crate::forest_property::forest_property_data::{ForestPropertyData, ForestPropertyDataSchema};
@@ -49,7 +49,7 @@ pub fn get_bounding_box_of_map(property: &ForestPropertyData) -> Polygon<f64> {
         }
     }
     
-    let bbox = geo::Polygon::new(
+    geo::Polygon::new(
         LineString(vec![
             Coord { x: min_x, y: min_y },
             Coord { x: max_x, y: min_y },
@@ -58,9 +58,7 @@ pub fn get_bounding_box_of_map(property: &ForestPropertyData) -> Polygon<f64> {
             Coord { x: min_x, y: min_y },
         ]),
         vec![],
-    );
-
-    bbox
+    )
 }
 
 pub fn random_bbox(map_bbox: &Polygon<f64>) -> Polygon<f64> {
@@ -89,7 +87,7 @@ pub fn random_bbox(map_bbox: &Polygon<f64>) -> Polygon<f64> {
         }
     }
 
-    let random_bbox = geo::Polygon::new(
+    geo::Polygon::new(
         LineString(vec![
             Coord { x: x1, y: y1 },
             Coord { x: x2, y: y1 },
@@ -98,9 +96,7 @@ pub fn random_bbox(map_bbox: &Polygon<f64>) -> Polygon<f64> {
             Coord { x: x1, y: y1 },
         ]),
         vec![],
-    );
-
-    random_bbox
+    )
 }
 
 // Get color based on species number
@@ -145,7 +141,16 @@ fn get_color_by_species(number: u8) -> Rgb<u8> {
 }
 
 /* CREATES GEOJSON FROM COORDINATES OF BOUNDING BOX */
-pub fn create_geo_json_from_coords(min_x: f64, max_x: f64, min_y: f64, max_y: f64, property: &ForestPropertyData, buildings_geojson: &GeoJson, roads_geojson: &GeoJson) -> Result<GeoJson, Box<dyn Error>>  {
+pub fn create_geo_json_from_coords(
+    min_x: f64, 
+    max_x: f64, 
+    min_y: f64, 
+    max_y: f64, 
+    property: &ForestPropertyData, 
+    buildings_geojson: &GeoJson, 
+    roads_geojson: &GeoJson
+) -> Result<GeoJson, Box<dyn Error>>  {
+
     let start = Instant::now();
 
     let bbox = geo::Polygon::new(
@@ -159,8 +164,12 @@ pub fn create_geo_json_from_coords(min_x: f64, max_x: f64, min_y: f64, max_y: f6
         vec![],
     );
 
-    let real_estate = property.real_estates.clone().unwrap().real_estate[0].clone();
-    let stands = real_estate.get_stands();
+    let stands = if property.real_estates.is_some() {
+        property.real_estates.clone().unwrap().real_estate[0].clone().get_stands()
+    } else {
+        property.stands.clone().unwrap().get_stands()
+    };
+
     println!("Total stands: {:?}", stands.len());
 
     // Create compartments in the bounding box
@@ -176,11 +185,20 @@ pub fn create_geo_json_from_coords(min_x: f64, max_x: f64, min_y: f64, max_y: f6
     Ok(geojson)
 }
 
-pub fn draw_stands_in_bbox(bbox: &Polygon<f64>, property: &ForestPropertyData, buildings: &Vec<Polygon>) -> ImageProcessor {
+pub fn draw_stands_in_bbox(
+    bbox: &Polygon<f64>, 
+    property: &ForestPropertyData, 
+    buildings: &Vec<Polygon>
+) -> ImageProcessor {
+
     let start = Instant::now();
 
-    let real_estate = property.real_estates.clone().unwrap().real_estate[0].clone();
-    let stands = real_estate.get_stands();
+    let stands = if property.real_estates.is_some() {
+        property.real_estates.clone().unwrap().real_estate[0].clone().get_stands()
+    } else {
+        property.stands.clone().unwrap().get_stands()
+    };
+
     println!("Total stands: {:?}\n", stands.len());
 
     // Find compartments in the bounding box
@@ -250,8 +268,14 @@ pub fn draw_selected_stand(property: &ForestPropertyData) -> ImageProcessor {
     image.draw_polygon_image(&mapped_coordinates, Rgb([0, 0, 255]));
 
     let summary_stem_count = stand.summary_stem_count();
-    let strata = stand.get_strata().expect("No treeStrata/stratums found");
-    let random_trees = generate_random_trees(&polygon, &strata, 1.0, stand_id);
+    let main_tree_species = stand.main_tree_species();
+
+    let mut random_trees = Vec::new();
+    if let Some(strata) = stand.get_strata() {
+        random_trees = generate_random_trees(&polygon, &strata, 1.0, stand_id);
+    } else {
+        random_trees = generate_random_trees_no_strata(&polygon, &stand, 1.0, stand_id);
+    }
 
     // Convert the Polygon and the trees to GeoJSON
     let geojson = polygon_to_geojson(&polygon, &random_trees);
@@ -278,7 +302,7 @@ pub fn draw_selected_stand(property: &ForestPropertyData) -> ImageProcessor {
         // Draw the random points
         for tree in random_trees {
             let point = coord! {x: tree.position().0, y: tree.position().1};
-            image.draw_random_point(&scale, img_width, img_height, point, Rgb([255, 0, 0])) // Draw points in red
+            image.draw_random_point(&scale, img_width, img_height, point, get_color_by_species(main_tree_species.unwrap())) // Draw points in red
         }
     }
     println!("\nTotal stem count: {:?}", summary_stem_count.unwrap_or(0));
@@ -287,7 +311,10 @@ pub fn draw_selected_stand(property: &ForestPropertyData) -> ImageProcessor {
 }
 
 // Function to save a GeoJson object to a file
-pub fn save_geojson(geojson: &GeoJson, filename: &str) {
+pub fn save_geojson(
+    geojson: &GeoJson, 
+    filename: &str
+) {
     // Serialize the GeoJson object to a string
     let geojson_string = serde_json::to_string_pretty(&geojson).expect("Failed to serialize GeoJson");
 

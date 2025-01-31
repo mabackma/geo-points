@@ -18,12 +18,6 @@ use wasm_bindgen::prelude::wasm_bindgen;
 use wasm_bindgen::JsValue;
 use web_sys::console::log_1;
 
-use std::rc::Rc;
-use std::cell::RefCell;
-use wasm_bindgen_futures::spawn_local;
-use serde_wasm_bindgen::to_value;
-use serde_wasm_bindgen::from_value;
-
 const METERS_IN_ONE_DEGREE_LAT: f64 = 111_320.0;
 
 fn meters_to_degrees_lat(meters: f64) -> f64 {
@@ -109,7 +103,11 @@ struct Operation {
 }
 
 impl Operation {
-    pub fn new(operation_type: OperationType, cutting_areas: Vec<Polygon>) -> Self {
+    pub fn new(
+        operation_type: OperationType, 
+        cutting_areas: Vec<Polygon>
+    ) -> Self {
+
         Operation {
             operation_type,
             cutting_areas,
@@ -178,7 +176,11 @@ impl VirtualForest {
 
     // Method to fetch forest property data from a polygon string and update the VirtualForest instance
     #[wasm_bindgen]
-    pub async fn update_property_data_from_polygon_string(&mut self, polygon_string: String) -> Result<(), JsValue> {
+    pub async fn update_property_data_from_polygon_string(
+        &mut self, 
+        polygon_string: String
+    ) -> Result<(), JsValue> {
+
         // Construct the URL based on the polygon string
         let url = format!(
             "https://avoin.metsakeskus.fi/rest/mvrest/FRStandData/v1/ByPolygon?wktPolygon=POLYGON%20(({}))&stdVersion=MV1.9",
@@ -200,7 +202,10 @@ impl VirtualForest {
     }
 
     // Gets the infrastructure data (buildings and roads) in the bounding box
-    pub async fn get_infrastructure(&mut self, xml: &str) {
+    pub async fn get_infrastructure(
+        &mut self, 
+        xml: &str
+    ) {
         let (min_x, max_x, min_y, max_y) = get_coords_of_map(xml);
 
         let west = min_x;
@@ -264,7 +269,14 @@ impl VirtualForest {
         }
     }
 
-    fn get_url_water(body_type: &str, west: f64, south: f64, east: f64, north: f64) -> String {
+    fn get_url_water(
+        body_type: &str, 
+        west: f64, 
+        south: f64, 
+        east: f64, 
+        north: f64
+    ) -> String {
+
         format!(
             "https://metne-test.onrender.com/geoserver/mml/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=mml:{}&bbox={},{},{},{},EPSG:4326&srsName=EPSG:4326&outputFormat=application/json",
             body_type, west, south, east, north
@@ -309,7 +321,10 @@ impl VirtualForest {
     }
 
     #[wasm_bindgen]
-    pub fn set_realestate(&mut self, index: u32) {
+    pub fn set_realestate(
+        &mut self, 
+        index: u32
+    ) {
         self.selected_realestate = index;
     }
 
@@ -354,7 +369,11 @@ impl VirtualForest {
     }
 
     #[wasm_bindgen]
-    pub fn get_stand_by_id(&self, id: String) -> Result<JsValue, JsValue> {
+    pub fn get_stand_by_id(
+        &self, 
+        id: String
+    ) -> Result<JsValue, JsValue> {
+
         if let Some(stand) = self
             ._get_selected_realestate()
             .unwrap()
@@ -370,7 +389,12 @@ impl VirtualForest {
         }
     }
 
-    fn is_point_within_threshold(road_point: &Point<f64>, tree: &mut Tree, threshold_in_meters: f64) -> bool {
+    fn is_point_within_threshold(
+        road_point: &Point<f64>, 
+        tree: &mut Tree, 
+        threshold_in_meters: f64
+    ) -> bool {
+
         let point = point!(x: tree.position().0, y: tree.position().1);
 
         // Calculate the minimum distance from the point to any segment of the line
@@ -381,7 +405,14 @@ impl VirtualForest {
     }
 
     #[wasm_bindgen]
-    pub fn generate_trees_bbox(&self, min_x: f64, max_x: f64, min_y: f64, max_y: f64) -> Trees {
+    pub fn generate_trees_bbox(
+        &self, 
+        min_x: f64, 
+        max_x: f64, 
+        min_y: f64, 
+        max_y: f64
+    ) -> Trees {
+
         let bbox = Polygon::new(
             LineString(vec![
                 coord!(x: min_x, y: min_y),
@@ -414,7 +445,8 @@ impl VirtualForest {
         
         compartments.iter_mut().for_each(|compartment| {
             compartment.trees.iter_mut().for_each(|tree| {
-                let (x, y, _) = tree.position();
+                // Move the tree from the road if it is within the threshold
+/*                 let (x, y, _) = tree.position();
                 let tree_point = point!(x: x, y: y);
 
                 if let Some((mut road_point, road_line)) = road_lines.iter().filter_map(|rl| {
@@ -425,18 +457,24 @@ impl VirtualForest {
                         _ => None,
                     }
                 }).next() {
-                    log_1(&format!("Moving point from road").into());
                     Self::move_point_from_road(tree, &mut road_point, road_line, &compartment.polygon);
-                }
+                } */
                 
                 trees.insert(*tree);
-            })
+            });
         });
+
+        log_1(&format!("Done generating trees!").into());
 
         return trees;
     }
 
-    fn move_point_from_road(tree: &mut Tree, road_point: &mut Point<f64>, road_line: &LineString<f64>, compartment: &Polygon<f64>) {
+    fn move_point_from_road(
+        tree: &mut Tree, 
+        road_point: &mut Point<f64>, 
+        road_line: &LineString<f64>, 
+        compartment: &Polygon<f64>
+    ) {
         let (mut x, mut y, _) = tree.position();
         
         let five_meters_x = meters_to_degrees_lon(5.0, y);

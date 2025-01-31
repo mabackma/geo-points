@@ -70,6 +70,7 @@ impl<R: Rng> JitteredHexagonalGridSampling<R> {
         while self.current_y < self.max_y {
             let y_odd = self.current_y % 2 == 1;
             let max_x = if y_odd { self.max_x_odd } else { self.max_x_even };
+
             while self.current_x < max_x {
                 let cx = self.min_x + (self.current_x as f64 * 2.0 + if y_odd { 1.0 } else { 0.0 }) * self.r * HEX_SIDE;
                 let cy = self.min_y + self.current_y as f64 * 1.5 * self.r;
@@ -104,7 +105,6 @@ impl<R: Rng> JitteredHexagonalGridSampling<R> {
     pub fn fill(&mut self) -> Vec<[f64; 2]> {
  
         self.generate_all_points();
-
 
         if let Some(limit) = self.point_limit {
             let mut sampled_points = self.sample_points.clone();

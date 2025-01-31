@@ -42,23 +42,33 @@ impl Trees {
         }
     }
 
-    pub fn insert(&mut self, tree: Tree) {
+    pub fn insert(
+        &mut self, 
+        tree: Tree
+    ) {
         self.x.push(tree.position().0 as f32);
         self.y.push(tree.position().1 as f32);
         self.z.push(tree.position().2 as f32);
+
         self.species.push(tree.species());
         self.height.push(tree.tree_height());
         self.status.push(tree.tree_status() as u8);
         self.stand_id.push(tree.stand_id() as u16);
     }
 
-    pub fn for_each(&self, callback: &Function) {
+    pub fn for_each(
+        &self, 
+        callback: &Function
+    ) {
         for i in 0..self.x.len() {
+
             // Create a JS Array for the arguments
             let tree_args = Array::new();
+
             tree_args.push(&JsValue::from_f64(self.x[i] as f64));
             tree_args.push(&JsValue::from_f64(self.y[i] as f64));
             tree_args.push(&JsValue::from_f64(self.z[i] as f64));
+
             tree_args.push(&JsValue::from(self.species[i]));
             tree_args.push(&JsValue::from_f64(self.height[i] as f64));
             tree_args.push(&JsValue::from(self.status[i]));

@@ -14,7 +14,14 @@ pub struct Tree {
 }
 
 impl Tree {
-    pub fn new(stand_id: f64, species: u8, mean_height: f32, position: (f64, f64, f64), tree_status: Option<f64>) -> Self {
+    pub fn new(
+        stand_id: f64, 
+        species: u8, 
+        mean_height: f32, 
+        position: (f64, f64, f64), 
+        tree_status: Option<f64>
+    ) -> Self {
+
         let height = calculate_height(mean_height);
 
         Tree {
@@ -57,6 +64,7 @@ impl Tree {
 }
 
 pub fn calculate_height(base_height: f32) -> f32 {
+    
     // Create a Gaussian distribution with mean 1 and standard deviation 0.07
     let normal_dist = Normal::new(1.0, 0.07).unwrap();
     let mut rng = thread_rng();

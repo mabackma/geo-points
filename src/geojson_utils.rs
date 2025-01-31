@@ -56,7 +56,11 @@ impl From<SerdeJsonError> for FetchError {
 }
 
 // Function to convert a Polygon into a GeoJSON Feature
-fn convert_polygon_to_feature(polygon: &Polygon<f64>, property: Option<&str>) -> Feature {
+fn convert_polygon_to_feature(
+    polygon: &Polygon<f64>, 
+    property: Option<&str>
+) -> Feature {
+
     let exterior_coords: Vec<Vec<f64>> = polygon.exterior().points()
         .map(|point| vec![point.x(), point.y()])
         .collect();
@@ -88,7 +92,10 @@ fn convert_polygon_to_feature(polygon: &Polygon<f64>, property: Option<&str>) ->
     }
 }
 
-fn convert_linestrings_to_feature(line_strings: &Vec<LineString>) -> Feature {
+fn convert_linestrings_to_feature(
+    line_strings: &Vec<LineString>
+) -> Feature {
+
     let mut line_strings_coords = Vec::new();
     for line_string in line_strings {
         let coords: Vec<Vec<f64>> = line_string.points()
@@ -139,9 +146,10 @@ pub fn convert_tree_to_feature(tree: &Tree) -> Feature {
 }
 
 pub fn all_compartments_to_geojson(
-        compartments: Vec<Compartment>,
-        buildings: &GeoJson, 
-        roads: &GeoJson) -> GeoJson {
+    compartments: Vec<Compartment>,
+    buildings: &GeoJson, 
+    roads: &GeoJson
+) -> GeoJson {
         
     let mut all_features = Vec::new();
 
@@ -186,17 +194,16 @@ pub fn all_compartments_to_geojson(
         foreign_members: None,
     };
 
-    // Create a GeoJson object
-    let geojson = GeoJson::FeatureCollection(feature_collection);
-
-    geojson
+    // Return a GeoJson object
+    GeoJson::FeatureCollection(feature_collection)
 }
 
 pub fn all_compartment_areas_to_geojson(
     compartment_areas: Vec<CompartmentArea>,
     buildings: &Vec<Polygon>, 
     roads: &Vec<LineString>,
-    water: &Vec<Polygon>) -> GeoJson {
+    water: &Vec<Polygon>
+) -> GeoJson {
     
     let mut all_features = Vec::new();
 
@@ -226,13 +233,15 @@ pub fn all_compartment_areas_to_geojson(
         foreign_members: None,
     };
 
-    // Create a GeoJson object
-    let geojson = GeoJson::FeatureCollection(feature_collection);
-
-    geojson
+    // Return a GeoJson object
+    GeoJson::FeatureCollection(feature_collection)
 }
 
-pub fn polygon_to_geojson(polygon: &Polygon<f64>, trees: &Vec<Tree>) -> GeoJson {
+pub fn polygon_to_geojson(
+    polygon: &Polygon<f64>, 
+    trees: &Vec<Tree>
+) -> GeoJson {
+
     let mut all_features = Vec::new();
 
     // Convert the compartment (polygon) to a GeoJSON feature
@@ -271,11 +280,14 @@ pub fn geojson_to_polygons(geojson: &GeoJson) -> Vec<Polygon<f64>> {
 
     // Match on GeoJson to handle FeatureCollection
     if let GeoJson::FeatureCollection(collection) = geojson {
+
         for feature in &collection.features {
+
             // Ensure we are working with a valid Feature
             if let Some(geometry) = &feature.geometry {
                 match &geometry.value {
                     Value::Polygon(polygon) => {
+
                         // Convert GeoJSON Polygon to geo crate Polygon
                         let exterior = polygon[0]
                             .iter()
@@ -284,6 +296,7 @@ pub fn geojson_to_polygons(geojson: &GeoJson) -> Vec<Polygon<f64>> {
 
                         // Create a geo crate Polygon
                         let poly = Polygon::new(LineString::from(exterior), vec![]);
+
                         polygons.push(poly);
                     }
                     _ => {
@@ -304,6 +317,7 @@ pub fn water_geojson_to_polygons(geojson: &GeoJson) -> Vec<Polygon<f64>> {
     if let GeoJson::FeatureCollection(collection) = geojson {
         for feature in collection.features.iter() {
             if let Some(geometry) = &feature.geometry {
+
                 match &geometry.value {
                     Value::Polygon(polygon) => {
                         let exterior = polygon[0]
@@ -316,7 +330,9 @@ pub fn water_geojson_to_polygons(geojson: &GeoJson) -> Vec<Polygon<f64>> {
                                 }
                             })
                             .collect::<Vec<_>>();
+
                         let poly = Polygon::new(LineString::from(exterior), vec![]);
+
                         polygons.push(poly);
                     }
                     _ => {
@@ -336,6 +352,7 @@ pub fn roads_geojson_to_linestrings(geojson: &GeoJson) -> Vec<LineString<f64>> {
     if let GeoJson::FeatureCollection(collection) = geojson {
         for feature in collection.features.iter() {
             if let Some(geometry) = &feature.geometry {
+
                 match &geometry.value {
                     Value::LineString(line_string) => {
                         let line = line_string
@@ -348,6 +365,7 @@ pub fn roads_geojson_to_linestrings(geojson: &GeoJson) -> Vec<LineString<f64>> {
                                 }
                             })
                             .collect::<Vec<_>>();
+
                         linestrings.push(LineString::from(line));
                     }
                     _ => {

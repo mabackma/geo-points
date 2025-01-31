@@ -16,7 +16,11 @@ pub struct Scale {
 }
 
 impl ImageProcessor {
-    pub fn new(width: u32, height: u32) -> Self {
+    pub fn new(
+        width: u32, 
+        height: u32
+    ) -> Self {
+
         ImageProcessor {
             img: RgbImage::new(width, height),
             width,
@@ -28,7 +32,14 @@ impl ImageProcessor {
         &self.img
     }
 
-    pub fn create_scale(min_x:f64, max_x:f64, min_y:f64, max_y:f64, img_width:u32, img_height:u32) -> Scale {
+    pub fn create_scale(
+        min_x:f64, 
+        max_x:f64, 
+        min_y:f64, 
+        max_y:f64, 
+        img_width:u32, 
+        img_height:u32
+    ) -> Scale {
 
         let width = max_x - min_x;
         let height = max_y - min_y;
@@ -42,7 +53,11 @@ impl ImageProcessor {
     }
     
     // Scale polygon to fit image
-    pub fn scale_x_and_y(&self, p: &Polygon<f64>) -> Scale {
+    pub fn scale_x_and_y(
+        &self, 
+        p: &Polygon<f64>
+    ) -> Scale {
+
         let (min_x, max_x, min_y, max_y) = get_min_max_coordinates(&p);
         let width = max_x - min_x;
         let height = max_y - min_y;
@@ -56,7 +71,12 @@ impl ImageProcessor {
     }
 
     // Map polygon coordinates to image pixel coordinates
-    pub fn map_coordinates_to_image(&self, p: &Polygon<f64>, scale: &Scale) -> Vec<(u32, u32)> {
+    pub fn map_coordinates_to_image(
+        &self, 
+        p: &Polygon<f64>, 
+        scale: &Scale
+    ) -> Vec<(u32, u32)> {
+
         p.exterior()
             .points()
             .map(|point| {
@@ -68,7 +88,12 @@ impl ImageProcessor {
     }
 
     // DDA Line algorithm to draw line segments
-    pub fn draw_line_segment(&mut self, p1: (u32, u32), p2: (u32, u32), color: Rgb<u8>) {
+    pub fn draw_line_segment(
+        &mut self, 
+        p1: (u32, u32), 
+        p2: (u32, u32), 
+        color: Rgb<u8>
+    ) {
         let dx = p2.0 as i32 - p1.0 as i32;
         let dy = p2.1 as i32 - p1.1 as i32;
 
@@ -93,16 +118,28 @@ impl ImageProcessor {
     }
 
     // Draw the polygon edges by connecting points
-    pub fn draw_polygon_image(&mut self, coords: &Vec<(u32, u32)>, color: Rgb<u8>) {
+    pub fn draw_polygon_image(
+        &mut self, 
+        coords: &Vec<(u32, u32)>, 
+        color: Rgb<u8>
+    ) {
         for i in 0..coords.len() {
             let (x0, y0) = coords[i];
             let (x1, y1) = coords[(i + 1) % coords.len()]; // Wrap around to connect the last point to the first
+            
             self.draw_line_segment((x0, y0), (x1, y1), color);
         }
     }
 
     // Draws a random point
-    pub fn draw_random_point(&mut self, scale: &Scale, img_width: u32, img_height: u32, point: Coord, color: Rgb<u8>) {
+    pub fn draw_random_point(
+        &mut self, 
+        scale: &Scale, 
+        img_width: u32, 
+        img_height: u32, 
+        point: Coord, 
+        color: Rgb<u8>
+    ) {
         let Scale{scale_x, scale_y, min_x, min_y} = scale;
 
         let mut x = ((point.x - min_x) * scale_x).round() as u32;

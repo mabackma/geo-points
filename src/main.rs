@@ -21,14 +21,17 @@ pub fn forest_property_data_from_polygon(polygon_string: &str) -> ForestProperty
 }
 
 fn main() -> Result<(), Box<dyn Error>>{
-    //let property = ForestPropertyData::from_xml_file("forestpropertydata.xml");
+    let property = ForestPropertyData::from_xml_file("forestpropertydata.xml");
 
-    let polygon_string = "393960.156%206801453.126,%20394798.608%206801657.878,%20394930.512%206801670.111,%20395028.723%206802116.858,%20394258.945%206801929.148,%20394261.711%206801810.541,%20394091.166%206801665.961,%20393960.156%206801453.126";
-    let property = forest_property_data_from_polygon(polygon_string);
+    //let polygon_string = "393960.156%206801453.126,%20394798.608%206801657.878,%20394930.512%206801670.111,%20395028.723%206802116.858,%20394258.945%206801929.148,%20394261.711%206801810.541,%20394091.166%206801665.961,%20393960.156%206801453.126";
+    //let property = forest_property_data_from_polygon(polygon_string);
 
     let mut bbox = get_bounding_box_of_map(&property);
+
+    // Take only small part of map
     bbox = random_bbox(&bbox);
     println!("Bounding box: {:#?}", bbox);
+
     let empty_geojson = GeoJson::FeatureCollection(FeatureCollection {
         bbox: None,
         features: vec![],
@@ -67,7 +70,6 @@ fn main() -> Result<(), Box<dyn Error>>{
     }
 
     let(min_x, max_x, min_y, max_y) = get_min_max_coordinates(&bbox);
-    let property = ForestPropertyData::from_xml_file("forestpropertydata.xml");
 
     match create_geo_json_from_coords(min_x, max_x, min_y, max_y, &property, &buildings_geojson, &roads_geojson) {
         Ok(geojson) => {
@@ -82,7 +84,9 @@ fn main() -> Result<(), Box<dyn Error>>{
     }
 
     println!("------------------------------------------------------------");
-    let map_image = draw_stands_in_bbox(&bbox, &property, &buildings);  
+
+    let map_image = draw_stands_in_bbox(&bbox, &property, &buildings); 
+
     map_image
         .img()
         .save("stands_in_bbox_image.png")
@@ -90,7 +94,9 @@ fn main() -> Result<(), Box<dyn Error>>{
     println!("Image saved as 'stands_in_bbox_image.png'");
 
     println!("------------------------------------------------------------");
+
     let selected_image = draw_selected_stand(&property);
+
     selected_image
         .img()
         .save("selected_stand_image.png")

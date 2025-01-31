@@ -11,7 +11,11 @@ pub struct ForestPropertyData {
     pub stands: Option<Stands>,
 }
 
-pub fn read_number_cli(min: usize, max: usize) -> usize {
+pub fn read_number_cli(
+    min: usize, 
+    max: usize
+) -> usize {
+
     let mut buf = String::new();
 
     std::io::stdin()
@@ -40,6 +44,7 @@ pub trait ForestPropertyDataSchema {
 
 impl ForestPropertyDataSchema for ForestPropertyData {
     fn default() -> Self {
+
         ForestPropertyData {
             real_estates: None,
             stands: None,
@@ -63,7 +68,11 @@ impl ForestPropertyDataSchema for ForestPropertyData {
         property
     }
 
-    fn write_to_json_file(&self, path: &str) -> anyhow::Result<(), anyhow::Error> {
+    fn write_to_json_file(
+        &self, 
+        path: &str
+    ) -> anyhow::Result<(), anyhow::Error> {
+        
         let json_file = File::create(path)?;
 
         serde_json::to_writer(json_file, &self)?;
@@ -91,20 +100,25 @@ impl ForestPropertyDataSchema for ForestPropertyData {
     }
 
     fn get_stand_cli(&self) -> Stand {
-        let real_estates = &self.real_estates.clone().unwrap().real_estate;
 
-        println!("Realestates:");
-        for (i, real_estate) in real_estates.iter().enumerate() {
-            println!("{}. {:?}, ", i.to_string(), real_estate.real_estate_name);
-        }
-        println!("Choose a realestate number to view: ");
+        let stands_data: Vec<Stand> = if self.real_estates.is_some() {
+            let real_estates = &self.real_estates.clone().unwrap().real_estate;
 
-        let real_estate_index = read_number_cli(0, real_estates.len());
-
-        let binding = self.real_estates.clone().unwrap();
-        let real_estate = &binding.real_estate[real_estate_index];
-
-        let stands_data: Vec<Stand> = real_estate.get_stands();
+            println!("Realestates:");
+            for (i, real_estate) in real_estates.iter().enumerate() {
+                println!("{}. {:?}, ", i.to_string(), real_estate.real_estate_name);
+            }
+            println!("Choose a realestate number to view: ");
+    
+            let real_estate_index = read_number_cli(0, real_estates.len());
+    
+            let binding = self.real_estates.clone().unwrap();
+            let real_estate = &binding.real_estate[real_estate_index];
+    
+            real_estate.get_stands()
+        } else {
+            self.stands.clone().unwrap().get_stands()
+        };
 
         for (i, stand) in stands_data.iter().enumerate() {
             let StandBasicData {
@@ -129,7 +143,6 @@ impl ForestPropertyDataSchema for ForestPropertyData {
 
 #[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
 pub struct RealEstates {
-    
     #[serde(rename = "RealEstate")]
     pub real_estate: Vec<RealEstate>,
 }
@@ -153,7 +166,6 @@ pub struct RealEstate {
 }
 
 impl RealEstate {
-    
     pub fn get_stands(&self) -> Vec<Stand> {
 
         let parcels = &self.parcels.parcel;
@@ -173,7 +185,6 @@ impl RealEstate {
 
 #[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
 pub struct Parcels {
-    
     #[serde(rename = "Parcel")]
     pub parcel: Vec<Parcel>,
 }
@@ -191,7 +202,6 @@ pub struct Parcel {
 
 #[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
 pub struct StandBasicData {
-    
     #[serde(rename = "Identifiers")]
     pub identifiers: Option<Identifiers>,
     #[serde(rename = "CuttingRestriction", default)]
@@ -244,7 +254,6 @@ pub struct Identifiers {
 
 #[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
 pub struct Identifier {
-    
     #[serde(rename = "IdentifierType")]
     pub identifier_type: String,
     #[serde(rename = "IdentifierValue")]
@@ -253,7 +262,6 @@ pub struct Identifier {
 
 #[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
 pub struct SpecialFeatures {
-    
     #[serde(rename = "SpecialFeature")]
     pub special_feature: Vec<SpecialFeature>,
 }
@@ -262,7 +270,6 @@ pub struct SpecialFeatures {
 pub struct SpecialFeature {
     #[serde(rename = "@id")]
     pub id: u32,
-    
     #[serde(rename = "FeatureAdditionalCode")]
     pub feature_additional_code: Option<String>,
     #[serde(rename = "FeatureCode")]
@@ -271,7 +278,6 @@ pub struct SpecialFeature {
 
 #[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
 pub struct Operations {
-    
     #[serde(rename = "Operation")]
     pub operation: Vec<Operation>,
 }
@@ -302,14 +308,12 @@ pub struct Operation {
 
 #[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
 pub struct CompletionData {
-    
     #[serde(rename = "CompletionDate")]
     pub completion_date: String,
 }
 
 #[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
 pub struct Specifications {
-    
     #[serde(rename = "Specification")]
     pub specification: Vec<Specification>,
 }
@@ -335,7 +339,6 @@ pub struct ProposalData {
 
 #[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
 pub struct Cutting {
-    
     #[serde(rename = "CuttingVolume",default = "default_zero_f32")]
     pub cutting_volume: f32,
     #[serde(rename = "Assortments")]
@@ -344,7 +347,6 @@ pub struct Cutting {
 
 #[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
 pub struct Assortments {
-    
     #[serde(rename = "Assortment", default)]
     pub assortment: Vec<Assortment>,
 }
@@ -363,7 +365,6 @@ pub struct Assortment {
 
 #[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
 pub struct TreeStandData {
-    
     #[serde(rename = "TreeStandDataDate")]
     pub tree_stand_data_date: Vec<TreeStandDataDate>,
 }
@@ -384,7 +385,6 @@ pub struct TreeStandDataDate {
 
 #[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
 pub struct DeadTreeStrata {
-    
     #[serde(rename = "DeadTreeStratum")]
     pub dead_tree_stratum: Vec<DeadTreeStratum>,
 }
@@ -405,7 +405,6 @@ pub struct DeadTreeStratum {
 
 #[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
 pub struct TreeStrata {
-    
     #[serde(rename = "TreeStratum")]
     pub tree_stratum: Vec<TreeStratum>,
 }
@@ -417,6 +416,10 @@ fn default_zero_u32() -> u32 {
 
 fn default_zero_f32() -> f32 {
     0.0
+}
+
+fn default_zero_u8() -> u8 {
+    0
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize, Copy)]
@@ -478,4 +481,6 @@ pub struct TreeStandSummary {
     pub volume_growth: f32,
     #[serde(rename = "ValueGrowthPercent", default = "default_zero_f32")]
     pub value_growth_percent: f32,
+    #[serde(rename = "MainTreeSpecies", default = "default_zero_u8")]
+    pub main_tree_species: u8,
 }

@@ -1,5 +1,6 @@
 use crate::forest_property::compartment::find_stands_in_bounding_box;
 use crate::forest_property::forest_property_data::{ForestPropertyData, ForestPropertyDataSchema};
+use crate::forest_property::stand::Stand;
 use crate::forest_property::tree_stand_data::TreeStrata;
 use crate::forest_property::tree::Tree;
 use crate::jittered_hexagonal_sampling::{GridOptions, JitteredHexagonalGridSampling};
@@ -18,6 +19,7 @@ use core::f32::consts::PI;
 // Get minimum and maximum x and y coordinates of a polygon
 pub fn get_min_max_coordinates(p: &Polygon<f64>) -> (f64, f64, f64, f64) {
     let rect = p.bounding_rect().unwrap();
+    
     let min_x = rect.min().x;
     let max_x = rect.max().x;
     let min_y = rect.min().y;
@@ -72,7 +74,11 @@ pub fn polygon_to_wgs84(p: &Polygon) -> Polygon {
     Polygon::new(LineString::from(coords), vec![])
 }
 
-pub fn generate_radius(total_stem_count: u32, area: f32) -> f32 {
+pub fn generate_radius(
+    total_stem_count: u32, 
+    area: f32
+) -> f32 {
+
     let total_trees = total_stem_count as f32 * area / 10000.0;
 
     let mut ratio_fix = 1.3;
@@ -83,6 +89,7 @@ pub fn generate_radius(total_stem_count: u32, area: f32) -> f32 {
     let square_to_circle_ratio = 1.273 / ratio_fix;
 
     let tree_needed_area = area / total_trees / square_to_circle_ratio;
+
     // Calculate the radius based on the mean height of the tree species
     (tree_needed_area / PI).sqrt()
 }
@@ -131,7 +138,13 @@ pub fn get_area_ratio(
 }
 
 // Generates random trees in stand for all strata with jittered grid sampling
-pub fn generate_random_trees(p: &Polygon, strata: &TreeStrata, area_ratio: f64, stand_id: f64) -> Vec<Tree> {
+pub fn generate_random_trees(
+    p: &Polygon, 
+    strata: &TreeStrata, 
+    area_ratio: f64, 
+    stand_id: f64
+) -> Vec<Tree> {
+
     let total_stem_count = strata.tree_stratum.iter().fold(0, |mut acc: u32, f| {
         acc += f.stem_count;
         acc
@@ -163,11 +176,8 @@ pub fn generate_random_trees(p: &Polygon, strata: &TreeStrata, area_ratio: f64, 
             let mut grid = JitteredHexagonalGridSampling::new(rng, options);
 
             let points =  grid.fill();
-
-            if points.len() == 0 {
-                //println!("\tNo trees generated for stratum with basal area {}, stem count {}, mean height {}", stratum.basal_area, stratum.stem_count, stratum.mean_height);
-            }
-            else if points.len() < amount as usize {
+            
+            if points.len() != 0 && points.len() < amount as usize {
                 println!("Generated {} / {} trees for stratum with basal area {}, stem count {}, mean height {}.", points.len(), amount, stratum.basal_area, stratum.stem_count, stratum.mean_height);
             }
 
@@ -180,11 +190,60 @@ pub fn generate_random_trees(p: &Polygon, strata: &TreeStrata, area_ratio: f64, 
                     None
                 )
             }).collect();
+            
             trees_strata
         })
         .flatten();
 
     trees.collect()
+}
+
+pub fn generate_random_trees_no_strata(
+    p: &Polygon,
+    stand: &Stand,
+    area_ratio: f64, 
+    stand_id: f64
+) -> Vec<Tree> {
+
+    let stem_count = stand.summary_stem_count().unwrap_or(0);
+    let tree_species = stand.main_tree_species().unwrap_or(0);
+    let basal_area = stand.summary_basal_area().unwrap_or(0.0);
+    let mean_height = stand.summary_mean_height().unwrap_or(0.0);
+
+    let tree_amount = (stem_count as f64) * area_ratio;
+    let amount = tree_amount.round() as u32;
+
+    let mut radius = generate_radius(
+        stem_count,
+        basal_area
+    );
+            
+    radius *= 0.00001;
+
+    // Jittered Grid Version 2
+    let rng = rand::thread_rng();
+    let options = GridOptions {
+        polygon: p.to_owned(),
+        radius: (radius).into(),
+        jitter: Some(0.6666),
+        point_limit: Some(amount as usize),
+    };
+
+    let mut grid = JitteredHexagonalGridSampling::new(rng, options);
+
+    let points =  grid.fill();
+
+    let trees: Vec<Tree> = points.iter().map(|pair: &[f64; 2]| {
+        Tree::new(
+            stand_id,
+            tree_species,
+            mean_height,
+            (pair[0], pair[1], 0.0),
+            None
+        )
+    }).collect();
+    
+    trees
 }
 
 // Generates random trees for all strata in stand with jittered grid sampling
@@ -196,6 +255,7 @@ pub fn generate_random_trees_into_buffer(
     buffer: &SharedBuffer, // Pass in the SharedBuffer to fill
     start_index: usize,
 ) -> usize {
+
     let total_stem_count = strata.tree_stratum.iter().fold(0, |mut acc: u32, f| {
         acc += f.stem_count;
         acc
@@ -205,6 +265,7 @@ pub fn generate_random_trees_into_buffer(
         .tree_stratum
         .par_iter()
         .map(|stratum| {
+
             // Calculate the area ratio of the clipped polygon to the original polygon
             let original_area = stand_p.unsigned_area();
             let clipped_area = clipped_p.unsigned_area();
@@ -250,6 +311,7 @@ pub fn generate_random_trees_into_buffer(
     for (i, tree) in trees.iter().enumerate() {
         let buffer_index = start_index + i;
         if i < buffer.len() / 6 {
+
             // Fill the buffer with tree data
             buffer.fill_tree(
                 buffer_index,

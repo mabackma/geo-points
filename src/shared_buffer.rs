@@ -13,6 +13,7 @@ pub struct SharedBuffer {
 
 #[wasm_bindgen]
 impl SharedBuffer {
+    
     #[wasm_bindgen(constructor)]
     pub fn new(num_trees: usize) -> SharedBuffer {
         let size = num_trees * 6;
@@ -36,8 +37,16 @@ impl SharedBuffer {
 
     /// Fills the buffer with data for a single tree (stand_id, x, y, species, tree_height, tree_status=1.0)
     /// `index` is the index of the tree in the buffer (0-based)
-    pub fn fill_tree(&self, index: usize, stand_id: f64, x: f64, y: f64, species: u8, tree_height: f32) {
+    pub fn fill_tree(
+        &self, index: usize, 
+        stand_id: f64, 
+        x: f64, 
+        y: f64, 
+        species: u8, 
+        tree_height: f32
+    ) {
         let base = index * 6; // 6 values per tree: stand_id, x, y, species, tree_height, tree_status
+        
         if base + 6 < self.len && species != 0 {
             unsafe {
                 *self.ptr.add(base) = stand_id;     // stand id in f64
@@ -51,7 +60,13 @@ impl SharedBuffer {
     }
 
     /// Clears trees from chosen stand. 
-    pub fn forest_clearing(&self, stand_id: f64, amount: usize, tree_count: usize, area_ratio: f64) {
+    pub fn forest_clearing(
+        &self, 
+        stand_id: f64, 
+        amount: usize, 
+        tree_count: usize, 
+        area_ratio: f64
+    ) {
         let mut rng = rand::thread_rng();
         let mut indices = HashSet::new();
         let mut trees_cleared = 0;

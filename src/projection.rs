@@ -61,6 +61,7 @@ impl Projection {
 
     // Converts EPSG:4326 to EPSG:3067 (degrees to meters).
     pub fn transform_inverse(&self, x:f64, y:f64) -> (f64, f64) {
+
         // Convert degrees to radians
         let mut point_3d = (x.to_radians(), y.to_radians(), 0.0);
 
@@ -128,7 +129,11 @@ impl fmt::Debug for Projection {
 }
 
 impl PartialEq for Projection {
-    fn eq(&self, other: &Self) -> bool {
+    fn eq(
+        &self, 
+        other: &Self
+    ) -> bool {
+
         //self.from == other.from && self.to == other.to
         true
     }
@@ -137,6 +142,7 @@ impl PartialEq for Projection {
 // Implement Clone for Projection
 impl Clone for Projection {
     fn clone(&self) -> Self {
+
         Projection {
             from: self.from.clone(),
             to: self.to.clone(),
@@ -146,6 +152,7 @@ impl Clone for Projection {
 
 impl Default for Projection {
     fn default() -> Self {
+
         Projection {
             from: Proj::from_proj_string("+proj=latlong").unwrap(),
             to: Proj::from_proj_string("+proj=latlong").unwrap(),
@@ -155,6 +162,7 @@ impl Default for Projection {
 
 #[test]
 fn test_projection() {
+    
     // EPSG:3067 - TM35FIN(E,N) -- Finland
     let from = Proj::from_proj_string(
         "+proj=utm +zone=35 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs +type=crs",

@@ -49,10 +49,8 @@ pub struct Stand {
 
 impl Stand {
     pub fn compute_polygon(&mut self) -> &Self {
-
         self.computed_polygon = Some(self.create_polygon());
-        self
-       
+        self    
     }
 
     pub fn parse_geometry(&self, coord_string: &String) -> Vec<Coord<f64>> {
@@ -100,6 +98,7 @@ impl Stand {
     }
 
     pub fn create_polygon(&mut self) -> Polygon {
+
         // Projection from ETRS-TM35FIN to WGS84
         self.proj = Projection::new(CRS::Epsg3067, CRS::Epsg4326);
 
@@ -116,9 +115,51 @@ impl Stand {
             Some(data) => data,
             None => return None 
         };
-
+        
         match &last_data_date.tree_stand_summary {
             Some(summary) => return Some(summary.stem_count),
+            None => return None
+        };
+        
+    }
+
+    pub fn summary_basal_area(&self) -> Option<f32> {
+
+        let last_data_date = match self.get_last_tree_stand_data_date() {
+            Some(data) => data,
+            None => return None 
+        };
+        
+        match &last_data_date.tree_stand_summary {
+            Some(summary) => return Some(summary.basal_area.into()),
+            None => return None
+        };
+        
+    }
+
+    pub fn summary_mean_height(&self) -> Option<f32> {
+
+        let last_data_date = match self.get_last_tree_stand_data_date() {
+            Some(data) => data,
+            None => return None 
+        };
+        
+        match &last_data_date.tree_stand_summary {
+            Some(summary) => return Some(summary.mean_height.into()),
+            None => return None
+        };
+        
+    }
+
+    pub fn main_tree_species(&self) -> Option<u8> {
+
+        let last_data_date = match self.get_last_tree_stand_data_date() {
+            Some(data) => data,
+            None => return None 
+        };
+        
+        match &last_data_date.tree_stand_summary {
+            Some(summary) => return Some(summary.main_tree_species.into()),
             None => return None
         };
         
@@ -141,7 +182,12 @@ impl Stand {
             None => return None 
         };
 
+        if last_data_date.tree_strata.is_none() {
+            return None
+        }
+
         let stratums = last_data_date.tree_strata.unwrap().tree_stratum.to_owned();
+
         Some(stratums)
     }
 
@@ -151,8 +197,13 @@ impl Stand {
             None => return None 
         };
 
+        if last_data_date.tree_strata.is_none() {
+            return None
+        }
+
         let strata = &last_data_date.tree_strata.unwrap().tree_stratum;
         let strata = TreeStrata::new(strata.to_vec());
+
         Some(strata)
     }
 
