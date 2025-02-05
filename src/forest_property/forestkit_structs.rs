@@ -9,7 +9,7 @@
 ///     Float(f64),
 /// }
 /// 
-/// The Number struct uses a custom deserializer.
+/// The Number enum uses a custom deserializer.
 /// 
 /// More info at:
 /// https://crates.io/crates/schema_generator
