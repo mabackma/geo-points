@@ -5,186 +5,8091 @@
         "coordinates": [
           [
             [
-              25.0342568826143,
-              61.33825132053465
+              25.032020260223486,
+              61.334013587365
             ],
             [
-              25.034080221297224,
-              61.338176155199776
+              25.032029101503845,
+              61.334030652314944
             ],
             [
-              25.033893677086915,
-              61.338170338044634
+              25.031980555583907,
+              61.33413823738794
             ],
             [
-              25.03334098072743,
-              61.33783668183477
+              25.031901464396196,
+              61.33421619931832
             ],
             [
-              25.03328187683761,
-              61.33786108255989
+              25.031740852028236,
+              61.33429666842927
             ],
             [
-              25.032940657461644,
-              61.33771178724669
+              25.031555061144058,
+              61.33435968390783
             ],
             [
-              25.03104875706618,
-              61.33702294809432
+              25.031511440374608,
+              61.33439145199375
             ],
             [
-              25.0304266355097,
-              61.33658354756141
+              25.03148817709366,
+              61.33442348359807
             ],
             [
-              25.029941043298134,
-              61.33656132622015
+              25.029846715595337,
+              61.33421087727702
             ],
             [
-              25.029859359997957,
-              61.336594766336894
+              25.029353624237455,
+              61.33414700710135
             ],
             [
-              25.029704000919853,
-              61.33669746741417
+              25.028896012586724,
+              61.33408773053012
             ],
             [
-              25.029630552983548,
-              61.33673236938178
+              25.0288728681853,
+              61.33408473297342
             ],
             [
-              25.029571923952606,
-              61.33677662729286
+              25.02724643990335,
+              61.33387404078644
             ],
             [
-              25.029535317237897,
-              61.336816870660556
+              25.025842134568226,
+              61.3336921048909
             ],
             [
-              25.029486947587262,
-              61.33695672199483
+              25.02583421975017,
+              61.33369107927497
             ],
             [
-              25.029451658815425,
-              61.337001540174235
+              25.02579420064591,
+              61.333685894431866
             ],
             [
-              25.029346432431154,
-              61.337064974975014
+              25.02572621546894,
+              61.33367708642637
             ],
             [
-              25.029189498105282,
-              61.33711418470201
+              25.025735783921288,
+              61.333613839554125
             ],
             [
-              25.029109703192994,
-              61.33714743445584
+              25.025888743380282,
+              61.33364260900636
             ],
             [
-              25.029082592029695,
-              61.337167747119416
+              25.025910288149227,
+              61.33364666057705
             ],
             [
-              25.029040187002256,
-              61.33723169872319
+              25.02591669753526,
+              61.333647757709656
             ],
             [
-              25.028996800880694,
-              61.337264327081016
+              25.02614615682246,
+              61.33368337056585
             ],
             [
-              25.02885475644789,
-              61.33728596820923
+              25.02615013164538,
+              61.33368394827615
             ],
             [
-              25.028726137434695,
-              61.33729098921381
+              25.026403327248197,
+              61.333718321415134
             ],
             [
-              25.02863891334636,
-              61.33730059078765
+              25.026406598260923,
+              61.33371873712613
             ],
             [
-              25.02855932559314,
-              61.337317684036556
+              25.026713858831265,
+              61.333755675856985
             ],
             [
-              25.0284981370043,
-              61.3373436213244
+              25.026726984266418,
+              61.33375685972128
             ],
             [
-              25.02843069181564,
-              61.33739874994608
+              25.026740305046793,
+              61.33375728578716
             ],
             [
-              25.02838372949818,
-              61.33747185802503
+              25.02696982633978,
+              61.33375804096776
             ],
             [
-              25.0283640213541,
-              61.33752223993494
+              25.026984943745006,
+              61.333757599558005
             ],
             [
-              25.028360432439662,
-              61.33761071051701
+              25.026999806739916,
+              61.33375618098375
             ],
             [
-              25.028348123230217,
-              61.33764396744456
+              25.027014133344135,
+              61.33375381078515
             ],
             [
-              25.030428986553723,
-              61.33791993676115
+              25.027027664160908,
+              61.33375054177153
             ],
             [
-              25.030372062376138,
-              61.33763042126173
+              25.027219083420682,
+              61.33369613918336
             ],
             [
-              25.030740925227768,
-              61.337402370304765
+              25.027231434575743,
+              61.33369207083325
             ],
             [
-              25.03116310366921,
-              61.33737064009086
+              25.027241180076956,
+              61.33368791435659
             ],
             [
-              25.03166328633554,
-              61.33756081790514
+              25.02738982684099,
+              61.33361666567754
             ],
             [
-              25.03205857072021,
-              61.33795764719657
+              25.02763228286404,
+              61.333552313354176
             ],
             [
-              25.032235915774358,
-              61.338061142749574
+              25.027871179176415,
+              61.333492298521016
             ],
             [
-              25.032697470979542,
-              61.33802997795945
+              25.028128153280186,
+              61.333440361243674
             ],
             [
-              25.033114402424914,
-              61.33827602814549
+              25.02833922789319,
+              61.333400797712805
             ],
             [
-              25.03482425690331,
-              61.338502727052926
+              25.028344619528507,
+              61.33339971031247
             ],
             [
-              25.034739599305762,
-              61.33816940370514
+              25.02867790937189,
+              61.33332741743744
             ],
             [
-              25.0342568826143,
-              61.33825132053465
+              25.028684871186435,
+              61.33332576279969
+            ],
+            [
+              25.028689968414962,
+              61.33332436308873
+            ],
+            [
+              25.0289667375709,
+              61.333243605333756
+            ],
+            [
+              25.028977978700727,
+              61.33323985389466
+            ],
+            [
+              25.028984023232887,
+              61.3332373884808
+            ],
+            [
+              25.029360112776843,
+              61.333072818787635
+            ],
+            [
+              25.02936895264299,
+              61.33306849187061
+            ],
+            [
+              25.029594152218817,
+              61.33294276481084
+            ],
+            [
+              25.02959644064018,
+              61.33294144556368
+            ],
+            [
+              25.029776087555618,
+              61.332834420019545
+            ],
+            [
+              25.029786537799705,
+              61.332827009237384
+            ],
+            [
+              25.029794284171228,
+              61.33281887314574
+            ],
+            [
+              25.029925535259157,
+              61.332643949373086
+            ],
+            [
+              25.030482884605117,
+              61.33265203044407
+            ],
+            [
+              25.030614559939696,
+              61.33271941034265
+            ],
+            [
+              25.030871023383774,
+              61.33280790027287
+            ],
+            [
+              25.03118593826912,
+              61.332934118070014
+            ],
+            [
+              25.031307489943142,
+              61.332964747660995
+            ],
+            [
+              25.031669150359093,
+              61.33347889466792
+            ],
+            [
+              25.03166218826141,
+              61.33350515463402
+            ],
+            [
+              25.031570375383374,
+              61.333545375456474
+            ],
+            [
+              25.03147004930436,
+              61.333600291295426
+            ],
+            [
+              25.03139504857366,
+              61.33367496703428
+            ],
+            [
+              25.03139013994856,
+              61.33371719411947
+            ],
+            [
+              25.03146822076079,
+              61.33381443019121
+            ],
+            [
+              25.031567046986446,
+              61.333900392949644
+            ],
+            [
+              25.0316543750809,
+              61.333955884056834
+            ],
+            [
+              25.031744157440276,
+              61.33399571395893
+            ],
+            [
+              25.031814022065195,
+              61.33400740189684
+            ],
+            [
+              25.031999791169373,
+              61.334008432510586
+            ],
+            [
+              25.032020260223486,
+              61.334013587365
             ]
           ]
         ],
         "type": "Polygon"
       },
       "properties": {},
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029360328495965,
+          61.33334839410061
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031348737365068,
+          61.33381669772428
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029959822641832,
+          61.3328437021735
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02922093143533,
+          61.33396985467605
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.028987849183785,
+          61.33385348573428
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.028961606636077,
+          61.333946611223816
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029435799354264,
+          61.33341928598639
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029786751290967,
+          61.333281985991306
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031130328547924,
+          61.333057034423476
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02802771601984,
+          61.3334683070567
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.028879119329257,
+          61.333952661748256
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030949103349858,
+          61.33380168411925
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03051869819813,
+          61.333193295370044
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031052682599896,
+          61.33433816145806
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03098630160194,
+          61.33287347857162
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03108584584298,
+          61.33388833048789
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030693318303683,
+          61.33305011053946
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030583152772792,
+          61.33355307693338
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02885206546062,
+          61.334013083238744
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02918155492768,
+          61.33336098315545
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.0296982460254,
+          61.33403327769286
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03028018563157,
+          61.33302810527002
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03152637163867,
+          61.33402892667794
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031337771964825,
+          61.33316616074718
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.028948011029172,
+          61.333537807923186
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03141219815801,
+          61.334221568630916
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029513334724662,
+          61.3339303903178
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030931214275448,
+          61.333553318143636
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031587151416876,
+          61.33421642031796
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02764958192047,
+          61.333849769475655
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029730069492576,
+          61.333239500968226
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031230873358183,
+          61.3334706950462
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030219228546393,
+          61.333126048544614
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030749031241033,
+          61.33324670119719
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030389745429776,
+          61.33372049800819
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030185112896323,
+          61.3328735958945
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029885538196563,
+          61.33306446064967
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031369034043347,
+          61.33391081154598
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031078641252204,
+          61.333389380801016
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030009876987574,
+          61.33314090706579
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031248779323313,
+          61.333162826060054
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.025778310073363,
+          61.33362905459945
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02809783516029,
+          61.33396562232476
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03007025498489,
+          61.334086619284044
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02726150167464,
+          61.333733845299555
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031257755787376,
+          61.33334641975007
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03032593932688,
+          61.3330290071298
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030592195578052,
+          61.33375944944321
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.028896698069687,
+          61.33371172720641
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030762338659777,
+          61.332860558271534
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03028101817898,
+          61.332727484751494
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.0294940263888,
+          61.33369978351636
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.028799337649964,
+          61.33378309555906
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02901511470054,
+          61.33399650592687
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.028485844759604,
+          61.33402470939595
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02934705089574,
+          61.3334281566836
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029624942266786,
+          61.333245092383905
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.0307685894093,
+          61.33418772797978
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.028729633641937,
+          61.33340082753839
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029618184351484,
+          61.3334741061124
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029526691032224,
+          61.33343080482139
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030032386232016,
+          61.33378191816711
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031353057842853,
+          61.333282997695626
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03061127996151,
+          61.333597680541324
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029582588752255,
+          61.333697695089086
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.027405019584194,
+          61.33368952501421
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029483619377086,
+          61.333068743032825
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03122092904124,
+          61.33402115128701
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.027633024013728,
+          61.33369658257426
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.028256409801763,
+          61.33362878434773
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030152622719157,
+          61.33361289310232
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030748350321186,
+          61.33331776846497
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02978778764635,
+          61.33344206823827
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029732527343477,
+          61.33290496902444
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02879001743355,
+          61.33379752780452
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030207404309067,
+          61.33332389182137
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02997300370414,
+          61.333706912124036
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03037078137382,
+          61.33332290422154
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031088547037413,
+          61.33321740423435
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03117165124337,
+          61.33298618545452
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03132456082164,
+          61.333544252669654
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02855778892807,
+          61.333732572146886
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031356638125338,
+          61.333203905856834
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029667339233757,
+          61.33358155163105
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02905102946879,
+          61.333274408061556
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03050832197696,
+          61.33399401371978
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.0301673860448,
+          61.33388918655404
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.027953336341163,
+          61.333797944769564
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030806007646973,
+          61.333185119066016
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029342985958856,
+          61.334073751983645
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031066604349697,
+          61.33331024397771
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02892199833996,
+          61.33403122838352
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031207135494515,
+          61.33365457595426
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.028115216905277,
+          61.33347956616501
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03106504318749,
+          61.3338618039412
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02923971761881,
+          61.33399216129886
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029751029106016,
+          61.33332555164392
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030909617955626,
+          61.33312732652705
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029702084487983,
+          61.334098424136684
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029295949306732,
+          61.33410257790741
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030003524600218,
+          61.33365288744877
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030879028487686,
+          61.33354233097527
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030915076124106,
+          61.33404423654242
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029405154384257,
+          61.33305804173076
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029072151092812,
+          61.33392503212238
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030284271455262,
+          61.33399054915607
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031289578095418,
+          61.3341491389444
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03084781977781,
+          61.33369235259033
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030920458719134,
+          61.33334922620718
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03053279663758,
+          61.334139713347135
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030606158791322,
+          61.33410765031381
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030542403318115,
+          61.33270451437386
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03106032063774,
+          61.333081588927406
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031137338522228,
+          61.33354359805288
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030150018910234,
+          61.333028542106256
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02991383448634,
+          61.33269688278588
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02910015110612,
+          61.333706263267516
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030289719401036,
+          61.33324152000186
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030074798514047,
+          61.33418806634084
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02965805371052,
+          61.3334992655438
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02919370519758,
+          61.33376012813608
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.028265802246086,
+          61.33397138844771
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03065160300081,
+          61.33289687638698
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02992184895247,
+          61.332745846276175
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.0283198512819,
+          61.33366757784615
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030799098680188,
+          61.33362980135072
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030116476845777,
+          61.33347361374771
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029588708029923,
+          61.3339236975451
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.028936735202542,
+          61.33407212831024
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031481116017737,
+          61.33394909267711
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030091731497233,
+          61.33358441951622
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.027695879404476,
+          61.33367111774873
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02966471100911,
+          61.33343201927581
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02864032565362,
+          61.33355102877686
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.027809642522293,
+          61.3336859247667
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030591806876807,
+          61.33303230219625
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031117545710355,
+          61.33395004755087
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029295868776376,
+          61.33324924094596
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02916214577045,
+          61.334061019534865
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030959489130694,
+          61.33411358547451
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03122350724891,
+          61.333351398323416
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029597279181104,
+          61.332975368775685
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030821043665753,
+          61.33365300933689
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030546625998777,
+          61.33392990241587
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.028637082524664,
+          61.33369907513244
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030740965757115,
+          61.33397101713313
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02899066301953,
+          61.333696978873384
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.027556359500995,
+          61.33362213339502
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03055421612155,
+          61.33282999584667
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.028031350380186,
+          61.33376428487821
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031671963445394,
+          61.33408103803087
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031097764456153,
+          61.33358359930004
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.0305639916685,
+          61.33380408154607
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029157003913816,
+          61.33340817276904
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029945214560257,
+          61.3330537234007
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03025329379685,
+          61.33411633364206
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029455482904314,
+          61.33369055656984
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031221543164108,
+          61.333965143211806
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02629802481876,
+          61.33372699979852
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.028664169200404,
+          61.33354330672296
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030721864454275,
+          61.3328032178889
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02986128249422,
+          61.33387730524115
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02978532501392,
+          61.33403043556433
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029927095763803,
+          61.33327412728483
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030320600703607,
+          61.333476446603136
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.027984899227516,
+          61.33378231013956
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030067707977505,
+          61.33271615606013
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03068357259044,
+          61.33358396969691
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.028770172385226,
+          61.333989613538996
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02971144540331,
+          61.33290366039941
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031289416527432,
+          61.33406381491431
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031593404958116,
+          61.333429573991154
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.0280645507462,
+          61.33383386285614
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.028784887384074,
+          61.33350145749277
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030243598892596,
+          61.33294315394688
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02954202653151,
+          61.33354729027875
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.0280196481658,
+          61.333694139169204
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03122546119309,
+          61.33421694912205
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.027611401700067,
+          61.33374271036032
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031190611201357,
+          61.33438378336317
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02752925319419,
+          61.33373804286432
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030646834952524,
+          61.33412181572489
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030457336629432,
+          61.33363719256456
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03099463190605,
+          61.33395621491618
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03040589142146,
+          61.33289902112863
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029273046986784,
+          61.334080738371014
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02915319824663,
+          61.333484928594366
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029820322037118,
+          61.334080424197744
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029583245189684,
+          61.33324434661091
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.027426691948524,
+          61.33384065801235
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.027864237230876,
+          61.33366075869745
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031163684210558,
+          61.333693244438784
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030449611511084,
+          61.33378221323888
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.027186465429256,
+          61.33372735672804
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030290220159056,
+          61.33285892013467
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030745487148,
+          61.333136169255155
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.028862762943017,
+          61.33391906006302
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.028435931383807,
+          61.33381825797941
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030469331870165,
+          61.333017726906924
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029130540098002,
+          61.33389385671209
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029147278307953,
+          61.33380361618962
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.027422737946274,
+          61.33377011400907
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02774671071139,
+          61.333870620320404
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03093334833675,
+          61.33377300840139
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02737811299866,
+          61.333765895663255
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03118543875958,
+          61.33355540384811
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03075499461323,
+          61.33309701739367
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030066854786146,
+          61.333330076863696
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02831440985441,
+          61.333964392053254
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030469743683106,
+          61.33374124281303
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03036398252939,
+          61.33422699077036
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029539007542898,
+          61.333009091457086
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.027497021187134,
+          61.333734723329925
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03038856493844,
+          61.33276676075581
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029945278399016,
+          61.33400814290686
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02923507986713,
+          61.3336912452881
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03124307939786,
+          61.334373368654475
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02769526443651,
+          61.333744704879926
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03102712301398,
+          61.33355402873772
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030249951528937,
+          61.33331723568632
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03057175023399,
+          61.33388618838831
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030782861949778,
+          61.33334784576865
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030003099472694,
+          61.33387811011037
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03090661512601,
+          61.33366775546768
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03068660113929,
+          61.33398970836267
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03023732808068,
+          61.33279234831345
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03124707404652,
+          61.33410332962921
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031172896167643,
+          61.33404274099967
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03129252174886,
+          61.33411409966611
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030153970361777,
+          61.333931091648004
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031557816713946,
+          61.33410515542213
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02921415622041,
+          61.33335110775017
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.027557073861644,
+          61.333811166608925
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029348794621473,
+          61.33314187280432
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030883622829883,
+          61.33428574821992
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029732822353907,
+          61.333838141415946
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03060002635436,
+          61.33384340499912
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031298337582403,
+          61.33314089776945
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03039170300656,
+          61.33319996791904
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030010436658106,
+          61.33395060179653
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029905982474396,
+          61.334004955470505
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.027931257681814,
+          61.333956242936424
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029253400394254,
+          61.333850850424525
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029412233613915,
+          61.334084121797225
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.028989743152188,
+          61.333929914413346
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029397280845995,
+          61.333891932288424
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029691153420682,
+          61.33306312436237
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02965590717798,
+          61.33321838960759
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031046464582886,
+          61.33327430372866
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03124846164395,
+          61.333891195856694
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031434404767534,
+          61.33394717686624
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031192232937396,
+          61.33324824243056
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03136952975236,
+          61.33415072875534
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.0288638880355,
+          61.33380693473023
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030664627468735,
+          61.33417890137451
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029158737844288,
+          61.33400149267957
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02696241557319,
+          61.33382346745791
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029533145551852,
+          61.333698516273486
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.026451522619105,
+          61.333728301287756
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030869007252754,
+          61.33305136569459
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031530640820524,
+          61.33425844335141
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031421881938307,
+          61.33351672301669
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030560972814666,
+          61.33402959429328
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02756800548201,
+          61.333648364904
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029815310072348,
+          61.33418615113428
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02936707561155,
+          61.333626696496594
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02786159705274,
+          61.33354079968992
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030977723224016,
+          61.33324199589297
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03092509587188,
+          61.33406208599369
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031168699441867,
+          61.33367080091115
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03112554062404,
+          61.33389322545124
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029897250248293,
+          61.33383765705441
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030871250007156,
+          61.33283738841112
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02978567803489,
+          61.33283174615608
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030071163304736,
+          61.33383618192078
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02977800811287,
+          61.3339516835089
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029207366913933,
+          61.3338907024689
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.027175203302516,
+          61.33379899952026
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.027997096975277,
+          61.333876251869604
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031476088037916,
+          61.334115554155865
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029199659671963,
+          61.33401107944621
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03087609864474,
+          61.33335357181763
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.026070238968327,
+          61.333687269148925
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031142242204538,
+          61.33415726661762
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030069636211614,
+          61.33287043321407
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02761208555573,
+          61.33380974382702
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.027683388717918,
+          61.33377355728252
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031110346707298,
+          61.333390456757115
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030109785338105,
+          61.333835945586685
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03127429203571,
+          61.334043091621254
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02820421687601,
+          61.33361897178527
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030473507615614,
+          61.333145209165096
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029294306793872,
+          61.33350970670392
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029343510013113,
+          61.333740901469966
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02997782249124,
+          61.33301903458897
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029447751522845,
+          61.33329125655514
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.027950369555207,
+          61.33373418804879
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030543507671208,
+          61.33278397735931
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029616207619767,
+          61.333964448139234
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029612912864447,
+          61.33365894715663
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.027847212497115,
+          61.33383751836427
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.0296192421025,
+          61.33319665345105
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.028733228266788,
+          61.33387921848304
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029488512747374,
+          61.334102090094774
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.028138384126898,
+          61.33382004234535
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03058803590524,
+          61.33270674427736
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02779902209168,
+          61.333779308800416
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029797421223588,
+          61.333817454349685
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031319326069717,
+          61.33308727130537
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029503283109424,
+          61.3330816948822
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031428397038436,
+          61.334045992639545
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030010872659396,
+          61.33328089897882
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029896561874963,
+          61.33272846318318
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03101355248031,
+          61.332914013692616
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030750456334452,
+          61.332907606413734
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029974539540326,
+          61.33340899341802
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030296627955817,
+          61.33294413880561
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.027569937555207,
+          61.333588438128494
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029963975611867,
+          61.33312262025435
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.028755452120137,
+          61.333557105964225
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031329860142257,
+          61.33398713153543
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.028548530101187,
+          61.33391261247336
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029844474971807,
+          61.33300680704371
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03139166958889,
+          61.33439634344634
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029899717025106,
+          61.33391450661878
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.028652711009343,
+          61.33349853276358
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.028537907340557,
+          61.33347522584041
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02930420135377,
+          61.33365891113808
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02977369969159,
+          61.333620043223995
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.028205855702385,
+          61.333844789330094
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029007081710066,
+          61.33350354046819
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029956570539326,
+          61.3332868039762
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030892379226852,
+          61.33408632854271
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031398248319743,
+          61.334116098133215
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03146044551019,
+          61.33354118203436
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031875609858403,
+          61.33419170609098
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02769431086574,
+          61.33358458338037
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031344437762716,
+          61.33418921315553
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030813290199816,
+          61.33290752315357
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02989280141245,
+          61.333537065725494
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030043937429,
+          61.33381614266661
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029046358935776,
+          61.3335819402114
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02997002823487,
+          61.33286931851599
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02942613807292,
+          61.33380284682476
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.028464768397974,
+          61.333765227210314
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030460104343284,
+          61.33398930324462
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.028591981531864,
+          61.33378305863081
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03087372216086,
+          61.33425714682114
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03018239156346,
+          61.332842441466006
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02981702283016,
+          61.33380840830562
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030683558682924,
+          61.33381564623579
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030533021152284,
+          61.3330125924567
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029454224753824,
+          61.3337770228518
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030933043924854,
+          61.333030690232356
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030530040540967,
+          61.33387215789613
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02957322458799,
+          61.33388515745595
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031120480628054,
+          61.33399503453801
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02917161579078,
+          61.3337245304554
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030054926136525,
+          61.333398959140304
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.028635217967082,
+          61.33375839801542
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02860896065625,
+          61.33364440728222
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03098201618638,
+          61.334223755659956
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030693664625268,
+          61.33350138475881
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03167345331518,
+          61.334287398895924
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030903408962807,
+          61.33344393616457
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.028808688310285,
+          61.333537230002314
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02933183171966,
+          61.333234745845424
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.028616108978444,
+          61.33387167471901
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031377965615334,
+          61.333877129042506
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029124256878234,
+          61.33335463627202
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031296183672016,
+          61.33298607107794
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030209254490853,
+          61.33384664903726
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031135785829274,
+          61.33327422487122
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03111943020932,
+          61.33294788981117
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029804858954876,
+          61.33308545933503
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030141259017583,
+          61.333960185494796
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02929432752056,
+          61.33359290480937
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02941855044818,
+          61.33317185812588
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029648727349496,
+          61.33394911894456
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030682946119665,
+          61.33320739221528
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02814182200565,
+          61.33395266948842
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03011787380878,
+          61.33323476960244
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029844763135614,
+          61.333999371552146
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.027984992383505,
+          61.33390891591677
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03034580873307,
+          61.3329200028452
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.028453604479196,
+          61.33354282411422
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030082185724535,
+          61.33343304127415
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029859427356776,
+          61.3339185369775
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029371510475126,
+          61.33370517401367
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.0313032259774,
+          61.33334175755835
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.027299080113966,
+          61.333849952344416
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029767024347134,
+          61.332882947600964
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03090604498815,
+          61.33395874137117
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029584555377188,
+          61.33318088784482
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03144902393511,
+          61.334222276576284
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02739295566319,
+          61.33365130195361
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02764965081568,
+          61.33381537399484
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030839008760683,
+          61.3332495034204
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029508653526104,
+          61.33377510865556
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030775470897417,
+          61.33319918943782
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030753394170382,
+          61.33369135100486
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.0299753908639,
+          61.332949716025894
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.027892116718224,
+          61.333764896294944
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.0278452974416,
+          61.333587059793096
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.0309961888056,
+          61.33328050493136
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029812528189915,
+          61.333778714469425
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.028203177749724,
+          61.33377752636346
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.0293335627967,
+          61.333989175246806
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030401772691324,
+          61.33395388196964
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.028903671546097,
+          61.333992720472956
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030087098482486,
+          61.33403846443766
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029773472695837,
+          61.33358691648081
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.028712247324382,
+          61.33398983615199
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029735324983587,
+          61.333806539767515
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031397521481956,
+          61.33434723378733
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030990396753847,
+          61.33373136698953
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03031739812381,
+          61.334158550334365
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03058804159681,
+          61.33401082122561
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029181842547334,
+          61.33357810860962
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02748168866505,
+          61.3336556085444
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03020928850958,
+          61.33354132592764
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030736654814717,
+          61.333195735665406
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031504985374802,
+          61.333256759904536
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02851377717005,
+          61.33373316608022
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030583894868947,
+          61.333927598329076
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029984324581136,
+          61.333834773584314
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031239162347934,
+          61.3337798107046
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03015136947129,
+          61.332933900455714
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02883487973462,
+          61.33365616531935
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02611320532577,
+          61.333698483316496
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030322818102846,
+          61.333326334851755
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031025761313987,
+          61.33316257372644
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030831087654597,
+          61.33321935447869
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.028398485824972,
+          61.3334246598426
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031498294207648,
+          61.333907693389435
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030445268801408,
+          61.33349830280662
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031581554689247,
+          61.333927820704545
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03099174351434,
+          61.33331638406046
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03082957959969,
+          61.33389080084203
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029991949267817,
+          61.33403621419692
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02942442883391,
+          61.333626272787065
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.026849324546692,
+          61.333774831377106
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03169420271902,
+          61.33417114681292
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.025753419571373,
+          61.33365442674945
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03130623097786,
+          61.33372527088517
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02973336146142,
+          61.33304890030714
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.027720141501057,
+          61.33383537571442
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02969902304288,
+          61.334172868120326
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030292655367184,
+          61.333545986552245
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03046826002278,
+          61.333317497563755
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029735675980646,
+          61.33372513150841
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02972542967697,
+          61.33348183356339
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029174299090535,
+          61.333795952637075
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02997709034998,
+          61.33413314324907
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.0311322935066,
+          61.3335717965177
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.0292198179315,
+          61.333447585470246
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02935887536998,
+          61.33321471806439
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02922980605424,
+          61.33351806172849
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.027068896477328,
+          61.333775002407826
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03041706924697,
+          61.33309131140766
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.028354159153963,
+          61.33381962962968
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.028978896375442,
+          61.33332005596491
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03027911099707,
+          61.33363230001297
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.0290877630558,
+          61.33395641868646
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029184125642594,
+          61.33410963306945
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.028521676464027,
+          61.3338145164048
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031524723684452,
+          61.33410532455495
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031184233335864,
+          61.333278267559585
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02780719977325,
+          61.33360592934499
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03047064404828,
+          61.333177674404375
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02955779590741,
+          61.333353828726054
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.028928700737406,
+          61.333390563599345
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029864062357323,
+          61.33365057109421
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03090539611309,
+          61.33306943948041
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029001723746273,
+          61.333747409296095
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03054036712912,
+          61.33347154843259
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03125005751107,
+          61.334145777779874
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030254054986546,
+          61.33377073879595
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029939777312535,
+          61.333098904421234
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029291598274927,
+          61.33413659002504
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.0301400567219,
+          61.333464510111035
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030749149248557,
+          61.33298021154574
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031013754893415,
+          61.333613583420046
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030162859853352,
+          61.333665872949375
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030609876971543,
+          61.33380183520922
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.028123763781597,
+          61.333706133511235
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030293914796157,
+          61.334105442625386
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031403873935986,
+          61.33325313304035
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.028373682218245,
+          61.33361693805383
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030780822333096,
+          61.33410611908451
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.026642211321224,
+          61.33378052439716
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030544311140716,
+          61.333635888870454
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03046231386281,
+          61.333923691508694
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02993006180222,
+          61.332881728143306
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03063259642442,
+          61.33301330033582
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.028959424489987,
+          61.33343451257021
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03114415781962,
+          61.333428782047854
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031041602119394,
+          61.334170403190186
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029453222146252,
+          61.33398472683593
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03105261723804,
+          61.334032911218046
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03069459248836,
+          61.33282307903302
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.0291487773982,
+          61.33324282265396
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030491162251124,
+          61.33380559228946
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.03059726255118,
+          61.333065997380444
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02909887350644,
+          61.33331437492842
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029836895046106,
+          61.333213543531514
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.031599564309197,
+          61.33404086998701
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030952478774545,
+          61.33320231726279
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030527950345153,
+          61.332822470257014
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030215508245398,
+          61.33418618996327
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02819208576793,
+          61.33357961753693
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.029359020152786,
+          61.33377945400237
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.02924272884216,
+          61.333234501156596
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030717825540645,
+          61.33398327286756
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.0281899809188,
+          61.33366171098635
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.027103039622585,
+          61.333772209945046
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030028378490638,
+          61.333245615573105
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.030106699706046,
+          61.33376584441197
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.028172616820473,
+          61.333727892652476
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "species": 2,
+        "stand_id": 35570030.0,
+        "status": 1.0
+      },
       "type": "Feature"
     }
   ],
